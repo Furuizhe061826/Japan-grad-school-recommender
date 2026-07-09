@@ -49,6 +49,8 @@ export type GraduateProgram = {
 export type RecommendedProgram = GraduateProgram & {
   band: RecommendationBand;
   score: number;
+  researchMatchScore: number;
+  matchedKeywords: string[];
   reasons: string[];
   improvements: string[];
 };

@@ -11,6 +11,7 @@ import type {
 const bands: RecommendationBand[] = ["冲刺", "匹配", "相对稳妥"];
 
 const defaultTier: UndergraduateTier = "其他 / 不确定";
+const genericResearchKeywords = new Set(["工程", "科学", "研究", "系统"]);
 
 function getProfile(profile: StudentProfile): StudentProfile {
   // 兼容用户浏览器里旧版 localStorage 数据，避免升级后结果页空白。
@@ -99,21 +100,36 @@ function normalizeKeywords(text: string) {
     .filter(Boolean);
 }
 
-function scoreResearchMatch(profile: StudentProfile, program: GraduateProgram) {
+function getResearchMatch(profile: StudentProfile, program: GraduateProgram) {
   const profileText = `${profile.undergraduateMajor} ${profile.researchDirection} ${profile.additionalBackground}`.toLowerCase();
   const userKeywords = normalizeKeywords(profileText);
   const programText = [...program.researchFields, ...program.keywords, program.fieldCategory].join(" ").toLowerCase();
 
   const directFieldMatch = program.researchFields.some((field) => profileText.includes(field.toLowerCase()));
-  const directKeywordMatch = program.keywords.some((keyword) => profileText.includes(keyword.toLowerCase()));
-  const keywordHits = userKeywords.filter((keyword) => programText.includes(keyword)).length;
+  const matchedKeywords = program.keywords.filter(
+    (keyword) => profileText.includes(keyword.toLowerCase()) && !genericResearchKeywords.has(keyword)
+  );
+  const directKeywordMatch = matchedKeywords.length > 0;
+  const userKeywordHits = userKeywords.filter((keyword) => programText.includes(keyword));
+  const uniqueMatchedKeywords = Array.from(new Set([...matchedKeywords, ...userKeywordHits]));
+  const keywordHits = uniqueMatchedKeywords.length;
 
-  if (directFieldMatch) return 100;
-  if (directKeywordMatch && keywordHits >= 2) return 94;
-  if (directKeywordMatch) return 86;
-  if (keywordHits >= 2) return 78;
-  if (keywordHits === 1) return 66;
-  return 42;
+  let score = 42;
+
+  if (directFieldMatch) score = 100;
+  else if (directKeywordMatch && keywordHits >= 2) score = 94;
+  else if (directKeywordMatch) score = 86;
+  else if (keywordHits >= 2) score = 78;
+  else if (keywordHits === 1) score = 66;
+
+  return {
+    score,
+    matchedKeywords: uniqueMatchedKeywords
+  };
+}
+
+function scoreResearchMatch(profile: StudentProfile, program: GraduateProgram) {
+  return getResearchMatch(profile, program).score;
 }
 
 function scoreRegion(profile: StudentProfile, program: GraduateProgram) {
@@ -191,9 +207,11 @@ function chooseBand(score: number, difficulty: number, preference: StudentProfil
 }
 
 function buildReasons(profile: StudentProfile, program: GraduateProgram, score: number) {
-  const researchScore = scoreResearchMatch(profile, program);
+  const researchMatch = getResearchMatch(profile, program);
+  const matchedKeywordText =
+    researchMatch.matchedKeywords.length > 0 ? `命中的关键词包括：${researchMatch.matchedKeywords.join("、")}。` : "暂未命中明确关键词。";
   const reasons = [
-    `${program.universityName} 的 ${program.graduateSchool} / ${program.programName} 覆盖 ${program.researchFields.join("、")}，与「${profile.researchDirection || "目标方向"}」的匹配度为 ${researchScore} 分。`,
+    `${program.universityName} 的 ${program.graduateSchool} / ${program.programName} 覆盖 ${program.researchFields.join("、")}，与「${profile.researchDirection || "目标方向"}」的方向匹配分为 ${researchMatch.score} 分，${matchedKeywordText}`,
     `系统同时参考了你的本科院校层次「${profile.undergraduateTier}」、GPA、语言成绩和目标地区，综合匹配度为 ${score} 分。`
   ];
 
@@ -215,6 +233,7 @@ function buildReasons(profile: StudentProfile, program: GraduateProgram, score: 
 function buildImprovements(profile: StudentProfile, program: GraduateProgram) {
   const improvements: string[] = [];
   const undergradScore = scoreUndergraduateTier(profile.undergraduateTier);
+  const researchScore = scoreResearchMatch(profile, program);
 
   if (undergradScore < 70 && program.difficulty >= 84) {
     improvements.push("本科院校层次在高难度项目中不占优势，建议用科研经历、课程项目、推荐信和套磁反馈补强。");
@@ -232,7 +251,7 @@ function buildImprovements(profile: StudentProfile, program: GraduateProgram) {
     improvements.push(`建议补充日语能力证明，尤其是日语授课或需要面试的项目通常看重：${program.japaneseRequirement}。`);
   }
 
-  if (scoreResearchMatch(profile, program) < 78) {
+  if (researchScore < 78) {
     improvements.push("研究方向还需要更具体，建议把目标教授、研究室关键词、方法和过往经历连接起来。");
   }
 
@@ -248,6 +267,7 @@ function buildImprovements(profile: StudentProfile, program: GraduateProgram) {
 }
 
 function makeRecommendedProgram(profile: StudentProfile, program: GraduateProgram): RecommendedProgram {
+  const researchMatch = getResearchMatch(profile, program);
   const score = calculateScore(profile, program);
   const band = chooseBand(score, program.difficulty, profile.applicationPreference);
 
@@ -255,9 +275,28 @@ function makeRecommendedProgram(profile: StudentProfile, program: GraduateProgra
     ...program,
     band,
     score,
+    researchMatchScore: researchMatch.score,
+    matchedKeywords: researchMatch.matchedKeywords,
     reasons: buildReasons(profile, program, score),
     improvements: buildImprovements(profile, program)
   };
+}
+
+function relevanceWeight(program: RecommendedProgram) {
+  if (program.researchMatchScore >= 86) return 3;
+  if (program.researchMatchScore >= 78) return 2;
+  if (program.researchMatchScore >= 66) return 1;
+  return 0;
+}
+
+function prioritizeRelevantPrograms(
+  programs: RecommendedProgram[],
+  compare: (a: RecommendedProgram, b: RecommendedProgram) => number
+) {
+  const relevantPrograms = programs.filter((program) => program.researchMatchScore >= 66).sort(compare);
+  const weakPrograms = programs.filter((program) => program.researchMatchScore < 66).sort(compare);
+
+  return [...relevantPrograms, ...weakPrograms];
 }
 
 function pickUniquePrograms(
@@ -295,13 +334,28 @@ function pickUniquePrograms(
 function rebalanceBands(programs: RecommendedProgram[]) {
   const selectedPrograms = new Set<string>();
   const selectedUniversities = new Set<string>();
-  const byMatch = [...programs].sort((a, b) => b.score - b.difficulty - (a.score - a.difficulty));
-
-  const challengeCandidates = [...programs].sort((a, b) => b.difficulty - a.difficulty || b.score - a.score);
-  const matchCandidates = byMatch.sort(
-    (a, b) => Math.abs(a.score - a.difficulty) - Math.abs(b.score - b.difficulty)
+  const challengeCandidates = prioritizeRelevantPrograms(
+    programs,
+    (a, b) =>
+      relevanceWeight(b) - relevanceWeight(a) ||
+      b.difficulty - a.difficulty ||
+      b.researchMatchScore - a.researchMatchScore ||
+      b.score - a.score
   );
-  const safetyCandidates = [...programs].sort((a, b) => a.difficulty - b.difficulty || b.score - a.score);
+  const matchCandidates = prioritizeRelevantPrograms(
+    programs,
+    (a, b) =>
+      relevanceWeight(b) - relevanceWeight(a) ||
+      Math.abs(a.score - a.difficulty) - Math.abs(b.score - b.difficulty) ||
+      b.researchMatchScore - a.researchMatchScore
+  );
+  const safetyCandidates = prioritizeRelevantPrograms(
+    programs,
+    (a, b) =>
+      relevanceWeight(b) - relevanceWeight(a) ||
+      a.difficulty - b.difficulty ||
+      b.score - a.score
+  );
 
   return {
     冲刺: pickUniquePrograms("冲刺", challengeCandidates, selectedPrograms, selectedUniversities),

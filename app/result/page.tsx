@@ -102,7 +102,9 @@ export default function ResultPage() {
                   <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
                     <Info label="地区" value={program.region} />
                     <Info label="推荐档位" value={program.band} />
+                    <Info label="方向匹配" value={`${program.researchMatchScore} 分`} />
                     <Info label="研究方向" value={program.researchFields.slice(0, 3).join(" / ")} />
+                    <Info label="命中关键词" value={program.matchedKeywords.length > 0 ? program.matchedKeywords.join(" / ") : "暂无明确命中"} />
                     <Info label="适配学位" value={program.degreeOptions.join(" / ")} />
                     <Info label="英语要求" value={program.englishRequirement} />
                     <Info label="日语要求" value={program.japaneseRequirement} />
