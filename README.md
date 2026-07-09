@@ -34,14 +34,17 @@ components/
   SiteShell.tsx         页面公共外壳
 data/
   chinaUniversities.json 本地中国本科院校识别数据库
+  facultyProfiles.json   本地教授/研究者资料库
   programs.json         本地研究科/专业方向数据库
   researchSynonyms.json 本地研究方向词典
 lib/
+  facultyMatching.ts     教授/研究者匹配逻辑
   recommendation.ts     推荐算法与报告生成逻辑
 scripts/
   fillAdmissionInfo.mjs  批量维护院校募集要项字段的脚本
   expandProgramCoverage.mjs 批量扩展院校/研究科/方向覆盖的脚本
   importChinaUniversities.mjs 从公开高校名单页面生成本科院校识别库的脚本
+  importWasedaFaculty.mjs 从早稻田官方研究者数据库生成教授资料库的脚本
 types/
   recommendation.ts     推荐相关 TypeScript 类型
 ```
@@ -84,6 +87,12 @@ types/
 - 民办 / 独立学院
 
 如果没有识别到学校，页面会保留手动选择入口。专科/高职名单还没有批量导入，后续可以用同样的数据结构补充。
+
+## 教授/研究者匹配
+
+`data/facultyProfiles.json` 当前包含 2244 条早稻田大学官方 Researchers Database 抓取的研究者资料。推荐结果中如果出现 Waseda University 项目，系统会基于用户研究方向、项目关键词和研究者公开研究领域，显示 1-3 个潜在导师/研究者。
+
+当前版本先使用官方列表页中的姓名、职称、所属、研究领域和研究者主页链接进行规则匹配。后续可以继续抓取详情页，补充研究室主页、近期论文、研究项目、是否接收修士/博士/研究生等字段。
 
 ## 推荐逻辑说明
 

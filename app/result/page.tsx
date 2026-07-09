@@ -120,6 +120,7 @@ export default function ResultPage() {
                       <p className="mt-1">{program.improvements.join(" ")}</p>
                     </div>
                     <ScoreBreakdown program={program} />
+                    <FacultyMatchesBlock program={program} />
                     <p className="rounded-xl bg-mist p-3 text-xs text-slate-500">{program.notes}</p>
                     <AdmissionInfoBlock program={program} />
                   </div>
@@ -200,6 +201,45 @@ function ScoreBreakdown({ program }: { program: RecommendedProgram }) {
             <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-mist">
               <div className="h-full rounded-full bg-ocean" style={{ width: `${Math.max(4, Math.min(100, item.score))}%` }} />
             </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function FacultyMatchesBlock({ program }: { program: RecommendedProgram }) {
+  if (program.facultyMatches.length === 0) return null;
+
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-3">
+      <div className="flex items-center justify-between gap-3">
+        <p className="font-semibold text-ink">潜在导师/研究者</p>
+        <p className="text-xs text-slate-500">早稻田官方数据库</p>
+      </div>
+      <div className="mt-3 space-y-3">
+        {program.facultyMatches.map((faculty) => (
+          <div key={faculty.facultyUrl} className="rounded-lg bg-mist p-3">
+            <div className="flex items-start justify-between gap-3">
+              <div>
+                <p className="font-semibold text-slate-800">{faculty.professorName}</p>
+                <p className="mt-0.5 text-xs text-slate-500">{faculty.title}</p>
+              </div>
+              <span className="rounded-full bg-white px-2 py-1 text-xs font-semibold text-ocean">{faculty.matchScore}</span>
+            </div>
+            <p className="mt-2 text-xs leading-5 text-slate-600">{faculty.department}</p>
+            {faculty.matchedKeywords.length > 0 && (
+              <p className="mt-2 text-xs leading-5 text-slate-600">命中：{faculty.matchedKeywords.join(" / ")}</p>
+            )}
+            <p className="mt-2 text-xs leading-5 text-slate-500">{faculty.matchReason}</p>
+            <a
+              href={faculty.facultyUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-2 inline-flex text-xs font-semibold text-ocean underline-offset-4 hover:underline"
+            >
+              查看官方研究者页面
+            </a>
           </div>
         ))}
       </div>

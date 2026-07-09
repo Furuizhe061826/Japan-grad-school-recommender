@@ -64,6 +64,7 @@ export type RecommendedProgram = GraduateProgram & {
   researchMatchScore: number;
   matchedKeywords: string[];
   scoreBreakdown: ScoreBreakdownItem[];
+  facultyMatches: FacultyMatch[];
   reasons: string[];
   improvements: string[];
 };
@@ -81,4 +82,28 @@ export type RecommendationResult = {
   generatedAt: string;
   summary: string;
   programs: Record<RecommendationBand, RecommendedProgram[]>;
+};
+
+export type FacultyProfile = {
+  university: string;
+  sourceAffiliation: string;
+  graduateSchoolHints: string[];
+  department: string;
+  professorName: string;
+  title: string;
+  labName: string;
+  researchKeywords: string[];
+  researchSummary: string;
+  facultyUrl: string;
+  labUrl: string;
+  sourceUrl: string;
+  sourceDatabase: string;
+  fieldCategory: string;
+  lastChecked: string;
+};
+
+export type FacultyMatch = FacultyProfile & {
+  matchScore: number;
+  matchedKeywords: string[];
+  matchReason: string;
 };

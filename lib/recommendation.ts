@@ -1,6 +1,7 @@
 import programs from "@/data/programs.json";
 import researchSynonyms from "@/data/researchSynonyms.json";
 import { detectChinaUniversity } from "@/lib/chinaUniversities";
+import { findFacultyMatches } from "@/lib/facultyMatching";
 import type {
   GraduateProgram,
   RecommendationBand,
@@ -332,6 +333,7 @@ function makeRecommendedProgram(profile: StudentProfile, program: GraduateProgra
     researchMatchScore: researchMatch.score,
     matchedKeywords: researchMatch.matchedKeywords,
     scoreBreakdown,
+    facultyMatches: findFacultyMatches(profile, program),
     reasons: buildReasons(profile, program, score),
     improvements: buildImprovements(profile, program)
   };
@@ -462,6 +464,14 @@ export function buildRecommendationReport(result: RecommendationResult) {
       );
       lines.push(`推荐理由：${program.reasons.join(" ")}`);
       lines.push(`需要提升：${program.improvements.join(" ")}`);
+      if (program.facultyMatches.length > 0) {
+        lines.push("潜在导师/研究者：");
+        program.facultyMatches.forEach((faculty) => {
+          lines.push(
+            `- ${faculty.professorName}（${faculty.title}，匹配 ${faculty.matchScore}）：${faculty.matchReason} ${faculty.facultyUrl}`
+          );
+        });
+      }
       if (program.admissionInfo) {
         lines.push(`募集要项参考：${program.admissionInfo.sourceLabel}`);
         lines.push(`官方链接：${program.admissionInfo.guideUrl}`);
