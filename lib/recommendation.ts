@@ -1,4 +1,5 @@
 import programs from "@/data/programs.json";
+import researchSynonyms from "@/data/researchSynonyms.json";
 import type {
   GraduateProgram,
   RecommendationBand,
@@ -12,6 +13,12 @@ const bands: RecommendationBand[] = ["冲刺", "匹配", "相对稳妥"];
 
 const defaultTier: UndergraduateTier = "其他 / 不确定";
 const genericResearchKeywords = new Set(["工程", "科学", "研究", "系统"]);
+
+type ResearchSynonymGroup = {
+  category: string;
+  triggers: string[];
+  expandedKeywords: string[];
+};
 
 function getProfile(profile: StudentProfile): StudentProfile {
   // 兼容用户浏览器里旧版 localStorage 数据，避免升级后结果页空白。
@@ -100,9 +107,23 @@ function normalizeKeywords(text: string) {
     .filter(Boolean);
 }
 
+function getExpandedResearchKeywords(profileText: string) {
+  const lowerProfileText = profileText.toLowerCase();
+  const matchedGroups = (researchSynonyms as ResearchSynonymGroup[]).filter((group) =>
+    group.triggers.some((trigger) => lowerProfileText.includes(trigger.toLowerCase()))
+  );
+  const expandedKeywords = matchedGroups.flatMap((group) => group.expandedKeywords);
+
+  return {
+    matchedCategories: matchedGroups.map((group) => group.category),
+    expandedKeywords: Array.from(new Set(expandedKeywords))
+  };
+}
+
 function getResearchMatch(profile: StudentProfile, program: GraduateProgram) {
   const profileText = `${profile.undergraduateMajor} ${profile.researchDirection} ${profile.additionalBackground}`.toLowerCase();
-  const userKeywords = normalizeKeywords(profileText);
+  const expandedResearch = getExpandedResearchKeywords(profileText);
+  const userKeywords = Array.from(new Set([...normalizeKeywords(profileText), ...expandedResearch.expandedKeywords]));
   const programText = [...program.researchFields, ...program.keywords, program.fieldCategory].join(" ").toLowerCase();
 
   const directFieldMatch = program.researchFields.some((field) => profileText.includes(field.toLowerCase()));
@@ -110,7 +131,7 @@ function getResearchMatch(profile: StudentProfile, program: GraduateProgram) {
     (keyword) => profileText.includes(keyword.toLowerCase()) && !genericResearchKeywords.has(keyword)
   );
   const directKeywordMatch = matchedKeywords.length > 0;
-  const userKeywordHits = userKeywords.filter((keyword) => programText.includes(keyword));
+  const userKeywordHits = userKeywords.filter((keyword) => programText.includes(keyword.toLowerCase()));
   const uniqueMatchedKeywords = Array.from(new Set([...matchedKeywords, ...userKeywordHits]));
   const keywordHits = uniqueMatchedKeywords.length;
 
@@ -124,7 +145,8 @@ function getResearchMatch(profile: StudentProfile, program: GraduateProgram) {
 
   return {
     score,
-    matchedKeywords: uniqueMatchedKeywords
+    matchedKeywords: uniqueMatchedKeywords,
+    matchedCategories: expandedResearch.matchedCategories
   };
 }
 
@@ -208,10 +230,12 @@ function chooseBand(score: number, difficulty: number, preference: StudentProfil
 
 function buildReasons(profile: StudentProfile, program: GraduateProgram, score: number) {
   const researchMatch = getResearchMatch(profile, program);
+  const categoryText =
+    researchMatch.matchedCategories.length > 0 ? `系统识别为「${researchMatch.matchedCategories.join(" / ")}」方向。` : "";
   const matchedKeywordText =
     researchMatch.matchedKeywords.length > 0 ? `命中的关键词包括：${researchMatch.matchedKeywords.join("、")}。` : "暂未命中明确关键词。";
   const reasons = [
-    `${program.universityName} 的 ${program.graduateSchool} / ${program.programName} 覆盖 ${program.researchFields.join("、")}，与「${profile.researchDirection || "目标方向"}」的方向匹配分为 ${researchMatch.score} 分，${matchedKeywordText}`,
+    `${program.universityName} 的 ${program.graduateSchool} / ${program.programName} 覆盖 ${program.researchFields.join("、")}，与「${profile.researchDirection || "目标方向"}」的方向匹配分为 ${researchMatch.score} 分。${categoryText}${matchedKeywordText}`,
     `系统同时参考了你的本科院校层次「${profile.undergraduateTier}」、GPA、语言成绩和目标地区，综合匹配度为 ${score} 分。`
   ];
 

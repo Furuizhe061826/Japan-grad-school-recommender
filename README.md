@@ -34,6 +34,7 @@ components/
   SiteShell.tsx         页面公共外壳
 data/
   programs.json         本地研究科/专业方向数据库
+  researchSynonyms.json 本地研究方向词典
 lib/
   recommendation.ts     推荐算法与报告生成逻辑
 types/
@@ -68,9 +69,10 @@ types/
 2. 根据 IELTS / TOEFL / TOEIC 文本估算英语分。
 3. 根据 JLPT N1 / N2 / N3 / 无估算日语分。
 4. 根据本科院校层次估算背景竞争力。
-5. 匹配用户填写的目标研究方向与项目 `researchFields` / `keywords`。
-6. 加入地区偏好、排名偏好、目标学位和项目难度。
-7. 输出冲刺、匹配、相对稳妥三档推荐，并生成自然语言理由和提升建议。
+5. 使用 `data/researchSynonyms.json` 扩展研究方向同义词，例如「图像拼接融合」会扩展到计算机视觉、图像处理、人工智能等关键词。
+6. 匹配用户填写的目标研究方向与项目 `researchFields` / `keywords`。
+7. 加入地区偏好、排名偏好、目标学位和项目难度。
+8. 输出冲刺、匹配、相对稳妥三档推荐，并生成自然语言理由和提升建议。
 
 核心代码在 `lib/recommendation.ts`。
 
