@@ -121,19 +121,26 @@ function getExpandedResearchKeywords(profileText: string) {
 }
 
 function getResearchMatch(profile: StudentProfile, program: GraduateProgram) {
-  const profileText = `${profile.undergraduateMajor} ${profile.researchDirection} ${profile.additionalBackground}`.toLowerCase();
-  const expandedResearch = getExpandedResearchKeywords(profileText);
-  const userKeywords = Array.from(new Set([...normalizeKeywords(profileText), ...expandedResearch.expandedKeywords]));
+  const targetText = `${profile.researchDirection} ${profile.additionalBackground}`.toLowerCase();
+  const backgroundText = profile.undergraduateMajor.toLowerCase();
+  const expandedResearch = getExpandedResearchKeywords(targetText);
+  const targetKeywords = Array.from(new Set([...normalizeKeywords(targetText), ...expandedResearch.expandedKeywords]));
   const programText = [...program.researchFields, ...program.keywords, program.fieldCategory].join(" ").toLowerCase();
 
-  const directFieldMatch = program.researchFields.some((field) => profileText.includes(field.toLowerCase()));
-  const matchedKeywords = program.keywords.filter(
-    (keyword) => profileText.includes(keyword.toLowerCase()) && !genericResearchKeywords.has(keyword)
+  const directFieldMatch = program.researchFields.some((field) => targetText.includes(field.toLowerCase()));
+  const matchedTargetKeywords = program.keywords.filter(
+    (keyword) => targetText.includes(keyword.toLowerCase()) && !genericResearchKeywords.has(keyword)
   );
-  const directKeywordMatch = matchedKeywords.length > 0;
-  const userKeywordHits = userKeywords.filter((keyword) => programText.includes(keyword.toLowerCase()));
-  const uniqueMatchedKeywords = Array.from(new Set([...matchedKeywords, ...userKeywordHits]));
-  const keywordHits = uniqueMatchedKeywords.length;
+  const targetKeywordHits = targetKeywords.filter(
+    (keyword) => programText.includes(keyword.toLowerCase()) && !genericResearchKeywords.has(keyword)
+  );
+  const backgroundKeywordHits = program.keywords.filter(
+    (keyword) => backgroundText.includes(keyword.toLowerCase()) && !genericResearchKeywords.has(keyword)
+  );
+  const uniqueTargetMatches = Array.from(new Set([...matchedTargetKeywords, ...targetKeywordHits]));
+  const uniqueBackgroundMatches = Array.from(new Set(backgroundKeywordHits));
+  const directKeywordMatch = matchedTargetKeywords.length > 0;
+  const keywordHits = uniqueTargetMatches.length;
 
   let score = 42;
 
@@ -142,10 +149,16 @@ function getResearchMatch(profile: StudentProfile, program: GraduateProgram) {
   else if (directKeywordMatch) score = 86;
   else if (keywordHits >= 2) score = 78;
   else if (keywordHits === 1) score = 66;
+  else if (uniqueBackgroundMatches.length >= 2) score = 60;
+  else if (uniqueBackgroundMatches.length === 1) score = 54;
+
+  if (keywordHits > 0 && uniqueBackgroundMatches.length > 0) {
+    score = Math.min(100, score + 4);
+  }
 
   return {
     score,
-    matchedKeywords: uniqueMatchedKeywords,
+    matchedKeywords: Array.from(new Set([...uniqueTargetMatches, ...uniqueBackgroundMatches])),
     matchedCategories: expandedResearch.matchedCategories
   };
 }
