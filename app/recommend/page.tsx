@@ -1,9 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { FormEvent, useState } from "react";
+import { FormEvent, useMemo, useState } from "react";
 import { Disclaimer } from "@/components/Disclaimer";
 import { SiteShell } from "@/components/SiteShell";
+import { detectChinaUniversity, getChinaUniversityCount } from "@/lib/chinaUniversities";
 import type { StudentProfile } from "@/types/recommendation";
 
 const defaultProfile: StudentProfile = {
@@ -23,9 +24,22 @@ const defaultProfile: StudentProfile = {
 export default function RecommendPage() {
   const router = useRouter();
   const [profile, setProfile] = useState<StudentProfile>(defaultProfile);
+  const detectedUniversity = useMemo(
+    () => detectChinaUniversity(profile.undergraduateSchool),
+    [profile.undergraduateSchool]
+  );
 
   function updateField<K extends keyof StudentProfile>(key: K, value: StudentProfile[K]) {
     setProfile((current) => ({ ...current, [key]: value }));
+  }
+
+  function updateUndergraduateSchool(value: string) {
+    const detected = detectChinaUniversity(value);
+    setProfile((current) => ({
+      ...current,
+      undergraduateSchool: value,
+      undergraduateTier: detected?.tier ?? current.undergraduateTier
+    }));
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -50,10 +64,11 @@ export default function RecommendPage() {
             <Field label="本科院校名称">
               <input
                 value={profile.undergraduateSchool}
-                onChange={(event) => updateField("undergraduateSchool", event.target.value)}
+                onChange={(event) => updateUndergraduateSchool(event.target.value)}
                 placeholder="例如：同济大学 / 武汉理工大学 / 某某学院"
                 className="form-input"
               />
+              <UniversityDetectionHint schoolName={profile.undergraduateSchool} detectedUniversity={detectedUniversity} />
             </Field>
 
             <Field label="本科院校层次">
@@ -197,6 +212,28 @@ export default function RecommendPage() {
       </section>
       <Disclaimer />
     </SiteShell>
+  );
+}
+
+function UniversityDetectionHint({
+  schoolName,
+  detectedUniversity
+}: {
+  schoolName: string;
+  detectedUniversity: ReturnType<typeof detectChinaUniversity>;
+}) {
+  if (!schoolName.trim()) {
+    return <p className="mt-2 text-xs text-slate-400">当前内置 {getChinaUniversityCount()} 所中国本科院校用于自动识别。</p>;
+  }
+
+  if (!detectedUniversity) {
+    return <p className="mt-2 text-xs text-slate-500">暂未识别该院校，可手动选择本科院校层次。</p>;
+  }
+
+  return (
+    <p className="mt-2 text-xs text-matcha">
+      已识别：{detectedUniversity.name} · {detectedUniversity.city} · {detectedUniversity.tier}
+    </p>
   );
 }
 

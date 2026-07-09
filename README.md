@@ -33,6 +33,7 @@ components/
   Disclaimer.tsx        页面底部免责声明
   SiteShell.tsx         页面公共外壳
 data/
+  chinaUniversities.json 本地中国本科院校识别数据库
   programs.json         本地研究科/专业方向数据库
   researchSynonyms.json 本地研究方向词典
 lib/
@@ -40,6 +41,7 @@ lib/
 scripts/
   fillAdmissionInfo.mjs  批量维护院校募集要项字段的脚本
   expandProgramCoverage.mjs 批量扩展院校/研究科/方向覆盖的脚本
+  importChinaUniversities.mjs 从公开高校名单页面生成本科院校识别库的脚本
 types/
   recommendation.ts     推荐相关 TypeScript 类型
 ```
@@ -68,6 +70,20 @@ types/
 当前数据库包含 80 个项目方向，覆盖旧帝大、早稻田、庆应，并补回 Tokyo Institute of Science。所有项目均已补入 `admissionInfo`。其中能明确核到官方招生页的条目会显示“官方页面已核验”；暂时只定位到官方入口、还需要继续核对具体募集要项 PDF 或专攻页面的条目会显示“待逐项核验”。
 
 后续扩展时，可以先从研究科官网找到最新募集要项页面，再把信息补进对应项目的 `admissionInfo`。如果需要批量重写这些字段，可以参考 `scripts/fillAdmissionInfo.mjs`；如果要继续批量增加院校项目，可以参考 `scripts/expandProgramCoverage.mjs`。
+
+## 中国本科院校识别
+
+`data/chinaUniversities.json` 当前包含 1289 所中国本科院校，用于在信息输入页根据“本科院校名称”自动识别院校层次。识别结果会自动同步到“本科院校层次”，并继续参与推荐算法中的“本科背景”评分。
+
+当前识别规则包括：
+
+- C9 / 顶尖 985
+- 985
+- 211
+- 普通一本 / 普通本科
+- 民办 / 独立学院
+
+如果没有识别到学校，页面会保留手动选择入口。专科/高职名单还没有批量导入，后续可以用同样的数据结构补充。
 
 ## 推荐逻辑说明
 

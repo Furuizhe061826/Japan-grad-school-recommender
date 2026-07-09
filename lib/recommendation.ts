@@ -1,5 +1,6 @@
 import programs from "@/data/programs.json";
 import researchSynonyms from "@/data/researchSynonyms.json";
+import { detectChinaUniversity } from "@/lib/chinaUniversities";
 import type {
   GraduateProgram,
   RecommendationBand,
@@ -22,10 +23,12 @@ type ResearchSynonymGroup = {
 };
 
 function getProfile(profile: StudentProfile): StudentProfile {
+  const detectedUniversity = detectChinaUniversity(profile.undergraduateSchool ?? "");
+
   // 兼容用户浏览器里旧版 localStorage 数据，避免升级后结果页空白。
   return {
     undergraduateSchool: profile.undergraduateSchool ?? "",
-    undergraduateTier: profile.undergraduateTier ?? defaultTier,
+    undergraduateTier: detectedUniversity?.tier ?? profile.undergraduateTier ?? defaultTier,
     undergraduateMajor: profile.undergraduateMajor ?? "",
     researchDirection: profile.researchDirection ?? "",
     gpa: profile.gpa ?? "",
