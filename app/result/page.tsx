@@ -119,6 +119,7 @@ export default function ResultPage() {
                       <p className="font-semibold text-ink">需要提升的地方</p>
                       <p className="mt-1">{program.improvements.join(" ")}</p>
                     </div>
+                    <ScoreBreakdown program={program} />
                     <p className="rounded-xl bg-mist p-3 text-xs text-slate-500">{program.notes}</p>
                     <AdmissionInfoBlock program={program} />
                   </div>
@@ -176,6 +177,32 @@ function AdmissionInfoBlock({ program }: { program: RecommendedProgram }) {
         查看官方页面：{info.sourceLabel}
       </a>
       <p className="mt-2 text-[11px] text-slate-400">核验日期：{info.lastChecked}</p>
+    </div>
+  );
+}
+
+function ScoreBreakdown({ program }: { program: RecommendedProgram }) {
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-3">
+      <div className="flex items-center justify-between gap-3">
+        <p className="font-semibold text-ink">评分拆解</p>
+        <p className="text-xs text-slate-500">分数 x 权重</p>
+      </div>
+      <div className="mt-3 space-y-2">
+        {program.scoreBreakdown.map((item) => (
+          <div key={item.key}>
+            <div className="flex items-center justify-between gap-3 text-xs">
+              <span className="font-semibold text-slate-600">{item.label}</span>
+              <span className="tabular-nums text-slate-500">
+                {item.score} x {Math.round(item.weight * 100)}% = {item.contribution}
+              </span>
+            </div>
+            <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-mist">
+              <div className="h-full rounded-full bg-ocean" style={{ width: `${Math.max(4, Math.min(100, item.score))}%` }} />
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

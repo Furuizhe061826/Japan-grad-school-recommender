@@ -63,8 +63,17 @@ export type RecommendedProgram = GraduateProgram & {
   score: number;
   researchMatchScore: number;
   matchedKeywords: string[];
+  scoreBreakdown: ScoreBreakdownItem[];
   reasons: string[];
   improvements: string[];
+};
+
+export type ScoreBreakdownItem = {
+  key: "research" | "gpa" | "english" | "japanese" | "undergrad" | "region" | "rank" | "degree";
+  label: string;
+  score: number;
+  weight: number;
+  contribution: number;
 };
 
 export type RecommendationResult = {

@@ -5,6 +5,7 @@ import type {
   RecommendationBand,
   RecommendationResult,
   RecommendedProgram,
+  ScoreBreakdownItem,
   StudentProfile,
   UndergraduateTier
 } from "@/types/recommendation";
@@ -176,17 +177,8 @@ function scoreDegree(profile: StudentProfile, program: GraduateProgram) {
   return program.degreeOptions.includes(profile.degreeGoal) ? 100 : 62;
 }
 
-function calculateScore(profile: StudentProfile, program: GraduateProgram) {
-  const gpaScore = parseGpa(profile.gpa);
-  const englishScore = scoreEnglish(profile.englishScore);
-  const japaneseScore = scoreJapanese(profile.japaneseScore);
-  const researchScore = scoreResearchMatch(profile, program);
-  const regionScore = scoreRegion(profile, program);
-  const degreeScore = scoreDegree(profile, program);
-  const undergradScore = scoreUndergraduateTier(profile.undergraduateTier);
-  const rankScore = program.rankTier === 1 ? 100 : 86;
-
-  const preferenceWeights = {
+function getPreferenceWeights(preference: StudentProfile["applicationPreference"]) {
+  return {
     排名优先: {
       gpa: 0.16,
       english: 0.14,
@@ -217,18 +209,39 @@ function calculateScore(profile: StudentProfile, program: GraduateProgram) {
       undergrad: 0.1,
       degree: 0.04
     }
-  }[profile.applicationPreference];
+  }[preference];
+}
 
-  const rawScore =
-    gpaScore * preferenceWeights.gpa +
-    englishScore * preferenceWeights.english +
-    japaneseScore * preferenceWeights.japanese +
-    researchScore * preferenceWeights.research +
-    regionScore * preferenceWeights.region +
-    rankScore * preferenceWeights.rank +
-    undergradScore * preferenceWeights.undergrad +
-    degreeScore * preferenceWeights.degree;
+function buildScoreBreakdown(profile: StudentProfile, program: GraduateProgram): ScoreBreakdownItem[] {
+  const gpaScore = parseGpa(profile.gpa);
+  const englishScore = scoreEnglish(profile.englishScore);
+  const japaneseScore = scoreJapanese(profile.japaneseScore);
+  const researchScore = scoreResearchMatch(profile, program);
+  const regionScore = scoreRegion(profile, program);
+  const degreeScore = scoreDegree(profile, program);
+  const undergradScore = scoreUndergraduateTier(profile.undergraduateTier);
+  const rankScore = program.rankTier === 1 ? 100 : 86;
+  const preferenceWeights = getPreferenceWeights(profile.applicationPreference);
 
+  const items: Array<Omit<ScoreBreakdownItem, "contribution">> = [
+    { key: "research", label: "研究方向", score: researchScore, weight: preferenceWeights.research },
+    { key: "gpa", label: "GPA", score: gpaScore, weight: preferenceWeights.gpa },
+    { key: "english", label: "英语", score: englishScore, weight: preferenceWeights.english },
+    { key: "japanese", label: "日语", score: japaneseScore, weight: preferenceWeights.japanese },
+    { key: "undergrad", label: "本科背景", score: undergradScore, weight: preferenceWeights.undergrad },
+    { key: "region", label: "地区偏好", score: regionScore, weight: preferenceWeights.region },
+    { key: "rank", label: "院校层级", score: rankScore, weight: preferenceWeights.rank },
+    { key: "degree", label: "学位适配", score: degreeScore, weight: preferenceWeights.degree }
+  ];
+
+  return items.map((item) => ({
+    ...item,
+    contribution: Math.round(item.score * item.weight * 10) / 10
+  }));
+}
+
+function calculateScore(profile: StudentProfile, program: GraduateProgram) {
+  const rawScore = buildScoreBreakdown(profile, program).reduce((sum, item) => sum + item.contribution, 0);
   return Math.round(Math.max(30, Math.min(99, rawScore)));
 }
 
@@ -305,6 +318,7 @@ function buildImprovements(profile: StudentProfile, program: GraduateProgram) {
 
 function makeRecommendedProgram(profile: StudentProfile, program: GraduateProgram): RecommendedProgram {
   const researchMatch = getResearchMatch(profile, program);
+  const scoreBreakdown = buildScoreBreakdown(profile, program);
   const score = calculateScore(profile, program);
   const band = chooseBand(score, program.difficulty, profile.applicationPreference);
 
@@ -314,6 +328,7 @@ function makeRecommendedProgram(profile: StudentProfile, program: GraduateProgra
     score,
     researchMatchScore: researchMatch.score,
     matchedKeywords: researchMatch.matchedKeywords,
+    scoreBreakdown,
     reasons: buildReasons(profile, program, score),
     improvements: buildImprovements(profile, program)
   };
@@ -437,6 +452,11 @@ export function buildRecommendationReport(result: RecommendationResult) {
       lines.push(`${index + 1}. ${program.universityName}｜${program.graduateSchool}｜${program.programName}`);
       lines.push(`方向：${program.researchFields.join(" / ")}｜地区：${program.region}`);
       lines.push(`匹配度：${program.score} 分`);
+      lines.push(
+        `评分拆解：${program.scoreBreakdown
+          .map((item) => `${item.label}${item.score}分 x ${Math.round(item.weight * 100)}% = ${item.contribution}`)
+          .join("；")}`
+      );
       lines.push(`推荐理由：${program.reasons.join(" ")}`);
       lines.push(`需要提升：${program.improvements.join(" ")}`);
       if (program.admissionInfo) {
