@@ -11,8 +11,13 @@
   },
   {
     "category": "结构工程 / 抗震防灾",
-    "triggers": ["抗震结构", "结构工程", "地震工程", "防灾", "灾害科学", "桥梁结构", "结构健康监测", "岩土", "基础设施"],
-    "expandedKeywords": ["结构", "抗震", "地震", "防灾", "土木", "建筑", "基础设施", "灾害"]
+    "triggers": ["抗震结构", "结构工程", "地震工程", "防灾", "灾害科学", "桥梁结构", "结构健康监测", "岩土", "基础设施", "混凝土结构", "钢筋混凝土", "预应力混凝土"],
+    "expandedKeywords": ["结构", "抗震", "地震", "防灾", "土木", "建筑", "基础设施", "灾害", "structural", "seismic", "earthquake", "bridge", "resilience"]
+  },
+  {
+    "category": "混凝土 / 土木结构材料",
+    "triggers": ["混凝土", "钢筋混凝土", "预应力混凝土", "rc结构", "rc", "水泥", "桥梁混凝土", "混凝土耐久性", "结构可靠性"],
+    "expandedKeywords": ["混凝土", "钢筋混凝土", "预应力混凝土", "concrete", "reinforced concrete", "prestressed concrete", "cement", "bridge", "structural safety", "structural reliability", "durability", "corrosion", "コンクリート"]
   },
   {
     "category": "交互设计 / 用户体验",

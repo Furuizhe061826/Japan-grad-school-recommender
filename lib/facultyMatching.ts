@@ -9,6 +9,7 @@ type ResearchSynonymGroup = {
 };
 
 const genericKeywords = new Set(["工程", "科学", "研究", "系统", "engineering", "science", "research", "systems"]);
+const weakProgramKeywords = new Set(["工学", "土木", "建筑", "工程", "engineering", "science"]);
 
 function normalizeKeywords(text: string) {
   return text
@@ -50,24 +51,37 @@ export function findFacultyMatches(profile: StudentProfile, program: GraduatePro
     .map((faculty) => {
       const facultyText = `${faculty.department} ${faculty.researchKeywords.join(" ")} ${faculty.researchSummary} ${faculty.fieldCategory}`.toLowerCase();
       const targetMatches = userKeywords.filter((keyword) => facultyText.includes(keyword.toLowerCase()));
-      const programMatches = faculty.researchKeywords.filter((keyword) => programKeywords.has(keyword.toLowerCase()));
+      const programMatches = faculty.researchKeywords.filter((keyword) => {
+        const normalizedKeyword = keyword.toLowerCase();
+        return programKeywords.has(normalizedKeyword) && !weakProgramKeywords.has(normalizedKeyword);
+      });
       const matchedKeywords = Array.from(new Set([...targetMatches, ...programMatches])).slice(0, 10);
       const affinity = getProgramAffinity(program, faculty);
-      const score = Math.min(100, 34 + matchedKeywords.length * 12 + affinity);
+      const hasResearchSignal = targetMatches.length > 0 || programMatches.length > 0;
+      const score = hasResearchSignal
+        ? Math.min(100, 38 + targetMatches.length * 14 + programMatches.length * 8 + Math.min(affinity, 18))
+        : 0;
 
       return {
-        ...faculty,
-        matchScore: matchedKeywords.length > 0 || affinity > 0 ? score : 0,
-        matchedKeywords,
-        matchReason:
-          matchedKeywords.length > 0
-            ? `研究关键词命中：${matchedKeywords.join(" / ")}`
-            : affinity > 0
-              ? "所属学术院或研究领域与该项目方向接近，建议进一步核对教授主页。"
+        match: {
+          ...faculty,
+          matchScore: score,
+          matchedKeywords,
+          matchReason:
+            matchedKeywords.length > 0
+              ? `研究关键词命中：${matchedKeywords.join(" / ")}`
               : ""
+        },
+        targetMatchCount: targetMatches.length
       };
     })
-    .filter((faculty) => faculty.matchScore >= 58)
-    .sort((a, b) => b.matchScore - a.matchScore || b.matchedKeywords.length - a.matchedKeywords.length)
-    .slice(0, 3);
+    .filter((item) => item.match.matchScore >= 58)
+    .sort(
+      (a, b) =>
+        b.targetMatchCount - a.targetMatchCount ||
+        b.match.matchScore - a.match.matchScore ||
+        b.match.matchedKeywords.length - a.match.matchedKeywords.length
+    )
+    .slice(0, 3)
+    .map((item) => item.match);
 }

@@ -21,6 +21,32 @@ const affiliations = [
   { code: "0000014", name: "Affiliated organization" }
 ];
 
+// The list pages sometimes expose only broad research areas. Keep targeted enrichments
+// from official detail pages here so re-imports do not lose important matching signals.
+const profileEnrichments = new Map([
+  [
+    `${baseUrl}/html/100001116_en.html`,
+    {
+      researchKeywords: [
+        "Structural and seismic engineering",
+        "Structure engineering and earthquake engineering",
+        "Concrete",
+        "Reinforced concrete",
+        "Prestressed concrete bridges",
+        "Structural safety",
+        "Structural reliability",
+        "Resilience",
+        "Bridge engineering",
+        "Durability",
+        "Corrosion"
+      ],
+      researchSummary:
+        "Structural and seismic engineering; life-cycle analysis, sustainability, resilience, multiple hazards, climate change, damage-free structures; concrete, reinforced concrete, prestressed concrete bridges, structural safety and reliability.",
+      labUrl: "https://akiyama617.sci.waseda.ac.jp/en-home/"
+    }
+  ]
+]);
+
 const targetJobTitlePattern = /Professor|Associate Professor|Assistant Professor|Lecturer/i;
 
 function decodeHtml(value) {
@@ -171,6 +197,14 @@ for (const profile of importedProfiles) {
 }
 
 const facultyProfiles = Array.from(byUrl.values()).sort((a, b) => a.professorName.localeCompare(b.professorName));
+for (const profile of facultyProfiles) {
+  const enrichment = profileEnrichments.get(profile.facultyUrl);
+  if (!enrichment) continue;
+
+  profile.researchKeywords = Array.from(new Set([...profile.researchKeywords, ...enrichment.researchKeywords]));
+  profile.researchSummary = `${profile.researchSummary}; ${enrichment.researchSummary}`;
+  profile.labUrl = enrichment.labUrl;
+}
 
 fs.writeFileSync(outputPath, `${JSON.stringify(facultyProfiles, null, 2)}\n`, "utf8");
 console.log(`Imported ${facultyProfiles.length} Waseda faculty profiles to ${outputPath}`);

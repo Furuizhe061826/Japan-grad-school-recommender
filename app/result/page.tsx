@@ -232,14 +232,26 @@ function FacultyMatchesBlock({ program }: { program: RecommendedProgram }) {
               <p className="mt-2 text-xs leading-5 text-slate-600">命中：{faculty.matchedKeywords.join(" / ")}</p>
             )}
             <p className="mt-2 text-xs leading-5 text-slate-500">{faculty.matchReason}</p>
-            <a
-              href={faculty.facultyUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-2 inline-flex text-xs font-semibold text-ocean underline-offset-4 hover:underline"
-            >
-              查看官方研究者页面
-            </a>
+            <div className="mt-2 flex flex-wrap gap-3">
+              <a
+                href={faculty.facultyUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex text-xs font-semibold text-ocean underline-offset-4 hover:underline"
+              >
+                查看官方研究者页面
+              </a>
+              {faculty.labUrl && (
+                <a
+                  href={faculty.labUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex text-xs font-semibold text-ocean underline-offset-4 hover:underline"
+                >
+                  查看实验室主页
+                </a>
+              )}
+            </div>
           </div>
         ))}
       </div>
