@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #f4f7fa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #17202a;
+  background:
+    radial-gradient(circle at top left, rgba(232, 93, 117, 0.16), transparent 34rem),
+    linear-gradient(180deg, #f8fbfd 0%, #eef4f7 100%);
+}
+
+input,
+select,
+textarea {
+  outline: none;
+}
+
+@layer components {
+  .form-input {
+    @apply w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-800 shadow-sm transition placeholder:text-slate-400 focus:border-ocean focus:ring-4 focus:ring-ocean/10;
+  }
+}
