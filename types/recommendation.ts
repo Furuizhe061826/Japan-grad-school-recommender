@@ -44,6 +44,18 @@ export type GraduateProgram = {
   notes: string;
   admissionGuideUrl?: string;
   lastChecked?: string;
+  admissionInfo?: {
+    sourceLabel: string;
+    guideUrl: string;
+    applicationPeriod: string;
+    examMethod: string;
+    requiredDocuments: string[];
+    supervisorContact: string;
+    languageNotes: string;
+    eligibilityNotes: string;
+    lastChecked: string;
+    verificationStatus: "官方页面已核验" | "待逐项核验";
+  };
 };
 
 export type RecommendedProgram = GraduateProgram & {

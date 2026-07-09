@@ -58,8 +58,18 @@ types/
 - `japaneseRequirement`：日语要求说明
 - `difficulty`：申请难度，建议 60-100
 - `notes`：项目备注
+- `admissionInfo`：可选字段，用来记录官方募集要项信息，包括官网链接、申请时间、选拔方式、常见材料、语言提示、资格提示、核验日期和核验状态
 
 添加新项目时，复制一段对象并修改字段即可。推荐算法会自动读取 JSON 并参与排序。
+
+第一批已接入官方募集要项来源的项目包括：
+
+- University of Tokyo / Graduate School of Engineering
+- University of Tokyo / Graduate School of Information Science and Technology
+- Kyoto University / Graduate School of Informatics
+- Kyoto University / Graduate School of Engineering
+
+其他项目暂时会显示“待逐项核验”。后续扩展时，可以先从研究科官网找到最新募集要项页面，再把信息补进对应项目的 `admissionInfo`。
 
 ## 推荐逻辑说明
 

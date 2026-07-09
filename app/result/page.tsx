@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Disclaimer } from "@/components/Disclaimer";
 import { SiteShell } from "@/components/SiteShell";
 import { buildRecommendationReport, generateRecommendations } from "@/lib/recommendation";
-import type { RecommendationBand, RecommendationResult, StudentProfile } from "@/types/recommendation";
+import type { RecommendationBand, RecommendationResult, RecommendedProgram, StudentProfile } from "@/types/recommendation";
 
 const bandStyles: Record<RecommendationBand, string> = {
   冲刺: "border-sakura/30 bg-sakura/10 text-sakura",
@@ -120,6 +120,7 @@ export default function ResultPage() {
                       <p className="mt-1">{program.improvements.join(" ")}</p>
                     </div>
                     <p className="rounded-xl bg-mist p-3 text-xs text-slate-500">{program.notes}</p>
+                    <AdmissionInfoBlock program={program} />
                   </div>
                 </article>
               ))}
@@ -137,6 +138,53 @@ function Info({ label, value }: { label: string; value: string }) {
     <div className="rounded-xl bg-mist p-3">
       <dt className="text-xs font-semibold text-slate-500">{label}</dt>
       <dd className="mt-1 text-slate-700">{value}</dd>
+    </div>
+  );
+}
+
+function AdmissionInfoBlock({ program }: { program: RecommendedProgram }) {
+  if (!program.admissionInfo) {
+    return (
+      <div className="rounded-xl border border-dashed border-slate-200 p-3 text-xs leading-5 text-slate-500">
+        该项目募集要项待逐项核验，当前申请条件请以研究科官网最新信息为准。
+      </div>
+    );
+  }
+
+  const info = program.admissionInfo;
+
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-3 text-xs leading-5 text-slate-600">
+      <div className="flex flex-wrap items-center justify-between gap-2">
+        <p className="font-semibold text-ink">募集要项参考</p>
+        <span className="rounded-full bg-matcha/10 px-2 py-1 font-semibold text-matcha">{info.verificationStatus}</span>
+      </div>
+      <dl className="mt-3 space-y-2">
+        <AdmissionRow label="申请时间" value={info.applicationPeriod} />
+        <AdmissionRow label="选拔方式" value={info.examMethod} />
+        <AdmissionRow label="常见材料" value={info.requiredDocuments.join(" / ")} />
+        <AdmissionRow label="导师联系" value={info.supervisorContact} />
+        <AdmissionRow label="语言提示" value={info.languageNotes} />
+        <AdmissionRow label="资格提示" value={info.eligibilityNotes} />
+      </dl>
+      <a
+        href={info.guideUrl}
+        target="_blank"
+        rel="noreferrer"
+        className="mt-3 inline-flex font-semibold text-ocean underline-offset-4 hover:underline"
+      >
+        查看官方页面：{info.sourceLabel}
+      </a>
+      <p className="mt-2 text-[11px] text-slate-400">核验日期：{info.lastChecked}</p>
+    </div>
+  );
+}
+
+function AdmissionRow({ label, value }: { label: string; value: string }) {
+  return (
+    <div>
+      <dt className="font-semibold text-slate-500">{label}</dt>
+      <dd className="mt-0.5 text-slate-600">{value}</dd>
     </div>
   );
 }

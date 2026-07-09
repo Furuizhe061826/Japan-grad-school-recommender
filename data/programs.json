@@ -12,7 +12,19 @@
     "englishRequirement": "建议 TOEFL 90+ / IELTS 6.5+，具体以研究科募集要项为准",
     "japaneseRequirement": "日语项目建议 JLPT N1；部分研究室可英语沟通",
     "difficulty": 97,
-    "notes": "适合本科背景强、研究计划书成熟，并能明确匹配教授方向的申请者。"
+    "notes": "适合本科背景强、研究计划书成熟，并能明确匹配教授方向的申请者。",
+    "admissionInfo": {
+      "sourceLabel": "UTokyo Graduate School of Engineering Admissions",
+      "guideUrl": "https://www.t.u-tokyo.ac.jp/en/study-at-utokyo/soe/admission",
+      "applicationPeriod": "以工学系研究科官网最新 Application Guidelines / Regular Admission 页面为准",
+      "examMethod": "Regular Admission 通常包含笔试、口试等评估；具体科目和方式依专攻募集要项确认",
+      "requiredDocuments": ["申请表", "成绩单", "毕业/预计毕业证明", "研究计划相关材料", "语言成绩或其他专攻指定材料"],
+      "supervisorContact": "建议提前确认目标研究室和教授方向；是否必须事前联系需看具体专攻要求",
+      "languageNotes": "英语/日语要求依专攻和项目而定，需以最新 Application Guidelines 为准",
+      "eligibilityNotes": "硕士、博士、专业学位项目均可能有不同资格条件，需逐项核对",
+      "lastChecked": "2026-07-09",
+      "verificationStatus": "官方页面已核验"
+    }
   },
   {
     "universityName": "University of Tokyo",
@@ -27,7 +39,19 @@
     "englishRequirement": "建议 TOEFL 95+ / IELTS 7.0+",
     "japaneseRequirement": "英语研究项目较多；日语项目建议 JLPT N1",
     "difficulty": 98,
-    "notes": "竞争极高，研究经历、论文或高质量项目会显著影响申请竞争力。"
+    "notes": "竞争极高，研究经历、论文或高质量项目会显著影响申请竞争力。",
+    "admissionInfo": {
+      "sourceLabel": "UTokyo IST Admissions",
+      "guideUrl": "https://www.i.u-tokyo.ac.jp/index_e.shtml",
+      "applicationPeriod": "官网已发布 AY2027 Entrance Examinations 信息；具体夏季/冬季申请窗口以 Admissions 页面为准",
+      "examMethod": "按 Master's and Doctoral Program 募集信息确认，通常需结合笔试、口试、材料审查等要求",
+      "requiredDocuments": ["申请表", "成绩单", "毕业/预计毕业证明", "研究计划或志望理由", "语言成绩或项目指定材料"],
+      "supervisorContact": "建议结合 Computer Science / AI 相关研究室提前确认导师匹配度",
+      "languageNotes": "IST 有英文页面和国际项目入口，语言要求仍需按具体项目募集要项确认",
+      "eligibilityNotes": "需确认 Master’s / Doctoral Program 或 English Program 的具体申请资格",
+      "lastChecked": "2026-07-09",
+      "verificationStatus": "官方页面已核验"
+    }
   },
   {
     "universityName": "University of Tokyo",
@@ -57,7 +81,19 @@
     "englishRequirement": "建议 TOEFL 90+ / IELTS 6.5+",
     "japaneseRequirement": "日语项目建议 JLPT N1；英语能力同样重要",
     "difficulty": 94,
-    "notes": "重视研究计划原创性和导师方向匹配。"
+    "notes": "重视研究计划原创性和导师方向匹配。",
+    "admissionInfo": {
+      "sourceLabel": "Kyoto University Graduate School of Informatics Admissions",
+      "guideUrl": "https://www.i.kyoto-u.ac.jp/en/admission/guide/",
+      "applicationPeriod": "官网展示 2026 Academic Year entrance examination schedule；后续年度需以 Guidelines for Admission 更新为准",
+      "examMethod": "按 Master’s / Doctoral Program 日程和 Guidelines for Admission 确认考试方式",
+      "requiredDocuments": ["申请表", "成绩单", "毕业/预计毕业证明", "研究计划或志望理由", "语言成绩或研究科指定材料"],
+      "supervisorContact": "信息学研究科方向细分明显，建议提前确认目标课程、研究室和教授方向",
+      "languageNotes": "日语/英语要求以研究科 Guidelines for Admission 为准",
+      "eligibilityNotes": "Master’s 与 Doctoral Program 分别公布日程和募集信息，需按目标学位核对",
+      "lastChecked": "2026-07-09",
+      "verificationStatus": "官方页面已核验"
+    }
   },
   {
     "universityName": "Kyoto University",
@@ -72,7 +108,19 @@
     "englishRequirement": "建议 TOEFL 85+ / IELTS 6.5+",
     "japaneseRequirement": "日语项目建议 JLPT N1 或 N2 以上",
     "difficulty": 92,
-    "notes": "适合土木、结构、环境和防灾方向背景的申请者。"
+    "notes": "适合土木、结构、环境和防灾方向背景的申请者。",
+    "admissionInfo": {
+      "sourceLabel": "Kyoto University Graduate School of Engineering Admissions",
+      "guideUrl": "https://www.t.kyoto-u.ac.jp/ja/admissions/graduate",
+      "applicationPeriod": "以工学研究科「大学院入試の種類・スケジュール」和最新募集要項为准",
+      "examMethod": "修士/博士后期课程入学考试方式需按专攻页面和募集要项确认",
+      "requiredDocuments": ["申请表", "成绩单", "毕业/预计毕业证明", "研究计划相关材料", "专攻指定材料"],
+      "supervisorContact": "土木、地震、防灾方向建议先查研究室并确认导师研究主题",
+      "languageNotes": "语言要求依专攻和考试类别不同，需以最新入学试验页面为准",
+      "eligibilityNotes": "留学生可参考工学部・工学研究科への留学页面，并按修士/博士后期入学考试确认资格",
+      "lastChecked": "2026-07-09",
+      "verificationStatus": "官方页面已核验"
+    }
   },
   {
     "universityName": "Kyoto University",

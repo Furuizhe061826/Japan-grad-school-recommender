@@ -426,6 +426,17 @@ export function buildRecommendationReport(result: RecommendationResult) {
       lines.push(`匹配度：${program.score} 分`);
       lines.push(`推荐理由：${program.reasons.join(" ")}`);
       lines.push(`需要提升：${program.improvements.join(" ")}`);
+      if (program.admissionInfo) {
+        lines.push(`募集要项参考：${program.admissionInfo.sourceLabel}`);
+        lines.push(`官方链接：${program.admissionInfo.guideUrl}`);
+        lines.push(`申请时间：${program.admissionInfo.applicationPeriod}`);
+        lines.push(`选拔方式：${program.admissionInfo.examMethod}`);
+        lines.push(`常见材料：${program.admissionInfo.requiredDocuments.join(" / ")}`);
+        lines.push(`语言提示：${program.admissionInfo.languageNotes}`);
+        lines.push(`核验状态：${program.admissionInfo.verificationStatus}（${program.admissionInfo.lastChecked}）`);
+      } else {
+        lines.push("募集要项参考：待逐项核验，请以研究科官网最新信息为准。");
+      }
       lines.push("");
     });
   }
