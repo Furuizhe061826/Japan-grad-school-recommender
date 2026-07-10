@@ -2,12 +2,12 @@
   {
     "category": "计算机视觉 / 图像处理",
     "triggers": ["图像拼接", "图像融合", "图像处理", "计算机视觉", "视觉", "cv", "影像", "图像识别", "目标检测", "图像分割", "三维重建", "特征匹配", "遥感影像"],
-    "expandedKeywords": ["计算机视觉", "图像处理", "图像拼接", "图像融合", "机器学习", "深度学习", "人工智能", "数据科学", "计算机"]
+    "expandedKeywords": ["计算机视觉", "图像处理", "图像拼接", "图像融合", "机器学习", "深度学习", "人工智能", "数据科学", "computer vision", "image processing", "image recognition", "object detection", "image segmentation", "semantic segmentation", "3d reconstruction", "feature matching", "remote sensing", "pattern recognition", "machine learning", "deep learning", "artificial intelligence"]
   },
   {
     "category": "人工智能 / 机器学习",
     "triggers": ["人工智能", "机器学习", "深度学习", "神经网络", "强化学习", "大模型", "自然语言处理", "nlp", "生成式ai", "推荐系统"],
-    "expandedKeywords": ["人工智能", "机器学习", "深度学习", "算法", "数据科学", "计算机", "智能系统"]
+    "expandedKeywords": ["人工智能", "机器学习", "深度学习", "算法", "数据科学", "智能系统", "artificial intelligence", "machine learning", "deep learning", "neural network", "natural language processing", "data science", "algorithm", "intelligent systems"]
   },
   {
     "category": "结构工程 / 抗震防灾",
