@@ -3906,5 +3906,6117 @@
       "lastChecked": "2026-07-09",
       "verificationStatus": "待逐项核验"
     }
+  },
+  {
+    "universityName": "University of Tsukuba",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "其他",
+    "rankTier": 2,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 84,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "University of Tsukuba",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 2,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 83,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "University of Tsukuba",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 2,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 83,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "University of Tsukuba",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "其他",
+    "rankTier": 2,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 82,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "University of Tsukuba",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "其他",
+    "rankTier": 2,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 83,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kobe University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "关西",
+    "rankTier": 2,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 83,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kobe University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "关西",
+    "rankTier": 2,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 84,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kobe University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "关西",
+    "rankTier": 2,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 82,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kobe University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "关西",
+    "rankTier": 2,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 83,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Yokohama National University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 81,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Yokohama National University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Civil Engineering / Architecture / Urban Systems",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "土木工程",
+      "建筑",
+      "都市系统"
+    ],
+    "keywords": [
+      "土木",
+      "建筑",
+      "结构",
+      "抗震",
+      "混凝土",
+      "城市",
+      "环境",
+      "基础设施"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语授课和设计/规划类方向通常建议 JLPT N2+",
+    "difficulty": 81,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Yokohama National University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 80,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Yokohama National University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 82,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo Metropolitan University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 81,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo Metropolitan University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 80,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo Metropolitan University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Civil Engineering / Architecture / Urban Systems",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "土木工程",
+      "建筑",
+      "都市系统"
+    ],
+    "keywords": [
+      "土木",
+      "建筑",
+      "结构",
+      "抗震",
+      "混凝土",
+      "城市",
+      "环境",
+      "基础设施"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语授课和设计/规划类方向通常建议 JLPT N2+",
+    "difficulty": 80,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo Metropolitan University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 80,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Chiba University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 80,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Chiba University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 80,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Chiba University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 80,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Chiba University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 80,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Hiroshima University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "其他",
+    "rankTier": 2,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 80,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Hiroshima University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 2,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 79,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Hiroshima University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 2,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 79,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Hiroshima University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "其他",
+    "rankTier": 2,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 78,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo University of Science",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 80,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo University of Science",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 79,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo University of Science",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 79,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo University of Science",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 78,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Sophia University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 77,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Sophia University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 79,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Sophia University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "东京",
+    "rankTier": 2,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 78,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo University of Agriculture and Technology",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 77,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo University of Agriculture and Technology",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 77,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo University of Agriculture and Technology",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 77,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo University of Agriculture and Technology",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 78,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "The University of Electro-Communications",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 78,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "The University of Electro-Communications",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 77,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "The University of Electro-Communications",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 77,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Saitama University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 75,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Saitama University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Saitama University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Civil Engineering / Architecture / Urban Systems",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "土木工程",
+      "建筑",
+      "都市系统"
+    ],
+    "keywords": [
+      "土木",
+      "建筑",
+      "结构",
+      "抗震",
+      "混凝土",
+      "城市",
+      "环境",
+      "基础设施"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语授课和设计/规划类方向通常建议 JLPT N2+",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Saitama University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Shizuoka University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Shizuoka University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Shizuoka University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Shizuoka University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Shinshu University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Shinshu University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Shinshu University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Shinshu University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 72,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kanazawa University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 75,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kanazawa University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kanazawa University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kanazawa University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Okayama University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 75,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Okayama University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Okayama University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Okayama University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kumamoto University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kumamoto University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kumamoto University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Civil Engineering / Architecture / Urban Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "土木工程",
+      "建筑",
+      "都市系统"
+    ],
+    "keywords": [
+      "土木",
+      "建筑",
+      "结构",
+      "抗震",
+      "混凝土",
+      "城市",
+      "环境",
+      "基础设施"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语授课和设计/规划类方向通常建议 JLPT N2+",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kumamoto University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Niigata University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 71,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Niigata University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 71,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Niigata University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 71,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Niigata University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 70,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Gifu University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 71,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Gifu University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 71,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Gifu University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 71,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Mie University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 70,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Mie University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 70,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Mie University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 69,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Yamagata University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 70,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Yamagata University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 70,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Yamagata University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 70,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Nagasaki University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 71,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Nagasaki University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 71,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Nagasaki University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 70,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kagoshima University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 69,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kagoshima University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 69,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kagoshima University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 68,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokushima University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 70,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokushima University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 70,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokushima University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 70,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Ehime University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 69,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Ehime University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 69,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Ehime University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 68,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Toyama University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 69,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Toyama University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 69,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Toyama University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 69,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Meiji University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Meiji University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 76,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Meiji University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 75,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Meiji University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 75,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Aoyama Gakuin University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Aoyama Gakuin University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 75,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Aoyama Gakuin University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Rikkyo University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 72,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Rikkyo University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Rikkyo University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Chuo University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 72,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Chuo University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Chuo University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Hosei University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 71,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Hosei University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Hosei University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 72,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Hosei University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 72,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Doshisha University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Doshisha University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 76,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Doshisha University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 75,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Doshisha University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 75,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Ritsumeikan University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 75,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Ritsumeikan University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Ritsumeikan University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Ritsumeikan University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kwansei Gakuin University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 71,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kwansei Gakuin University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kwansei Gakuin University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 72,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kansai University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 70,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kansai University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 72,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kansai University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 71,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kansai University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Civil Engineering / Architecture / Urban Systems",
+    "region": "关西",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "土木工程",
+      "建筑",
+      "都市系统"
+    ],
+    "keywords": [
+      "土木",
+      "建筑",
+      "结构",
+      "抗震",
+      "混凝土",
+      "城市",
+      "环境",
+      "基础设施"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语授课和设计/规划类方向通常建议 JLPT N2+",
+    "difficulty": 71,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Shibaura Institute of Technology",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Shibaura Institute of Technology",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 74,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Shibaura Institute of Technology",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Civil Engineering / Architecture / Urban Systems",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "土木工程",
+      "建筑",
+      "都市系统"
+    ],
+    "keywords": [
+      "土木",
+      "建筑",
+      "结构",
+      "抗震",
+      "混凝土",
+      "城市",
+      "环境",
+      "基础设施"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语授课和设计/规划类方向通常建议 JLPT N2+",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Shibaura Institute of Technology",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "东京",
+    "rankTier": 3,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 73,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo City University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 69,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo City University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 70,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo City University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Civil Engineering / Architecture / Urban Systems",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "土木工程",
+      "建筑",
+      "都市系统"
+    ],
+    "keywords": [
+      "土木",
+      "建筑",
+      "结构",
+      "抗震",
+      "混凝土",
+      "城市",
+      "环境",
+      "基础设施"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语授课和设计/规划类方向通常建议 JLPT N2+",
+    "difficulty": 69,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo City University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 69,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo Denki University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 69,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo Denki University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 68,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Tokyo Denki University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 68,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kogakuin University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 67,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kogakuin University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 68,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kogakuin University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Civil Engineering / Architecture / Urban Systems",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "土木工程",
+      "建筑",
+      "都市系统"
+    ],
+    "keywords": [
+      "土木",
+      "建筑",
+      "结构",
+      "抗震",
+      "混凝土",
+      "城市",
+      "环境",
+      "基础设施"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语授课和设计/规划类方向通常建议 JLPT N2+",
+    "difficulty": 67,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kogakuin University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 67,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Nihon University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 67,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Nihon University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Civil Engineering / Architecture / Urban Systems",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "土木工程",
+      "建筑",
+      "都市系统"
+    ],
+    "keywords": [
+      "土木",
+      "建筑",
+      "结构",
+      "抗震",
+      "混凝土",
+      "城市",
+      "环境",
+      "基础设施"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语授课和设计/规划类方向通常建议 JLPT N2+",
+    "difficulty": 67,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Nihon University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 66,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Nihon University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 67,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Toyo University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 65,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Toyo University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 67,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Toyo University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 66,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Toyo University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 66,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Komazawa University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 64,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Komazawa University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 65,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Senshu University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 64,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Senshu University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 66,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kanagawa University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 65,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kanagawa University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 66,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kanagawa University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 64,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kindai University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 68,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kindai University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 67,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kindai University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 67,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kindai University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 66,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Ryukoku University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 64,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Ryukoku University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 65,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Ryukoku University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 65,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kyoto Sangyo University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 64,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kyoto Sangyo University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 66,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Kyoto Sangyo University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 65,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Osaka Institute of Technology",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 66,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Osaka Institute of Technology",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 67,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Osaka Institute of Technology",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Civil Engineering / Architecture / Urban Systems",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "土木工程",
+      "建筑",
+      "都市系统"
+    ],
+    "keywords": [
+      "土木",
+      "建筑",
+      "结构",
+      "抗震",
+      "混凝土",
+      "城市",
+      "环境",
+      "基础设施"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语授课和设计/规划类方向通常建议 JLPT N2+",
+    "difficulty": 66,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Osaka Institute of Technology",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 66,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Konan University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 64,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Konan University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 66,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Konan University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "关西",
+    "rankTier": 4,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 65,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Meijo University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 4,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 65,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Meijo University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "其他",
+    "rankTier": 4,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 65,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Meijo University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "其他",
+    "rankTier": 4,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 64,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Chukyo University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "其他",
+    "rankTier": 4,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 63,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Chukyo University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "其他",
+    "rankTier": 4,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 65,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Chukyo University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "其他",
+    "rankTier": 4,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 64,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Fukuoka University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "其他",
+    "rankTier": 4,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 64,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Fukuoka University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "其他",
+    "rankTier": 4,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 64,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Fukuoka University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "其他",
+    "rankTier": 4,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 63,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Chiba Institute of Technology",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 63,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Chiba Institute of Technology",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Computer Science / Data Science / AI",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "信息",
+    "researchFields": [
+      "计算机科学",
+      "数据科学",
+      "人工智能"
+    ],
+    "keywords": [
+      "计算机",
+      "数据",
+      "人工智能",
+      "机器学习",
+      "算法",
+      "系统",
+      "图像处理",
+      "信息"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；英文研究需确认导师沟通语言",
+    "difficulty": 64,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Chiba Institute of Technology",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Materials Science / Applied Chemistry",
+    "region": "东京",
+    "rankTier": 4,
+    "fieldCategory": "理学",
+    "researchFields": [
+      "材料科学",
+      "应用化学",
+      "能源材料"
+    ],
+    "keywords": [
+      "材料",
+      "金属",
+      "合金",
+      "化学",
+      "能源",
+      "纳米",
+      "半导体",
+      "实验"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "研究室不同，建议 JLPT N2+ 或较强英语科研沟通能力",
+    "difficulty": 63,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Osaka Sangyo University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "关西",
+    "rankTier": 5,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 61,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Osaka Sangyo University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "关西",
+    "rankTier": 5,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 60,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Osaka Sangyo University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "关西",
+    "rankTier": 5,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 61,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Setsunan University",
+    "graduateSchool": "Graduate School of Science and Engineering",
+    "programName": "Mechanical / Electrical / Systems Engineering",
+    "region": "关西",
+    "rankTier": 5,
+    "fieldCategory": "工学",
+    "researchFields": [
+      "机械工程",
+      "电气电子",
+      "系统工程"
+    ],
+    "keywords": [
+      "机械",
+      "电气",
+      "电子",
+      "控制",
+      "机器人",
+      "系统",
+      "制造",
+      "能源"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，实验室沟通语言需逐项确认",
+    "difficulty": 61,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Setsunan University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "关西",
+    "rankTier": 5,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 61,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Setsunan University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "关西",
+    "rankTier": 5,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 60,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Teikyo University",
+    "graduateSchool": "Graduate School of Business / Economics / Social Sciences",
+    "programName": "Economics / Business / Policy Studies",
+    "region": "东京",
+    "rankTier": 5,
+    "fieldCategory": "商科社科",
+    "researchFields": [
+      "经济学",
+      "经营管理",
+      "政策研究"
+    ],
+    "keywords": [
+      "经济",
+      "经营",
+      "管理",
+      "金融",
+      "政策",
+      "社会",
+      "数据分析",
+      "统计"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，英文项目以募集要项为准",
+    "japaneseRequirement": "日语项目通常建议 JLPT N1-N2，社科研究计划书表达很重要",
+    "difficulty": 60,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Teikyo University",
+    "graduateSchool": "Graduate School of Life and Environmental Sciences",
+    "programName": "Life Science / Environmental Science / Food Systems",
+    "region": "东京",
+    "rankTier": 5,
+    "fieldCategory": "生命农业",
+    "researchFields": [
+      "生命科学",
+      "环境科学",
+      "食品资源"
+    ],
+    "keywords": [
+      "生命",
+      "生物",
+      "环境",
+      "食品",
+      "农业",
+      "资源",
+      "生态",
+      "可持续"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，具体以研究科募集要项为准",
+    "japaneseRequirement": "日语项目建议 JLPT N2+，英文项目需单独确认",
+    "difficulty": 61,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
+  },
+  {
+    "universityName": "Teikyo University",
+    "graduateSchool": "Graduate School of Design / Media / Human Sciences",
+    "programName": "Design / Media / Human-Computer Interaction",
+    "region": "东京",
+    "rankTier": 5,
+    "fieldCategory": "设计",
+    "researchFields": [
+      "设计学",
+      "媒体",
+      "人机交互"
+    ],
+    "keywords": [
+      "设计",
+      "媒体",
+      "用户体验",
+      "交互",
+      "人机交互",
+      "认知",
+      "产品",
+      "创新"
+    ],
+    "degreeOptions": [
+      "硕士",
+      "博士",
+      "研究生"
+    ],
+    "englishRequirement": "建议 TOEFL 70-80+ / IELTS 6.0+，作品集或研究计划要求需确认",
+    "japaneseRequirement": "日语项目建议 JLPT N2+；设计类需确认作品集和面试语言",
+    "difficulty": 61,
+    "notes": "基础覆盖条目，用于扩大推荐候选池；具体研究科、导师和募集要项需后续逐项核验。"
   }
 ]

@@ -181,6 +181,18 @@ function scoreDegree(profile: StudentProfile, program: GraduateProgram) {
   return program.degreeOptions.includes(profile.degreeGoal) ? 100 : 62;
 }
 
+function scoreRankTier(rankTier: number) {
+  const rankTierScores: Record<number, number> = {
+    1: 100,
+    2: 91,
+    3: 80,
+    4: 68,
+    5: 58
+  };
+
+  return rankTierScores[rankTier] ?? 68;
+}
+
 function getPreferenceWeights(preference: StudentProfile["applicationPreference"]) {
   return {
     排名优先: {
@@ -224,7 +236,7 @@ function buildScoreBreakdown(profile: StudentProfile, program: GraduateProgram):
   const regionScore = scoreRegion(profile, program);
   const degreeScore = scoreDegree(profile, program);
   const undergradScore = scoreUndergraduateTier(profile.undergraduateTier);
-  const rankScore = program.rankTier === 1 ? 100 : 86;
+  const rankScore = scoreRankTier(program.rankTier);
   const preferenceWeights = getPreferenceWeights(profile.applicationPreference);
 
   const items: Array<Omit<ScoreBreakdownItem, "contribution">> = [
@@ -246,7 +258,17 @@ function buildScoreBreakdown(profile: StudentProfile, program: GraduateProgram):
 
 function calculateScore(profile: StudentProfile, program: GraduateProgram) {
   const rawScore = buildScoreBreakdown(profile, program).reduce((sum, item) => sum + item.contribution, 0);
-  return Math.round(Math.max(30, Math.min(99, rawScore)));
+  const gpaScore = parseGpa(profile.gpa);
+  const englishScore = scoreEnglish(profile.englishScore);
+  const undergradScore = scoreUndergraduateTier(profile.undergraduateTier);
+  let realismAdjustment = 0;
+
+  // 高难度项目不会只因为方向匹配就变成“匹配校”，背景、GPA 和语言会明显影响现实性。
+  if (program.difficulty >= 90 && (undergradScore < 80 || gpaScore < 82)) realismAdjustment -= 8;
+  if (program.difficulty >= 84 && undergradScore < 70) realismAdjustment -= 5;
+  if (program.difficulty >= 82 && englishScore < 62) realismAdjustment -= 4;
+
+  return Math.round(Math.max(30, Math.min(99, rawScore + realismAdjustment)));
 }
 
 function chooseBand(score: number, difficulty: number, preference: StudentProfile["applicationPreference"]): RecommendationBand {
@@ -432,7 +454,7 @@ export function generateRecommendations(rawProfile: StudentProfile): Recommendat
   return {
     profile,
     generatedAt: new Date().toISOString(),
-    summary: `基于你的本科院校层次「${profile.undergraduateTier}」、${profile.undergraduateMajor || "本科专业"} 背景、${profile.researchDirection || "目标研究方向"}、GPA 和语言成绩，系统从旧帝大 + 早庆的研究科/方向库中生成了冲刺、匹配、相对稳妥三档申请组合。`,
+    summary: `基于你的本科院校层次「${profile.undergraduateTier}」、${profile.undergraduateMajor || "本科专业"} 背景、${profile.researchDirection || "目标研究方向"}、GPA 和语言成绩，系统从日本大学院广覆盖项目库中生成了冲刺、匹配、相对稳妥三档申请组合。`,
     programs: recommendedPrograms
   };
 }
@@ -465,10 +487,10 @@ export function buildRecommendationReport(result: RecommendationResult) {
       lines.push(`推荐理由：${program.reasons.join(" ")}`);
       lines.push(`需要提升：${program.improvements.join(" ")}`);
       if (program.facultyMatches.length > 0) {
-        lines.push("潜在导师/研究者：");
+        lines.push("潜在导师/研究室：");
         program.facultyMatches.forEach((faculty) => {
           lines.push(
-            `- ${faculty.professorName}（${faculty.title}，匹配 ${faculty.matchScore}）：${faculty.matchReason} ${faculty.facultyUrl}`
+            `- ${faculty.professorName}${faculty.labName ? `｜${faculty.labName}` : ""}（${faculty.title}，匹配 ${faculty.matchScore}）：${faculty.matchReason} ${faculty.facultyUrl}`
           );
         });
       }

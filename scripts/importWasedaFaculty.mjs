@@ -46,6 +46,7 @@ const profileEnrichments = new Map([
       ],
       researchSummary:
         "Structural and seismic engineering; life-cycle analysis, sustainability, resilience, multiple hazards, climate change, damage-free structures; concrete, reinforced concrete, prestressed concrete bridges, structural safety and reliability.",
+      labName: "Akiyama Laboratory / 秋山研究室",
       labUrl: "https://akiyama617.sci.waseda.ac.jp/en-home/"
     }
   ]
@@ -314,6 +315,7 @@ for (const profile of facultyProfiles) {
 
   profile.researchKeywords = Array.from(new Set([...profile.researchKeywords, ...enrichment.researchKeywords]));
   profile.researchSummary = `${profile.researchSummary}; ${enrichment.researchSummary}`;
+  profile.labName = enrichment.labName ?? profile.labName;
   profile.labUrl = enrichment.labUrl;
 }
 

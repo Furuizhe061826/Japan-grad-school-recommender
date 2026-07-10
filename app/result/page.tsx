@@ -214,7 +214,7 @@ function FacultyMatchesBlock({ program }: { program: RecommendedProgram }) {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-3">
       <div className="flex items-center justify-between gap-3">
-        <p className="font-semibold text-ink">潜在导师/研究者</p>
+        <p className="font-semibold text-ink">潜在导师/研究室</p>
         <p className="text-xs text-slate-500">早稻田官方数据库</p>
       </div>
       <div className="mt-3 space-y-3">
@@ -224,6 +224,7 @@ function FacultyMatchesBlock({ program }: { program: RecommendedProgram }) {
               <div>
                 <p className="font-semibold text-slate-800">{faculty.professorName}</p>
                 <p className="mt-0.5 text-xs text-slate-500">{faculty.title}</p>
+                {faculty.labName && <p className="mt-1 text-xs font-medium text-slate-700">{faculty.labName}</p>}
               </div>
               <span className="rounded-full bg-white px-2 py-1 text-xs font-semibold text-ocean">{faculty.matchScore}</span>
             </div>

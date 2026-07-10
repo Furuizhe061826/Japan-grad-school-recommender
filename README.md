@@ -38,12 +38,13 @@ data/
   programs.json         本地研究科/专业方向数据库
   researchSynonyms.json 本地研究方向词典
 lib/
-  facultyMatching.ts     教授/研究者匹配逻辑
+  facultyMatching.ts     教授/研究室匹配逻辑
   recommendation.ts     推荐算法与报告生成逻辑
 scripts/
   fillAdmissionInfo.mjs  批量维护院校募集要项字段的脚本
   expandProgramCoverage.mjs 批量扩展院校/研究科/方向覆盖的脚本
   importChinaUniversities.mjs 从公开高校名单页面生成本科院校识别库的脚本
+  addBroadJapanProgramCoverage.mjs 扩展日本院校基础覆盖的脚本
   importWasedaFaculty.mjs 从早稻田官方研究者数据库生成教授资料库的脚本
 types/
   recommendation.ts     推荐相关 TypeScript 类型
@@ -70,7 +71,9 @@ types/
 
 添加新项目时，复制一段对象并修改字段即可。推荐算法会自动读取 JSON 并参与排序。
 
-当前数据库包含 80 个项目方向，覆盖旧帝大、早稻田、庆应，并补回 Tokyo Institute of Science。所有项目均已补入 `admissionInfo`。其中能明确核到官方招生页的条目会显示“官方页面已核验”；暂时只定位到官方入口、还需要继续核对具体募集要项 PDF 或专攻页面的条目会显示“待逐项核验”。
+当前数据库包含 271 个项目方向，覆盖 65 所日本大学。除旧帝大、早稻田、庆应、Institute of Science Tokyo 外，还加入了筑波、神户、横国、东京都立、千叶、广岛、东京理科大、MARCH、关关同立、地方国公立和理工类私立等基础覆盖条目。
+
+其中前期深度维护过的重点项目带有 `admissionInfo`，会显示官方募集要项参考；新增的广覆盖条目暂时只作为候选池和难度梯度使用，结果页会显示“募集要项待逐项核验”。后续应优先给高频推荐学校补充官方募集要项、导师列表和研究科页面。
 
 后续扩展时，可以先从研究科官网找到最新募集要项页面，再把信息补进对应项目的 `admissionInfo`。如果需要批量重写这些字段，可以参考 `scripts/fillAdmissionInfo.mjs`；如果要继续批量增加院校项目，可以参考 `scripts/expandProgramCoverage.mjs`。
 
@@ -88,9 +91,9 @@ types/
 
 如果没有识别到学校，页面会保留手动选择入口。专科/高职名单还没有批量导入，后续可以用同样的数据结构补充。
 
-## 教授/研究者匹配
+## 教授/研究室匹配
 
-`data/facultyProfiles.json` 当前包含 2244 条早稻田大学官方 Researchers Database 抓取的研究者资料。脚本会抓取列表页和研究者详情页，并合并研究领域、研究兴趣、近期论文/项目标题、研究者主页和实验室主页等公开信息。推荐结果中如果出现 Waseda University 项目，系统会基于用户研究方向、项目关键词和研究者公开研究内容，显示 1-3 个潜在导师/研究者。
+`data/facultyProfiles.json` 当前包含 2244 条早稻田大学官方 Researchers Database 抓取的研究者资料。脚本会抓取列表页和研究者详情页，并合并研究领域、研究兴趣、近期论文/项目标题、研究者主页和实验室主页等公开信息。推荐结果中如果出现 Waseda University 项目，系统会基于用户研究方向、项目关键词和研究者公开研究内容，只展示正教授层面的潜在导师/研究室，避免把副教授、助教或研究员误当作独立研究室推荐。
 
 当前版本仍然不会判断教授当年是否招生、是否接受外国学生或是否适合直接套磁。这些信息需要继续结合实验室主页、募集要项、入试说明和导师个人页面逐项核验。
 

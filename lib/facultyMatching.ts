@@ -47,7 +47,7 @@ export function findFacultyMatches(profile: StudentProfile, program: GraduatePro
   const programKeywords = new Set([...program.keywords, ...program.researchFields].map((keyword) => keyword.toLowerCase()));
 
   return (facultyProfiles as FacultyProfile[])
-    .filter((faculty) => faculty.university === "Waseda University")
+    .filter((faculty) => faculty.university === "Waseda University" && faculty.title === "Professor")
     .map((faculty) => {
       const facultyText = `${faculty.department} ${faculty.researchKeywords.join(" ")} ${faculty.researchSummary} ${faculty.fieldCategory}`.toLowerCase();
       const targetMatches = userKeywords.filter((keyword) => {
