@@ -12,7 +12,7 @@
   {
     "category": "结构工程 / 抗震防灾",
     "triggers": ["抗震结构", "结构工程", "地震工程", "防灾", "灾害科学", "桥梁结构", "结构健康监测", "岩土", "基础设施", "混凝土结构", "钢筋混凝土", "预应力混凝土"],
-    "expandedKeywords": ["结构", "抗震", "地震", "防灾", "土木", "建筑", "基础设施", "灾害", "structural", "seismic", "earthquake", "bridge", "resilience"]
+    "expandedKeywords": ["结构", "抗震", "地震", "防灾", "土木", "建筑", "基础设施", "灾害", "structural engineering", "structural", "seismic engineering", "seismic", "earthquake engineering", "earthquake", "disaster prevention", "disaster mitigation", "bridge engineering", "bridge", "infrastructure", "resilience", "structural health monitoring", "geotechnical engineering"]
   },
   {
     "category": "混凝土 / 土木结构材料",
@@ -22,31 +22,31 @@
   {
     "category": "交互设计 / 用户体验",
     "triggers": ["用户体验", "ux", "交互设计", "产品设计", "人机交互", "hci", "服务设计", "界面设计", "可用性"],
-    "expandedKeywords": ["交互", "用户体验", "设计", "产品", "媒体", "人因", "创新"]
+    "expandedKeywords": ["交互", "用户体验", "设计", "产品", "媒体", "人因", "创新", "user experience", "ux", "interaction design", "human-computer interaction", "hci", "human interface", "service design", "product design", "usability", "cognitive science", "human factors"]
   },
   {
     "category": "城市规划 / 建筑环境",
     "triggers": ["城市更新", "城市规划", "都市规划", "建筑环境", "城市设计", "交通规划", "都市环境", "可持续城市"],
-    "expandedKeywords": ["城市", "都市", "规划", "建筑", "环境", "交通", "可持续"]
+    "expandedKeywords": ["城市", "都市", "规划", "建筑", "环境", "交通", "可持续", "urban planning", "city planning", "urban design", "architecture", "built environment", "transportation planning", "traffic", "regional planning", "sustainable city", "urban environment"]
   },
   {
     "category": "金融科技 / 商业数据",
     "triggers": ["金融科技", "fintech", "量化金融", "金融工程", "商业分析", "数据分析", "风险管理", "数字经济"],
-    "expandedKeywords": ["金融", "经济", "经营", "商科", "数据分析", "数据科学", "管理", "计量"]
+    "expandedKeywords": ["金融", "经济", "经营", "商科", "数据分析", "数据科学", "管理", "计量", "finance", "financial engineering", "fintech", "economics", "business administration", "management", "marketing", "accounting", "econometrics", "quantitative finance", "business analytics", "data analysis", "risk management"]
   },
   {
     "category": "能源环境 / 可持续",
     "triggers": ["新能源", "能源环境", "可持续发展", "碳中和", "气候变化", "环境政策", "绿色建筑", "循环经济"],
-    "expandedKeywords": ["能源", "环境", "可持续", "气候", "材料", "政策", "建筑"]
+    "expandedKeywords": ["能源", "环境", "可持续", "气候", "材料", "政策", "建筑", "energy", "environment", "sustainability", "sustainable development", "climate change", "carbon neutral", "renewable energy", "environmental policy", "green building", "circular economy", "life cycle assessment"]
   },
   {
     "category": "机器人 / 控制",
     "triggers": ["机器人", "自动驾驶", "控制工程", "自动化", "智能制造", "机电", "运动控制", "机械臂"],
-    "expandedKeywords": ["机器人", "控制", "机械", "自动化", "智能", "制造", "机电"]
+    "expandedKeywords": ["机器人", "控制", "机械", "自动化", "智能", "制造", "机电", "robotics", "robot", "control engineering", "control", "automation", "autonomous driving", "mechatronics", "mechanical engineering", "motion control", "intelligent manufacturing", "manufacturing", "actuator", "sensor"]
   },
   {
     "category": "材料科学 / 金属材料",
     "triggers": ["轻合金金属", "轻合金", "合金", "金属材料", "金属", "铝合金", "镁合金", "钛合金", "高熵合金", "材料加工", "材料成形", "金属疲劳", "金属腐蚀"],
-    "expandedKeywords": ["材料", "材料科学", "金属", "金属材料", "合金", "轻合金", "材料加工", "材料成形", "先进制造", "化学", "工程"]
+    "expandedKeywords": ["材料", "材料科学", "金属", "金属材料", "合金", "轻合金", "材料加工", "材料成形", "先进制造", "化学", "materials science", "materials engineering", "metal", "metallic materials", "alloy", "light alloy", "aluminum alloy", "aluminium alloy", "magnesium alloy", "titanium alloy", "high entropy alloy", "materials processing", "material forming", "metal fatigue", "corrosion", "surface engineering", "microstructure", "advanced manufacturing", "chemistry"]
   }
 ]

@@ -39,6 +39,10 @@ function getProgramAffinity(program: GraduateProgram, profile: FacultyProfile) {
   return 0;
 }
 
+export function hasFacultyProfilesForUniversity(universityName: string) {
+  return (facultyProfiles as FacultyProfile[]).some((faculty) => faculty.university === universityName && faculty.title === "Professor");
+}
+
 export function findFacultyMatches(profile: StudentProfile, program: GraduateProgram): FacultyMatch[] {
   const targetText = `${profile.researchDirection} ${profile.additionalBackground}`;
   const userKeywords = Array.from(new Set([...normalizeKeywords(targetText), ...getExpandedKeywords(targetText)]));

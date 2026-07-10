@@ -70,7 +70,17 @@ export type RecommendedProgram = GraduateProgram & {
 };
 
 export type ScoreBreakdownItem = {
-  key: "research" | "gpa" | "english" | "japanese" | "undergrad" | "region" | "rank" | "degree";
+  key:
+    | "research"
+    | "faculty"
+    | "difficulty"
+    | "gpa"
+    | "undergrad"
+    | "english"
+    | "japanese"
+    | "experience"
+    | "region"
+    | "degree";
   label: string;
   score: number;
   weight: number;
