@@ -215,7 +215,7 @@ function FacultyMatchesBlock({ program }: { program: RecommendedProgram }) {
     <div className="rounded-xl border border-slate-200 bg-white p-3">
       <div className="flex items-center justify-between gap-3">
         <p className="font-semibold text-ink">潜在导师/研究室</p>
-        <p className="text-xs text-slate-500">早稻田官方数据库</p>
+        <p className="text-xs text-slate-500">官方研究者数据库</p>
       </div>
       <div className="mt-3 space-y-3">
         {program.facultyMatches.map((faculty) => (

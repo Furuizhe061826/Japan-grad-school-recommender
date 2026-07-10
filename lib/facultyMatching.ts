@@ -40,14 +40,12 @@ function getProgramAffinity(program: GraduateProgram, profile: FacultyProfile) {
 }
 
 export function findFacultyMatches(profile: StudentProfile, program: GraduateProgram): FacultyMatch[] {
-  if (program.universityName !== "Waseda University") return [];
-
   const targetText = `${profile.researchDirection} ${profile.additionalBackground}`;
   const userKeywords = Array.from(new Set([...normalizeKeywords(targetText), ...getExpandedKeywords(targetText)]));
   const programKeywords = new Set([...program.keywords, ...program.researchFields].map((keyword) => keyword.toLowerCase()));
 
   return (facultyProfiles as FacultyProfile[])
-    .filter((faculty) => faculty.university === "Waseda University" && faculty.title === "Professor")
+    .filter((faculty) => faculty.university === program.universityName && faculty.title === "Professor")
     .map((faculty) => {
       const facultyText = `${faculty.department} ${faculty.researchKeywords.join(" ")} ${faculty.researchSummary} ${faculty.fieldCategory}`.toLowerCase();
       const targetMatches = userKeywords.filter((keyword) => {
