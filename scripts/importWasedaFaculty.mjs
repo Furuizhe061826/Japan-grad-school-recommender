@@ -3,6 +3,10 @@ import fs from "node:fs";
 const outputPath = "data/facultyProfiles.json";
 const baseUrl = "https://w-rdb.waseda.jp";
 const lastChecked = "2026-07-10";
+const detailConcurrency = 6;
+const detailRequestDelayMs = 80;
+const maxPublicationTitles = 24;
+const maxSummaryLength = 3200;
 
 // High-level Waseda affiliations from the official Researchers Database.
 // Using top-level affiliations avoids most duplicate entries from nested graduate school links.
@@ -58,6 +62,7 @@ function decodeHtml(value) {
     .replace(/&amp;/g, "&")
     .replace(/&#39;/g, "'")
     .replace(/&quot;/g, '"')
+    .replace(/▼display all/g, "")
     .replace(/\s+/g, " ")
     .trim();
 }
@@ -71,6 +76,69 @@ function normalizeKeywords(text) {
         .filter((keyword) => keyword.length > 1)
     )
   ).slice(0, 16);
+}
+
+function normalizeDetailKeywords(text) {
+  return Array.from(
+    new Set(
+      text
+        .split(/\s*\|\s*|,|;|\/|&nbsp;|　/)
+        .map((keyword) => decodeHtml(keyword))
+        .filter((keyword) => keyword.length > 2)
+        .filter((keyword) => !/^\d{4}/.test(keyword))
+    )
+  ).slice(0, 30);
+}
+
+function extractSectionHtml(html, divId, fallbackLength = 20000) {
+  const marker = `<div id="${divId}"`;
+  const start = html.indexOf(marker);
+  if (start === -1) return "";
+
+  const nextTextBlock = html.indexOf('<div class="text">', start + marker.length);
+  return html.slice(start, nextTextBlock === -1 ? start + fallbackLength : nextTextBlock);
+}
+
+function extractSectionText(html, divId) {
+  return decodeHtml(extractSectionHtml(html, divId));
+}
+
+function extractTitles(html) {
+  const titles = [];
+  const titlePattern = /<p class="title">([\s\S]*?)<\/p>/g;
+  let match;
+
+  while ((match = titlePattern.exec(html)) && titles.length < maxPublicationTitles) {
+    const title = decodeHtml(match[1]);
+    if (title.length < 8) continue;
+    titles.push(title);
+  }
+
+  return Array.from(new Set(titles));
+}
+
+function extractHomepageUrl(html) {
+  const homepageLabelIndex = html.indexOf("Homepage URL");
+  if (homepageLabelIndex === -1) return "";
+
+  const homepageBlock = html.slice(homepageLabelIndex, homepageLabelIndex + 1200);
+  const urlMatch = homepageBlock.match(/<a href="([^"]+)"/);
+  return urlMatch?.[1] ?? "";
+}
+
+function parseDetailPage(html) {
+  const areasText = extractSectionText(html, "kaknh_bnrui");
+  const interestsText = extractSectionText(html, "kenkyu_keyword");
+  const paperTitles = extractTitles(extractSectionHtml(html, "ronbn", 100000));
+  const projectTitles = extractTitles(extractSectionHtml(html, "kaknh_get", 60000));
+  const titleTexts = [...paperTitles, ...projectTitles].slice(0, maxPublicationTitles);
+  const detailText = [areasText, interestsText, ...titleTexts].filter(Boolean).join("; ");
+
+  return {
+    labUrl: extractHomepageUrl(html),
+    detailKeywords: normalizeDetailKeywords(`${areasText}; ${interestsText}`),
+    detailSummary: detailText.slice(0, maxSummaryLength)
+  };
 }
 
 function inferFieldCategory(keywords, affiliation) {
@@ -156,6 +224,47 @@ async function fetchText(url) {
   return response.text();
 }
 
+async function enrichProfileFromDetail(profile) {
+  try {
+    const html = await fetchText(profile.facultyUrl);
+    const detail = parseDetailPage(html);
+    const mergedKeywords = Array.from(new Set([...profile.researchKeywords, ...detail.detailKeywords]));
+
+    return {
+      ...profile,
+      researchKeywords: mergedKeywords.slice(0, 44),
+      researchSummary: [profile.researchSummary, detail.detailSummary].filter(Boolean).join("; ").slice(0, maxSummaryLength),
+      labUrl: detail.labUrl || profile.labUrl,
+      fieldCategory: inferFieldCategory(mergedKeywords, `${profile.department} ${detail.detailSummary}`)
+    };
+  } catch (error) {
+    console.warn(`Detail fetch failed for ${profile.professorName}: ${profile.facultyUrl}`);
+    return profile;
+  }
+}
+
+async function enrichProfilesFromDetails(profiles) {
+  const enrichedProfiles = new Array(profiles.length);
+  let nextIndex = 0;
+
+  async function worker(workerIndex) {
+    while (nextIndex < profiles.length) {
+      const currentIndex = nextIndex;
+      nextIndex += 1;
+
+      enrichedProfiles[currentIndex] = await enrichProfileFromDetail(profiles[currentIndex]);
+      if ((currentIndex + 1) % 100 === 0) {
+        console.log(`Detail pages: ${currentIndex + 1}/${profiles.length}`);
+      }
+
+      await new Promise((resolve) => setTimeout(resolve, detailRequestDelayMs + workerIndex * 10));
+    }
+  }
+
+  await Promise.all(Array.from({ length: detailConcurrency }, (_, index) => worker(index)));
+  return enrichedProfiles;
+}
+
 async function importAffiliation(affiliation) {
   const profiles = [];
 
@@ -196,7 +305,9 @@ for (const profile of importedProfiles) {
   });
 }
 
-const facultyProfiles = Array.from(byUrl.values()).sort((a, b) => a.professorName.localeCompare(b.professorName));
+let facultyProfiles = Array.from(byUrl.values()).sort((a, b) => a.professorName.localeCompare(b.professorName));
+console.log(`Fetching ${facultyProfiles.length} detail pages from Waseda Researchers Database...`);
+facultyProfiles = await enrichProfilesFromDetails(facultyProfiles);
 for (const profile of facultyProfiles) {
   const enrichment = profileEnrichments.get(profile.facultyUrl);
   if (!enrichment) continue;

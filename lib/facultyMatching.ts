@@ -50,7 +50,10 @@ export function findFacultyMatches(profile: StudentProfile, program: GraduatePro
     .filter((faculty) => faculty.university === "Waseda University")
     .map((faculty) => {
       const facultyText = `${faculty.department} ${faculty.researchKeywords.join(" ")} ${faculty.researchSummary} ${faculty.fieldCategory}`.toLowerCase();
-      const targetMatches = userKeywords.filter((keyword) => facultyText.includes(keyword.toLowerCase()));
+      const targetMatches = userKeywords.filter((keyword) => {
+        const normalizedKeyword = keyword.toLowerCase();
+        return !weakProgramKeywords.has(normalizedKeyword) && facultyText.includes(normalizedKeyword);
+      });
       const programMatches = faculty.researchKeywords.filter((keyword) => {
         const normalizedKeyword = keyword.toLowerCase();
         return programKeywords.has(normalizedKeyword) && !weakProgramKeywords.has(normalizedKeyword);
