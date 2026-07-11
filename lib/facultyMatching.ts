@@ -40,7 +40,12 @@ function getProgramAffinity(program: GraduateProgram, profile: FacultyProfile) {
 }
 
 export function hasFacultyProfilesForUniversity(universityName: string) {
-  return (facultyProfiles as FacultyProfile[]).some((faculty) => faculty.university === universityName && faculty.title === "Professor");
+  const professorCount = (facultyProfiles as FacultyProfile[]).filter(
+    (faculty) => faculty.university === universityName && faculty.title === "Professor"
+  ).length;
+
+  // 小批量人工核验资料只用于命中加分；达到一定规模后，才把“未命中教授”视为真实风险。
+  return professorCount >= 20;
 }
 
 export function findFacultyMatches(profile: StudentProfile, program: GraduateProgram): FacultyMatch[] {

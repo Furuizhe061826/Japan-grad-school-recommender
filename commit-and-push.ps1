@@ -21,8 +21,8 @@ if (-not $git) {
 
 Set-Location $PSScriptRoot
 
-& $git add README.md data/facultyProfiles.json package.json scripts/importKyotoFaculty.mjs portfolio commit-and-push.ps1
-& $git commit -m "Add Kyoto faculty data and portfolio"
+& $git add --all
+& $git commit -m "Add curated Osaka faculty profiles"
 & $git push
 
 Write-Host ""
