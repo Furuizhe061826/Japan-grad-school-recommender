@@ -50,6 +50,7 @@ scripts/
   addOsakaCuratedFaculty.mjs 补充大阪大学官方院系/实验室页面核验过的教授/研究室资料
   addTohokuCuratedFaculty.mjs 补充东北大学官方院系/实验室页面核验过的教授/研究室资料
   addNagoyaCuratedFaculty.mjs 补充名古屋大学官方院系/实验室页面核验过的教授/研究室资料
+  addKyushuHokkaidoScienceTokyoCuratedFaculty.mjs 补充九州大学、北海道大学、Institute of Science Tokyo 官方页面核验过的教授/研究室资料
   addOsakaEngineeringSciencePrograms.mjs 补充大阪大学基礎工学研究科项目入口的脚本
   importWasedaFaculty.mjs 从早稻田官方研究者数据库生成教授资料库的脚本
 types/
@@ -99,9 +100,9 @@ types/
 
 ## 教授/研究室匹配
 
-`data/facultyProfiles.json` 当前包含 3190 条教授/研究者资料，其中包括早稻田大学官方 Researchers Database 抓取的 2244 条资料、东京大学官方 Faculty Search 抓取的 566 位正教授资料、京都大学官方 Activity Database on Education and Research 抓取的 95 位正教授资料、大阪大学官方 Engineering Science / Information Science / Laboratory 页面核验整理的 83 条教授/研究室资料、东北大学官方 Engineering / Information Sciences / Civil and Environmental Engineering 页面核验整理的 99 条教授/研究室资料，以及名古屋大学官方 Engineering / Informatics / Environmental Studies 页面核验整理的 103 条教授/研究室资料。推荐结果中如果出现已接入教授库的学校，系统会基于用户研究方向、项目关键词和教授公开研究内容，只展示正教授层面的潜在导师/研究室，避免把副教授、助教或研究员误当作独立研究室推荐。
+`data/facultyProfiles.json` 当前包含 3242 条教授/研究者资料，其中包括早稻田大学官方 Researchers Database 抓取的 2244 条资料、东京大学官方 Faculty Search 抓取的 566 位正教授资料、京都大学官方 Activity Database on Education and Research 抓取的 95 位正教授资料、大阪大学官方 Engineering Science / Information Science / Laboratory 页面核验整理的 83 条教授/研究室资料、东北大学官方 Engineering / Information Sciences / Civil and Environmental Engineering 页面核验整理的 99 条教授/研究室资料、名古屋大学官方 Engineering / Informatics / Environmental Studies 页面核验整理的 103 条教授/研究室资料，以及九州大学、北海道大学、Institute of Science Tokyo 官方组织/研究室页面核验整理的 52 条教授/研究室资料。推荐结果中如果出现已接入教授库的学校，系统会基于用户研究方向、项目关键词和教授公开研究内容，只展示正教授层面的潜在导师/研究室，避免把副教授、助教或研究员误当作独立研究室推荐。
 
-早稻田脚本会抓取研究者列表页和详情页，合并研究领域、研究兴趣、近期论文/项目标题、研究者主页和实验室主页等公开信息。东京大学脚本会抓取正教授的 Specialty、Research theme(s)、Keywords related to research themes、所属组织和个人页面链接。京都大学脚本会从新版官方数据库逐页筛选职位严格等于 Professor 的资料，并补充 Research Topics / Research Interests 等公开研究内容。大阪大学当前优先补充了基礎工学研究科、情报科学研究科和 1 个工学研究科应用物理实验室；东北大学当前优先补充了工学研究科材料系、土木环境/防灾相关研究室和情报科学研究科；名古屋大学当前优先补充了工学研究科机械/航空、材料、土木，环境学研究科城市/建筑/防灾，以及情报学研究科。系统会按具体研究科判断教授库覆盖度，不会因为某个研究科已补全，就把同一大学其他尚未覆盖的研究科误判为“没有导师匹配”。当前版本仍然不会判断教授当年是否招生、是否接受外国学生或是否适合直接套磁，这些信息需要继续结合实验室主页、募集要项、入试说明和导师个人页面逐项核验。
+早稻田脚本会抓取研究者列表页和详情页，合并研究领域、研究兴趣、近期论文/项目标题、研究者主页和实验室主页等公开信息。东京大学脚本会抓取正教授的 Specialty、Research theme(s)、Keywords related to research themes、所属组织和个人页面链接。京都大学脚本会从新版官方数据库逐页筛选职位严格等于 Professor 的资料，并补充 Research Topics / Research Interests 等公开研究内容。大阪大学当前优先补充了基礎工学研究科、情报科学研究科和 1 个工学研究科应用物理实验室；东北大学当前优先补充了工学研究科材料系、土木环境/防灾相关研究室和情报科学研究科；名古屋大学当前优先补充了工学研究科机械/航空、材料、土木，环境学研究科城市/建筑/防灾，以及情报学研究科；九州大学、北海道大学和 Institute of Science Tokyo 当前优先补充了信息/AI、机械/机器人、材料、土木、防灾、能源环境和设计相关的高频申请方向。系统会按具体研究科判断教授库覆盖度，不会因为某个研究科已补全，就把同一大学其他尚未覆盖的研究科误判为“没有导师匹配”。当前版本仍然不会判断教授当年是否招生、是否接受外国学生或是否适合直接套磁，这些信息需要继续结合实验室主页、募集要项、入试说明和导师个人页面逐项核验。
 
 ## 推荐逻辑说明
 
