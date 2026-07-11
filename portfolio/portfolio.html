@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI 日本留学院校推荐助手｜作品集</title>
+    <style>
+      :root {
+        --ink: #122033;
+        --muted: #607086;
+        --line: #dbe3ec;
+        --soft: #f4f7fb;
+        --accent: #0f766e;
+        --accent-soft: #e7f5f2;
+        --blue: #1d4ed8;
+        --rose: #be123c;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: #eef2f7;
+        color: var(--ink);
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei",
+          sans-serif;
+        line-height: 1.55;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .deck {
+        display: grid;
+        gap: 18px;
+        padding: 24px;
+      }
+
+      .page {
+        position: relative;
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid var(--line);
+        box-shadow: 0 18px 55px rgba(15, 23, 42, 0.12);
+        page-break-after: always;
+      }
+
+      .page-inner {
+        position: relative;
+        z-index: 1;
+        padding: 24mm 20mm 18mm;
+      }
+
+      .page::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(120deg, rgba(15, 118, 110, 0.08), transparent 35%),
+          radial-gradient(circle at 92% 8%, rgba(29, 78, 216, 0.08), transparent 28%);
+        pointer-events: none;
+      }
+
+      .kicker {
+        margin: 0 0 12px;
+        color: var(--accent);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin-top: 0;
+      }
+
+      h1 {
+        max-width: 680px;
+        margin-bottom: 16px;
+        font-size: 44px;
+        line-height: 1.12;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        margin-bottom: 18px;
+        font-size: 30px;
+        line-height: 1.18;
+        letter-spacing: 0;
+      }
+
+      h3 {
+        margin-bottom: 10px;
+        font-size: 17px;
+      }
+
+      .lead {
+        max-width: 650px;
+        color: var(--muted);
+        font-size: 17px;
+      }
+
+      .meta-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 26px;
+      }
+
+      .meta-card,
+      .panel,
+      .shot,
+      .metric {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.86);
+      }
+
+      .meta-card {
+        padding: 14px 16px;
+      }
+
+      .label {
+        margin-bottom: 5px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .value {
+        font-size: 15px;
+        font-weight: 700;
+      }
+
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+      }
+
+      .tag {
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: #115e59;
+        padding: 6px 10px;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .section-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .panel {
+        padding: 18px;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      li {
+        margin: 7px 0;
+      }
+
+      .flow {
+        display: grid;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 22px;
+      }
+
+      .flow-step {
+        min-height: 86px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--soft);
+        padding: 12px;
+      }
+
+      .flow-step strong {
+        display: block;
+        margin-bottom: 6px;
+        color: var(--blue);
+        font-size: 13px;
+      }
+
+      .flow-step span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .screen-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .shot {
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        min-height: 138px;
+        overflow: hidden;
+      }
+
+      .shot-preview {
+        display: grid;
+        place-items: center;
+        background:
+          linear-gradient(135deg, #e6f3f0, #f7fafc),
+          repeating-linear-gradient(45deg, transparent, transparent 9px, rgba(15, 118, 110, 0.08) 9px, rgba(15, 118, 110, 0.08) 10px);
+        border-right: 1px solid var(--line);
+        color: #0f766e;
+        font-size: 13px;
+        font-weight: 800;
+        text-align: center;
+      }
+
+      .shot-body {
+        padding: 16px 18px;
+      }
+
+      .shot-body p {
+        margin-bottom: 8px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .logic-grid {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 16px;
+        margin-top: 18px;
+      }
+
+      .weights {
+        display: grid;
+        gap: 8px;
+      }
+
+      .weight-row {
+        display: grid;
+        grid-template-columns: 130px 1fr 42px;
+        align-items: center;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .bar {
+        height: 8px;
+        overflow: hidden;
+        border-radius: 999px;
+        background: #e5eaf0;
+      }
+
+      .bar span {
+        display: block;
+        height: 100%;
+        border-radius: inherit;
+        background: var(--accent);
+      }
+
+      .metrics {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 24px;
+      }
+
+      .metric {
+        padding: 14px;
+      }
+
+      .metric strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 24px;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .roadmap {
+        display: grid;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .roadmap-item {
+        display: grid;
+        grid-template-columns: 38px 1fr;
+        gap: 12px;
+        align-items: start;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fff;
+        padding: 14px;
+      }
+
+      .num {
+        display: grid;
+        width: 34px;
+        height: 34px;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-weight: 900;
+      }
+
+      .footer {
+        position: absolute;
+        right: 20mm;
+        bottom: 10mm;
+        left: 20mm;
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid var(--line);
+        padding-top: 8px;
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      .note {
+        margin-top: 18px;
+        border-left: 4px solid var(--rose);
+        background: #fff1f2;
+        padding: 12px 14px;
+        color: #881337;
+        font-size: 13px;
+      }
+
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+
+        body {
+          background: #fff;
+        }
+
+        .deck {
+          gap: 0;
+          padding: 0;
+        }
+
+        .page {
+          width: 210mm;
+          min-height: 297mm;
+          border: 0;
+          box-shadow: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="deck">
+      <section class="page">
+        <div class="page-inner">
+          <p class="kicker">Portfolio Project</p>
+          <h1>AI 日本留学院校推荐助手</h1>
+          <p class="lead">
+            面向日本大学院申请人群的院校与导师推荐网页 MVP。系统基于用户背景、语言成绩、研究方向和地区偏好，输出冲刺、匹配、相对稳妥三档申请建议，并提供可解释推荐理由。
+          </p>
+
+          <div class="meta-grid">
+            <div class="meta-card">
+              <div class="label">项目定位</div>
+              <div class="value">日本大学院院校与导师推荐网页 MVP</div>
+            </div>
+            <div class="meta-card">
+              <div class="label">我的角色</div>
+              <div class="value">产品设计、推荐逻辑设计、AI 辅助开发、部署上线</div>
+            </div>
+            <div class="meta-card">
+              <div class="label">技术栈</div>
+              <div class="value">Next.js / TypeScript / Tailwind CSS / JSON / 规则算法</div>
+            </div>
+            <div class="meta-card">
+              <div class="label">项目状态</div>
+              <div class="value">已完成 MVP、GitHub 管理、Vercel 在线部署</div>
+            </div>
+            <div class="meta-card">
+              <div class="label">Demo 链接</div>
+              <div class="value">https://japan-grad-school-recommender.vercel.app/</div>
+            </div>
+            <div class="meta-card">
+              <div class="label">GitHub 链接</div>
+              <div class="value">github.com/Furuizhe061826/Japan-grad-school-recommender</div>
+            </div>
+          </div>
+
+          <div class="metrics">
+            <div class="metric"><strong>65</strong><span>日本院校覆盖</span></div>
+            <div class="metric"><strong>271</strong><span>项目/方向条目</span></div>
+            <div class="metric"><strong>2905</strong><span>教授/研究者资料</span></div>
+            <div class="metric"><strong>1289</strong><span>中国本科院校识别</span></div>
+          </div>
+
+          <div class="tag-row">
+            <span class="tag">AI 产品</span>
+            <span class="tag">数据产品</span>
+            <span class="tag">项目管理</span>
+            <span class="tag">留学咨询场景</span>
+            <span class="tag">可解释推荐</span>
+          </div>
+        </div>
+        <div class="footer"><span>AI 日本留学院校推荐助手</span><span>01 / 05</span></div>
+      </section>
+
+      <section class="page">
+        <div class="page-inner">
+          <p class="kicker">User Problem & Product Flow</p>
+          <h2>用户痛点与产品流程</h2>
+
+          <div class="section-grid">
+            <div class="panel">
+              <h3>用户痛点</h3>
+              <ul>
+                <li>日本大学院申请信息分散，学生难以快速判断院校、研究科和教授方向是否匹配。</li>
+                <li>学生背景差异明显，传统选校建议常依赖经验判断，缺乏结构化和可复用的决策逻辑。</li>
+                <li>募集要项、研究室、教授方向和语言要求交叉复杂，信息检索和咨询成本较高。</li>
+              </ul>
+            </div>
+
+            <div class="panel">
+              <h3>产品目标</h3>
+              <ul>
+                <li>将用户背景转化为结构化字段，降低选校判断门槛。</li>
+                <li>基于本地院校与教授数据，形成初步候选池。</li>
+                <li>通过规则打分输出可解释推荐，辅助用户制定申请策略。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="flow">
+            <div class="flow-step">
+              <strong>01 输入背景</strong>
+              <span>本科院校、专业、GPA、语言成绩、研究方向、地区偏好</span>
+            </div>
+            <div class="flow-step">
+              <strong>02 信息结构化</strong>
+              <span>识别院校层次、语言门槛、研究关键词和目标学位</span>
+            </div>
+            <div class="flow-step">
+              <strong>03 数据库匹配</strong>
+              <span>匹配院校、研究科、方向关键词和潜在教授资料</span>
+            </div>
+            <div class="flow-step">
+              <strong>04 推荐打分</strong>
+              <span>综合研究匹配、申请难度、语言门槛和地区偏好</span>
+            </div>
+            <div class="flow-step">
+              <strong>05 输出报告</strong>
+              <span>生成冲刺、匹配、相对稳妥三档推荐和提升建议</span>
+            </div>
+          </div>
+
+          <div class="note">
+            设计重点：不是简单展示院校列表，而是把申请咨询过程拆解为可填写字段、可维护数据、可解释规则和可复用报告。
+          </div>
+        </div>
+        <div class="footer"><span>用户痛点与产品流程</span><span>02 / 05</span></div>
+      </section>
+
+      <section class="page">
+        <div class="page-inner">
+          <p class="kicker">Core Features & Screens</p>
+          <h2>核心功能与页面展示</h2>
+          <p class="lead">
+            MVP 包含首页引导、用户背景填写、推荐结果展示和复制报告功能，适合在作品集和面试中展示完整产品闭环。
+          </p>
+
+          <div class="screen-grid">
+            <div class="shot">
+              <div class="shot-preview">首页截图<br />占位区</div>
+              <div class="shot-body">
+                <h3>首页：产品定位与开始推荐</h3>
+                <p>展示产品名称、核心价值说明和开始推荐入口，让用户快速理解这是一个面向日本大学院申请的推荐助手。</p>
+                <div class="tag-row">
+                  <span class="tag">产品标题</span>
+                  <span class="tag">价值说明</span>
+                  <span class="tag">行动按钮</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="shot">
+              <div class="shot-preview">输入页截图<br />占位区</div>
+              <div class="shot-body">
+                <h3>输入页：用户背景结构化</h3>
+                <p>收集本科院校、专业、GPA、英语、日语、目标学位、地区偏好和补充经历，并用于后续推荐计算。</p>
+                <div class="tag-row">
+                  <span class="tag">背景字段</span>
+                  <span class="tag">院校层次识别</span>
+                  <span class="tag">研究方向输入</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="shot">
+              <div class="shot-preview">结果页截图<br />占位区</div>
+              <div class="shot-body">
+                <h3>结果页：三档推荐与可解释理由</h3>
+                <p>输出冲刺、匹配、相对稳妥三档院校，同时展示匹配分数、命中关键词、潜在导师和需要提升的地方。</p>
+                <div class="tag-row">
+                  <span class="tag">三档推荐</span>
+                  <span class="tag">导师匹配</span>
+                  <span class="tag">复制报告</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer"><span>核心功能与页面展示</span><span>03 / 05</span></div>
+      </section>
+
+      <section class="page">
+        <div class="page-inner">
+          <p class="kicker">Recommendation Logic & Data Structure</p>
+          <h2>推荐逻辑与数据结构</h2>
+
+          <div class="logic-grid">
+            <div class="panel">
+              <h3>数据结构</h3>
+              <ul>
+                <li>本地 JSON 数据库存储大学、研究科、专业方向、申请难度、语言要求和关键词。</li>
+                <li>教授资料库存储学校、所属组织、职位、研究关键词、研究摘要和官方链接。</li>
+                <li>中国本科院校识别库用于辅助判断本科背景层次，提升输入字段的结构化程度。</li>
+              </ul>
+
+              <h3 style="margin-top: 20px">推荐输出</h3>
+              <ul>
+                <li>冲刺 / 匹配 / 相对稳妥三档推荐结果。</li>
+                <li>每个项目提供匹配分数、推荐理由、潜在导师和提升建议。</li>
+                <li>报告语言尽量接近咨询建议，而非单纯表格排序。</li>
+              </ul>
+            </div>
+
+            <div class="panel">
+              <h3>核心评分维度</h3>
+              <div class="weights">
+                <div class="weight-row"><span>研究课题匹配</span><div class="bar"><span style="width: 100%"></span></div><b>25%</b></div>
+                <div class="weight-row"><span>教授/实验室匹配</span><div class="bar"><span style="width: 80%"></span></div><b>20%</b></div>
+                <div class="weight-row"><span>申请难度匹配</span><div class="bar"><span style="width: 48%"></span></div><b>12%</b></div>
+                <div class="weight-row"><span>GPA 与成绩</span><div class="bar"><span style="width: 40%"></span></div><b>10%</b></div>
+                <div class="weight-row"><span>本科背景</span><div class="bar"><span style="width: 32%"></span></div><b>8%</b></div>
+                <div class="weight-row"><span>英语竞争力</span><div class="bar"><span style="width: 32%"></span></div><b>8%</b></div>
+                <div class="weight-row"><span>科研经历</span><div class="bar"><span style="width: 28%"></span></div><b>7%</b></div>
+                <div class="weight-row"><span>日语竞争力</span><div class="bar"><span style="width: 20%"></span></div><b>5%</b></div>
+                <div class="weight-row"><span>地区偏好</span><div class="bar"><span style="width: 12%"></span></div><b>3%</b></div>
+                <div class="weight-row"><span>学位资格</span><div class="bar"><span style="width: 8%"></span></div><b>2%</b></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="note">
+            当前版本为 MVP 阶段的规则推荐系统，强调结果可控、逻辑透明和易迭代。后续可接入真实募集要项、教授招生信息和大模型能力，进一步提升推荐精度。
+          </div>
+        </div>
+        <div class="footer"><span>推荐逻辑与数据结构</span><span>04 / 05</span></div>
+      </section>
+
+      <section class="page">
+        <div class="page-inner">
+          <p class="kicker">Value & Iteration Plan</p>
+          <h2>项目价值与后续迭代</h2>
+
+          <div class="section-grid">
+            <div class="panel">
+              <h3>项目价值</h3>
+              <ul>
+                <li>将真实留学咨询需求转化为可交互产品 MVP，体现需求理解与产品抽象能力。</li>
+                <li>完成从需求拆解、字段设计、推荐规则、页面展示到部署上线的完整闭环。</li>
+                <li>通过本地数据结构和规则算法模拟 AI 推荐过程，体现数据产品设计能力。</li>
+                <li>使用 AI 辅助开发持续迭代功能，体现快速学习、问题拆解和执行落地能力。</li>
+              </ul>
+            </div>
+
+            <div class="panel">
+              <h3>能力映射</h3>
+              <ul>
+                <li>项目管理：需求拆解、优先级判断、版本迭代和上线部署。</li>
+                <li>数据分析：字段建模、规则打分、数据质量校验和结果解释。</li>
+                <li>AI 产品：推荐逻辑设计、可解释输出、未来 RAG / LLM 接入规划。</li>
+                <li>全球化业务：聚焦日本大学院申请场景，处理跨语言和跨院校信息匹配。</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="roadmap">
+            <div class="roadmap-item">
+              <div class="num">1</div>
+              <div>
+                <h3>接入大模型 API</h3>
+                <p>实现自然语言背景解析、个性化报告生成和更自然的咨询表达。</p>
+              </div>
+            </div>
+            <div class="roadmap-item">
+              <div class="num">2</div>
+              <div>
+                <h3>接入募集要项与官网信息</h3>
+                <p>通过 PDF / 官网资料整理和 RAG 检索，提高申请资格、语言要求和招生信息的准确性。</p>
+              </div>
+            </div>
+            <div class="roadmap-item">
+              <div class="num">3</div>
+              <div>
+                <h3>完善用户侧工具</h3>
+                <p>增加推荐报告导出、用户收藏、院校对比、导师对比和申请进度管理等功能。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer"><span>项目价值与后续迭代</span><span>05 / 05</span></div>
+      </section>
+    </main>
+  </body>
+</html>
