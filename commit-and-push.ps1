@@ -22,7 +22,7 @@ if (-not $git) {
 Set-Location $PSScriptRoot
 
 & $git add --all
-& $git commit -m "Expand Osaka and Tohoku faculty data"
+& $git commit -m "Expand Osaka Tohoku and Nagoya faculty data"
 & $git push
 
 Write-Host ""

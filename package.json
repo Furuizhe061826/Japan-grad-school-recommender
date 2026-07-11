@@ -10,6 +10,7 @@
     "import:faculty:kyoto": "node scripts/importKyotoFaculty.mjs",
     "import:faculty:osaka-curated": "node scripts/addOsakaCuratedFaculty.mjs",
     "import:faculty:tohoku-curated": "node scripts/addTohokuCuratedFaculty.mjs",
+    "import:faculty:nagoya-curated": "node scripts/addNagoyaCuratedFaculty.mjs",
     "import:programs:osaka-engineering-science": "node scripts/addOsakaEngineeringSciencePrograms.mjs"
   },
   "dependencies": {
