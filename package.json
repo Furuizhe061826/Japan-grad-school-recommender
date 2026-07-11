@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "tsc --noEmit",
     "import:faculty:kyoto": "node scripts/importKyotoFaculty.mjs",
-    "import:faculty:osaka-curated": "node scripts/addOsakaCuratedFaculty.mjs"
+    "import:faculty:osaka-curated": "node scripts/addOsakaCuratedFaculty.mjs",
+    "import:programs:osaka-engineering-science": "node scripts/addOsakaEngineeringSciencePrograms.mjs"
   },
   "dependencies": {
     "next": "16.2.10",

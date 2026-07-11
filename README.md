@@ -47,7 +47,8 @@ scripts/
   addBroadJapanProgramCoverage.mjs 扩展日本院校基础覆盖的脚本
   importUTokyoFaculty.mjs 从东京大学官方 Faculty Search 生成正教授资料的脚本
   importKyotoFaculty.mjs 从京都大学官方 Activity Database on Education and Research 生成正教授资料的脚本
-  addOsakaCuratedFaculty.mjs 补充大阪大学官方实验室页面核验过的少量教授/研究室资料
+  addOsakaCuratedFaculty.mjs 补充大阪大学官方院系/实验室页面核验过的教授/研究室资料
+  addOsakaEngineeringSciencePrograms.mjs 补充大阪大学基礎工学研究科项目入口的脚本
   importWasedaFaculty.mjs 从早稻田官方研究者数据库生成教授资料库的脚本
 types/
   recommendation.ts     推荐相关 TypeScript 类型
@@ -74,7 +75,7 @@ types/
 
 添加新项目时，复制一段对象并修改字段即可。推荐算法会自动读取 JSON 并参与排序。
 
-当前数据库包含 271 个项目方向，覆盖 65 所日本大学。除旧帝大、早稻田、庆应、Institute of Science Tokyo 外，还加入了筑波、神户、横国、东京都立、千叶、广岛、东京理科大、MARCH、关关同立、地方国公立和理工类私立等基础覆盖条目。
+当前数据库包含 274 个项目方向，覆盖 65 所日本大学。除旧帝大、早稻田、庆应、Institute of Science Tokyo 外，还加入了筑波、神户、横国、东京都立、千叶、广岛、东京理科大、MARCH、关关同立、地方国公立和理工类私立等基础覆盖条目。
 
 其中前期深度维护过的重点项目带有 `admissionInfo`，会显示官方募集要项参考；新增的广覆盖条目暂时只作为候选池和难度梯度使用，结果页会显示“募集要项待逐项核验”。后续应优先给高频推荐学校补充官方募集要项、导师列表和研究科页面。
 
@@ -96,9 +97,9 @@ types/
 
 ## 教授/研究室匹配
 
-`data/facultyProfiles.json` 当前包含 2907 条教授/研究者资料，其中包括早稻田大学官方 Researchers Database 抓取的 2244 条资料、东京大学官方 Faculty Search 抓取的 566 位正教授资料、京都大学官方 Activity Database on Education and Research 抓取的 95 位正教授资料，以及大阪大学官方实验室页面核验的 2 条教授/研究室资料。推荐结果中如果出现已接入教授库的学校，系统会基于用户研究方向、项目关键词和教授公开研究内容，只展示正教授层面的潜在导师/研究室，避免把副教授、助教或研究员误当作独立研究室推荐。
+`data/facultyProfiles.json` 当前包含 2988 条教授/研究者资料，其中包括早稻田大学官方 Researchers Database 抓取的 2244 条资料、东京大学官方 Faculty Search 抓取的 566 位正教授资料、京都大学官方 Activity Database on Education and Research 抓取的 95 位正教授资料，以及大阪大学官方 Engineering Science / Information Science / Laboratory 页面核验整理的 83 条教授/研究室资料。推荐结果中如果出现已接入教授库的学校，系统会基于用户研究方向、项目关键词和教授公开研究内容，只展示正教授层面的潜在导师/研究室，避免把副教授、助教或研究员误当作独立研究室推荐。
 
-早稻田脚本会抓取研究者列表页和详情页，合并研究领域、研究兴趣、近期论文/项目标题、研究者主页和实验室主页等公开信息。东京大学脚本会抓取正教授的 Specialty、Research theme(s)、Keywords related to research themes、所属组织和个人页面链接。京都大学脚本会从新版官方数据库逐页筛选职位严格等于 Professor 的资料，并补充 Research Topics / Research Interests 等公开研究内容。大阪大学当前先以官方实验室页面进行小批量核验，命中时可用于导师匹配加分，但不会把大阪大学视为完整教授库来惩罚未命中的方向。当前版本仍然不会判断教授当年是否招生、是否接受外国学生或是否适合直接套磁，这些信息需要继续结合实验室主页、募集要项、入试说明和导师个人页面逐项核验。
+早稻田脚本会抓取研究者列表页和详情页，合并研究领域、研究兴趣、近期论文/项目标题、研究者主页和实验室主页等公开信息。东京大学脚本会抓取正教授的 Specialty、Research theme(s)、Keywords related to research themes、所属组织和个人页面链接。京都大学脚本会从新版官方数据库逐页筛选职位严格等于 Professor 的资料，并补充 Research Topics / Research Interests 等公开研究内容。大阪大学当前优先补充了基礎工学研究科、情报科学研究科和 1 个工学研究科应用物理实验室；系统会按具体研究科判断教授库覆盖度，不会因为大阪某个研究科已补全，就把其他尚未覆盖的研究科误判为“没有导师匹配”。当前版本仍然不会判断教授当年是否招生、是否接受外国学生或是否适合直接套磁，这些信息需要继续结合实验室主页、募集要项、入试说明和导师个人页面逐项核验。
 
 ## 推荐逻辑说明
 

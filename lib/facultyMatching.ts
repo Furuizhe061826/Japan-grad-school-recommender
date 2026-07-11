@@ -39,13 +39,26 @@ function getProgramAffinity(program: GraduateProgram, profile: FacultyProfile) {
   return 0;
 }
 
-export function hasFacultyProfilesForUniversity(universityName: string) {
+function belongsToProgram(faculty: FacultyProfile, program: GraduateProgram) {
+  const programGraduateSchool = program.graduateSchool.toLowerCase();
+  const facultyText = `${faculty.sourceAffiliation} ${faculty.department} ${faculty.graduateSchoolHints.join(" ")} ${faculty.fieldCategory}`.toLowerCase();
+
+  return (
+    faculty.graduateSchoolHints.some((hint) => {
+      const normalizedHint = hint.toLowerCase();
+      return programGraduateSchool.includes(normalizedHint) || normalizedHint.includes(programGraduateSchool);
+    }) ||
+    facultyText.includes(programGraduateSchool)
+  );
+}
+
+export function hasFacultyProfilesForProgram(program: GraduateProgram) {
   const professorCount = (facultyProfiles as FacultyProfile[]).filter(
-    (faculty) => faculty.university === universityName && faculty.title === "Professor"
+    (faculty) => faculty.university === program.universityName && faculty.title === "Professor" && belongsToProgram(faculty, program)
   ).length;
 
-  // 小批量人工核验资料只用于命中加分；达到一定规模后，才把“未命中教授”视为真实风险。
-  return professorCount >= 20;
+  // A program-level threshold avoids treating one covered graduate school as if the whole university were covered.
+  return professorCount >= 8;
 }
 
 export function findFacultyMatches(profile: StudentProfile, program: GraduateProgram): FacultyMatch[] {
@@ -54,7 +67,7 @@ export function findFacultyMatches(profile: StudentProfile, program: GraduatePro
   const programKeywords = new Set([...program.keywords, ...program.researchFields].map((keyword) => keyword.toLowerCase()));
 
   return (facultyProfiles as FacultyProfile[])
-    .filter((faculty) => faculty.university === program.universityName && faculty.title === "Professor")
+    .filter((faculty) => faculty.university === program.universityName && faculty.title === "Professor" && belongsToProgram(faculty, program))
     .map((faculty) => {
       const facultyText = `${faculty.department} ${faculty.researchKeywords.join(" ")} ${faculty.researchSummary} ${faculty.fieldCategory}`.toLowerCase();
       const targetMatches = userKeywords.filter((keyword) => {

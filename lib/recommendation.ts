@@ -1,7 +1,7 @@
 import programs from "@/data/programs.json";
 import researchSynonyms from "@/data/researchSynonyms.json";
 import { detectChinaUniversity } from "@/lib/chinaUniversities";
-import { findFacultyMatches, hasFacultyProfilesForUniversity } from "@/lib/facultyMatching";
+import { findFacultyMatches, hasFacultyProfilesForProgram } from "@/lib/facultyMatching";
 import type {
   FacultyMatch,
   GraduateProgram,
@@ -243,8 +243,9 @@ function scoreDegree(profile: StudentProfile, program: GraduateProgram) {
 function scoreFacultyFit(program: GraduateProgram, facultyMatches: FacultyMatch[]) {
   if (facultyMatches.length > 0) return facultyMatches[0].matchScore;
 
-  // 还没接入教授库的学校给中性分，避免把“数据未接入”误判成“没有导师”。
-  return hasFacultyProfilesForUniversity(program.universityName) ? 38 : 68;
+  // If this exact graduate school is covered but no faculty match is found, treat it as a real weakness.
+  // If the faculty database has not covered this program yet, keep the score neutral.
+  return hasFacultyProfilesForProgram(program) ? 38 : 68;
 }
 
 function scoreDifficultyFit(profile: StudentProfile, program: GraduateProgram) {
