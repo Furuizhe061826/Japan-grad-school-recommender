@@ -10,6 +10,7 @@ import type {
   RecommendedProgram,
   ScoreBreakdownItem,
   StudentProfile,
+  TargetUniversityAssessment,
   UndergraduateTier
 } from "@/types/recommendation";
 
@@ -39,6 +40,7 @@ function getProfile(profile: StudentProfile): StudentProfile {
     degreeGoal: profile.degreeGoal ?? "硕士",
     regionPreference: profile.regionPreference ?? "不限",
     applicationPreference: profile.applicationPreference ?? "研究方向匹配优先",
+    targetUniversity: profile.targetUniversity ?? "",
     additionalBackground: profile.additionalBackground ?? ""
   };
 }
@@ -515,6 +517,170 @@ function rebalanceBands(programs: RecommendedProgram[]) {
   };
 }
 
+const universityAliases: Record<string, string[]> = {
+  "University of Tokyo": ["东京大学", "东大", "utokyo", "todai", "tokyo university"],
+  "Kyoto University": ["京都大学", "京大", "kyodai"],
+  "Osaka University": ["大阪大学", "阪大", "handai"],
+  "Tohoku University": ["东北大学", "東北大学", "tohoku"],
+  "Nagoya University": ["名古屋大学", "名大", "meidai"],
+  "Kyushu University": ["九州大学", "九大", "kyudai"],
+  "Hokkaido University": ["北海道大学", "北大", "hokudai"],
+  "Institute of Science Tokyo": ["东京科学大学", "東京科学大学", "东工大", "东京工业大学", "東京工業大学", "tokyo tech", "titech", "science tokyo"],
+  "Waseda University": ["早稻田大学", "早大", "waseda"],
+  "Keio University": ["庆应义塾大学", "庆应大学", "慶應義塾大学", "keio"],
+  "Tokyo Metropolitan University": ["东京都立大学", "東京都立大学", "tmu"],
+  "Yokohama National University": ["横滨国立大学", "横国", "yokohama national"]
+};
+
+function normalizeUniversityInput(text: string) {
+  return text
+    .toLowerCase()
+    .replace(/\s+/g, "")
+    .replace(/[・·\-＿_]/g, "")
+    .replace(/the/g, "")
+    .replace(/university/g, "univ");
+}
+
+function getAllUniversityNames() {
+  return Array.from(new Set((programs as GraduateProgram[]).map((program) => program.universityName))).sort();
+}
+
+function resolveTargetUniversity(input: string) {
+  const trimmedInput = input.trim();
+  if (!trimmedInput) return undefined;
+
+  const normalizedInput = normalizeUniversityInput(trimmedInput);
+  const universityNames = getAllUniversityNames();
+
+  for (const universityName of universityNames) {
+    const normalizedName = normalizeUniversityInput(universityName);
+    const aliases = universityAliases[universityName] ?? [];
+    const normalizedAliases = aliases.map(normalizeUniversityInput);
+    if (
+      normalizedInput === normalizedName ||
+      normalizedName.includes(normalizedInput) ||
+      normalizedInput.includes(normalizedName) ||
+      normalizedAliases.some((alias) => alias === normalizedInput || alias.includes(normalizedInput) || normalizedInput.includes(alias))
+    ) {
+      return universityName;
+    }
+  }
+
+  return undefined;
+}
+
+function getBreakdownScore(program: RecommendedProgram, key: ScoreBreakdownItem["key"]) {
+  return program.scoreBreakdown.find((item) => item.key === key)?.score ?? 0;
+}
+
+function probabilityLabel(score: number, bestProgram?: RecommendedProgram): TargetUniversityAssessment["probabilityLabel"] {
+  if (!bestProgram) return "暂无法判断";
+  if (score >= 86 && bestProgram.researchMatchScore >= 78) return "较高";
+  if (score >= 76 && bestProgram.researchMatchScore >= 66) return "中等";
+  if (score >= 62) return "偏低";
+  return "高风险";
+}
+
+function buildTargetAssessment(profile: StudentProfile, scoredPrograms: RecommendedProgram[]): TargetUniversityAssessment | undefined {
+  const requestedUniversity = profile.targetUniversity.trim();
+  if (!requestedUniversity) return undefined;
+
+  const resolvedUniversityName = resolveTargetUniversity(requestedUniversity);
+
+  if (!resolvedUniversityName) {
+    return {
+      requestedUniversity,
+      probabilityLabel: "暂无法判断",
+      probabilityScore: 0,
+      summary: `当前项目库还没有识别到「${requestedUniversity}」对应的院校名称。建议检查中英文名称，或先把该校加入本地项目库后再评估。`,
+      strengths: [],
+      risks: ["目标院校未能与本地院校库匹配，暂时无法生成可靠评估。"],
+      suggestions: ["可以输入英文校名，例如 University of Tokyo / Kyoto University / Institute of Science Tokyo，或使用常见中文简称如东大、京大、东工大。"],
+      bestPrograms: [],
+      facultyMatches: [],
+      alternativeUniversityNames: getAllUniversityNames().slice(0, 6)
+    };
+  }
+
+  const targetPrograms = scoredPrograms
+    .filter((program) => program.universityName === resolvedUniversityName)
+    .sort(
+      (a, b) =>
+        relevanceWeight(b) - relevanceWeight(a) ||
+        b.score - a.score ||
+        b.researchMatchScore - a.researchMatchScore ||
+        b.facultyMatches.length - a.facultyMatches.length
+    );
+  const bestPrograms = targetPrograms.slice(0, 3);
+  const bestProgram = bestPrograms[0];
+
+  if (!bestProgram) {
+    return {
+      requestedUniversity,
+      resolvedUniversityName,
+      probabilityLabel: "暂无法判断",
+      probabilityScore: 0,
+      summary: `已识别目标院校为 ${resolvedUniversityName}，但当前项目库还没有该校可评估的研究科/专业方向。`,
+      strengths: [],
+      risks: ["院校已识别，但缺少对应项目数据。"],
+      suggestions: ["下一步需要补充该校研究科、专业方向、募集要项和教授/研究室数据。"],
+      bestPrograms: [],
+      facultyMatches: [],
+      alternativeUniversityNames: []
+    };
+  }
+
+  const score = bestProgram.score;
+  const label = probabilityLabel(score, bestProgram);
+  const facultyMatches = Array.from(
+    new Map(bestPrograms.flatMap((program) => program.facultyMatches).map((faculty) => [faculty.facultyUrl, faculty])).values()
+  )
+    .sort((a, b) => b.matchScore - a.matchScore)
+    .slice(0, 5);
+  const strengths: string[] = [];
+  const risks: string[] = [];
+  const suggestions: string[] = [];
+
+  if (bestProgram.researchMatchScore >= 78) strengths.push("研究方向与该校项目库中的至少一个方向有较强匹配。");
+  else risks.push("研究方向与该校当前项目库的关键词匹配不够强，可能需要进一步明确研究题目。");
+
+  if (facultyMatches.length > 0) strengths.push(`当前教授库中找到 ${facultyMatches.length} 个相对接近的教授/研究室候选。`);
+  else risks.push("当前教授库暂未找到强匹配研究室，需要继续核验该校导师页面。");
+
+  if (getBreakdownScore(bestProgram, "difficulty") >= 80) strengths.push("你的综合背景与该校当前最匹配项目的难度差距相对可控。");
+  else risks.push("该校整体难度与当前背景之间仍有压力，需要用研究计划书、套磁和经历补强。");
+
+  if (getBreakdownScore(bestProgram, "english") < 76) risks.push("英语成绩可能接近或低于部分项目门槛，建议优先确认募集要项中的最低要求。");
+  if (getBreakdownScore(bestProgram, "japanese") < 60) risks.push("日语能力对日文项目或面试可能是风险点。");
+  if (getBreakdownScore(bestProgram, "experience") < 70) risks.push("补充背景中科研/项目经历信号偏弱。");
+
+  if (bestProgram.researchMatchScore < 78) suggestions.push("把研究方向写得更具体，例如研究对象、方法、材料/数据/实验手段和想解决的问题。");
+  if (facultyMatches.length > 0) suggestions.push("优先阅读匹配研究室的近年论文和实验室主页，再定制套磁邮件。");
+  suggestions.push("核对该校目标研究科最新募集要项，确认申请资格、语言要求、导师联系规则和考试形式。");
+  suggestions.push("用 1-2 页研究计划书把本科背景、目标课题和目标导师方向连接起来。");
+
+  const alternativeUniversityNames = scoredPrograms
+    .filter((program) => program.universityName !== resolvedUniversityName && program.researchMatchScore >= bestProgram.researchMatchScore)
+    .sort((a, b) => b.score - a.score)
+    .map((program) => program.universityName)
+    .filter((universityName, index, list) => list.indexOf(universityName) === index)
+    .slice(0, 3);
+
+  return {
+    requestedUniversity,
+    resolvedUniversityName,
+    probabilityLabel: label,
+    probabilityScore: score,
+    summary: `已识别你的意向院校为 ${resolvedUniversityName}。在当前本地项目库中，最接近你的方向的是 ${bestProgram.graduateSchool} / ${bestProgram.programName}，综合可行性为 ${score} 分，系统判断为「${label}」。`,
+    strengths,
+    risks,
+    suggestions,
+    bestPrograms,
+    facultyMatches,
+    alternativeUniversityNames
+  };
+}
+
 export function generateRecommendations(rawProfile: StudentProfile): RecommendationResult {
   const profile = getProfile(rawProfile);
   const scoredPrograms = (programs as GraduateProgram[])
@@ -522,11 +688,13 @@ export function generateRecommendations(rawProfile: StudentProfile): Recommendat
     .sort((a, b) => b.score - a.score);
 
   const recommendedPrograms = rebalanceBands(scoredPrograms);
+  const targetAssessment = buildTargetAssessment(profile, scoredPrograms);
 
   return {
     profile,
     generatedAt: new Date().toISOString(),
     summary: `基于你的本科院校层次「${profile.undergraduateTier}」、${profile.undergraduateMajor || "本科专业"} 背景、${profile.researchDirection || "目标研究方向"}、GPA 和语言成绩，系统从日本大学院广覆盖项目库中生成了冲刺、匹配、相对稳妥三档申请组合。`,
+    targetAssessment,
     programs: recommendedPrograms
   };
 }
@@ -544,6 +712,31 @@ export function buildRecommendationReport(result: RecommendationResult) {
     `申请偏好：${result.profile.applicationPreference}`,
     ""
   ];
+
+  if (result.targetAssessment) {
+    const assessment = result.targetAssessment;
+    lines.push("意向院校评估");
+    lines.push(`输入院校：${assessment.requestedUniversity}`);
+    lines.push(`识别院校：${assessment.resolvedUniversityName || "未识别"}`);
+    lines.push(`申请可行性：${assessment.probabilityLabel}${assessment.probabilityScore ? `（${assessment.probabilityScore} 分）` : ""}`);
+    lines.push(`评估摘要：${assessment.summary}`);
+    if (assessment.bestPrograms.length > 0) {
+      lines.push("最匹配项目：");
+      assessment.bestPrograms.forEach((program, index) => {
+        lines.push(`${index + 1}. ${program.graduateSchool}｜${program.programName}｜${program.score} 分`);
+      });
+    }
+    if (assessment.facultyMatches.length > 0) {
+      lines.push("匹配研究室：");
+      assessment.facultyMatches.forEach((faculty) => {
+        lines.push(`- ${faculty.professorName}${faculty.labName ? `｜${faculty.labName}` : ""}：${faculty.matchReason} ${faculty.facultyUrl}`);
+      });
+    }
+    if (assessment.strengths.length > 0) lines.push(`优势：${assessment.strengths.join(" ")}`);
+    if (assessment.risks.length > 0) lines.push(`风险：${assessment.risks.join(" ")}`);
+    lines.push(`建议：${assessment.suggestions.join(" ")}`);
+    lines.push("");
+  }
 
   for (const band of bands) {
     lines.push(`${band}项目`);

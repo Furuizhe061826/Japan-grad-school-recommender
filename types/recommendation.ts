@@ -25,6 +25,7 @@ export type StudentProfile = {
   degreeGoal: DegreeGoal;
   regionPreference: RegionPreference;
   applicationPreference: ApplicationPreference;
+  targetUniversity: string;
   additionalBackground: string;
 };
 
@@ -91,7 +92,22 @@ export type RecommendationResult = {
   profile: StudentProfile;
   generatedAt: string;
   summary: string;
+  targetAssessment?: TargetUniversityAssessment;
   programs: Record<RecommendationBand, RecommendedProgram[]>;
+};
+
+export type TargetUniversityAssessment = {
+  requestedUniversity: string;
+  resolvedUniversityName?: string;
+  probabilityLabel: "较高" | "中等" | "偏低" | "高风险" | "暂无法判断";
+  probabilityScore: number;
+  summary: string;
+  strengths: string[];
+  risks: string[];
+  suggestions: string[];
+  bestPrograms: RecommendedProgram[];
+  facultyMatches: FacultyMatch[];
+  alternativeUniversityNames: string[];
 };
 
 export type FacultyProfile = {

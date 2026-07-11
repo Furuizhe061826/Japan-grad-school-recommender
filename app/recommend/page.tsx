@@ -18,6 +18,7 @@ const defaultProfile: StudentProfile = {
   degreeGoal: "硕士",
   regionPreference: "不限",
   applicationPreference: "研究方向匹配优先",
+  targetUniversity: "",
   additionalBackground: ""
 };
 
@@ -180,6 +181,24 @@ export default function RecommendPage() {
                 <option>稳妥优先</option>
                 <option>研究方向匹配优先</option>
               </select>
+            </Field>
+          </div>
+
+          <div className="mt-6 rounded-2xl border border-ocean/15 bg-ocean/5 p-5">
+            <div className="mb-4">
+              <p className="text-sm font-semibold text-ocean">可选 / 意向院校评估</p>
+              <p className="mt-1 text-sm leading-6 text-slate-600">
+                如果你已经有目标学校，系统会在结果页单独判断这所学校对你来说是较高、中等、偏低还是高风险，并给出匹配项目和研究室建议。
+              </p>
+            </div>
+            <Field label="意向院校">
+              <input
+                value={profile.targetUniversity}
+                onChange={(event) => updateField("targetUniversity", event.target.value)}
+                placeholder="例如：东京大学 / 东工大 / Waseda University / Hokkaido University"
+                className="form-input"
+              />
+              <p className="mt-2 text-xs text-slate-500">不填写也可以，系统仍会正常生成冲刺 / 匹配 / 相对稳妥三档推荐。</p>
             </Field>
           </div>
 

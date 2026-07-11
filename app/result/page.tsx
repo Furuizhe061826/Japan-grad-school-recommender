@@ -5,12 +5,26 @@ import { useEffect, useMemo, useState } from "react";
 import { Disclaimer } from "@/components/Disclaimer";
 import { SiteShell } from "@/components/SiteShell";
 import { buildRecommendationReport, generateRecommendations } from "@/lib/recommendation";
-import type { RecommendationBand, RecommendationResult, RecommendedProgram, StudentProfile } from "@/types/recommendation";
+import type {
+  RecommendationBand,
+  RecommendationResult,
+  RecommendedProgram,
+  StudentProfile,
+  TargetUniversityAssessment
+} from "@/types/recommendation";
 
 const bandStyles: Record<RecommendationBand, string> = {
   冲刺: "border-sakura/30 bg-sakura/10 text-sakura",
   匹配: "border-ocean/30 bg-ocean/10 text-ocean",
   相对稳妥: "border-matcha/30 bg-matcha/10 text-matcha"
+};
+
+const assessmentStyles: Record<TargetUniversityAssessment["probabilityLabel"], string> = {
+  较高: "border-matcha/30 bg-matcha/10 text-matcha",
+  中等: "border-ocean/30 bg-ocean/10 text-ocean",
+  偏低: "border-amber-200 bg-amber-50 text-amber-700",
+  高风险: "border-sakura/30 bg-sakura/10 text-sakura",
+  暂无法判断: "border-slate-200 bg-slate-50 text-slate-600"
 };
 
 export default function ResultPage() {
@@ -73,6 +87,8 @@ export default function ResultPage() {
           </div>
         </div>
 
+        {result.targetAssessment && <TargetAssessmentBlock assessment={result.targetAssessment} />}
+
         <div className="grid gap-6 lg:grid-cols-3">
           {(["冲刺", "匹配", "相对稳妥"] as RecommendationBand[]).map((band) => (
             <section key={band} className="space-y-4">
@@ -132,6 +148,117 @@ export default function ResultPage() {
       </section>
       <Disclaimer />
     </SiteShell>
+  );
+}
+
+function TargetAssessmentBlock({ assessment }: { assessment: TargetUniversityAssessment }) {
+  const scoreText = assessment.probabilityScore > 0 ? `${assessment.probabilityScore} 分` : "暂无分数";
+  const hasBestPrograms = assessment.bestPrograms.length > 0;
+  const hasFacultyMatches = assessment.facultyMatches.length > 0;
+
+  return (
+    <section className="mb-8 rounded-2xl border border-ocean/15 bg-white p-5 shadow-sm sm:p-6">
+      <div className="flex flex-col gap-5 lg:flex-row lg:items-start lg:justify-between">
+        <div>
+          <p className="text-sm font-semibold text-ocean">意向院校评估</p>
+          <h2 className="mt-2 text-2xl font-bold text-ink">针对目标学校的申请可行性判断</h2>
+          <p className="mt-3 max-w-3xl leading-7 text-slate-600">{assessment.summary}</p>
+        </div>
+        <div className={`min-w-40 rounded-2xl border px-5 py-4 ${assessmentStyles[assessment.probabilityLabel]}`}>
+          <p className="text-xs font-semibold opacity-80">申请可行性</p>
+          <p className="mt-1 text-3xl font-bold">{assessment.probabilityLabel}</p>
+          <p className="mt-1 text-sm font-semibold">{scoreText}</p>
+        </div>
+      </div>
+
+      <dl className="mt-5 grid gap-3 sm:grid-cols-2">
+        <Info label="输入院校" value={assessment.requestedUniversity} />
+        <Info label="识别院校" value={assessment.resolvedUniversityName ?? "当前数据库暂未识别"} />
+      </dl>
+
+      {assessment.alternativeUniversityNames.length > 0 && (
+        <p className="mt-3 rounded-xl bg-mist p-3 text-sm leading-6 text-slate-600">
+          你也可以对比这些已收录院校：{assessment.alternativeUniversityNames.join(" / ")}
+        </p>
+      )}
+
+      {hasBestPrograms && (
+        <div className="mt-6">
+          <h3 className="text-base font-bold text-ink">校内更匹配的项目方向</h3>
+          <div className="mt-3 grid gap-3 lg:grid-cols-3">
+            {assessment.bestPrograms.slice(0, 3).map((program) => (
+              <div
+                key={`${program.universityName}-${program.graduateSchool}-${program.programName}`}
+                className="rounded-xl border border-slate-200 bg-mist p-4"
+              >
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="font-semibold text-ink">{program.graduateSchool}</p>
+                    <p className="mt-1 text-sm text-slate-600">{program.programName}</p>
+                  </div>
+                  <span className="rounded-full bg-white px-3 py-1 text-sm font-semibold text-ocean">{program.score}</span>
+                </div>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  方向匹配 {program.researchMatchScore} 分，档位为{program.band}。
+                  {program.facultyMatches.length > 0 ? ` 已命中 ${program.facultyMatches.length} 个潜在研究室。` : " 当前教授库暂无明确研究室命中。"}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {hasFacultyMatches && (
+        <div className="mt-6">
+          <h3 className="text-base font-bold text-ink">可优先查看的教授/研究室</h3>
+          <div className="mt-3 grid gap-3 md:grid-cols-2">
+            {assessment.facultyMatches.slice(0, 4).map((faculty) => (
+              <div key={faculty.facultyUrl} className="rounded-xl border border-slate-200 bg-white p-4">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="font-semibold text-ink">{faculty.professorName}</p>
+                    <p className="mt-1 text-xs text-slate-500">{faculty.title}</p>
+                    {faculty.labName && <p className="mt-1 text-sm font-medium text-slate-700">{faculty.labName}</p>}
+                  </div>
+                  <span className="rounded-full bg-mist px-2 py-1 text-xs font-semibold text-ocean">{faculty.matchScore}</span>
+                </div>
+                <p className="mt-2 text-xs leading-5 text-slate-600">{faculty.department}</p>
+                {faculty.matchedKeywords.length > 0 && (
+                  <p className="mt-2 text-xs leading-5 text-slate-600">命中：{faculty.matchedKeywords.join(" / ")}</p>
+                )}
+                <a
+                  href={faculty.facultyUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-3 inline-flex text-xs font-semibold text-ocean underline-offset-4 hover:underline"
+                >
+                  查看官方研究者页面
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <div className="mt-6 grid gap-4 lg:grid-cols-3">
+        <InsightList title="可利用优势" items={assessment.strengths} emptyText="当前没有明显优势信号。" />
+        <InsightList title="主要风险" items={assessment.risks} emptyText="当前没有明显高风险项。" />
+        <InsightList title="准备建议" items={assessment.suggestions} emptyText="建议先补充研究方向、语言成绩和目标学位。" />
+      </div>
+    </section>
+  );
+}
+
+function InsightList({ title, items, emptyText }: { title: string; items: string[]; emptyText: string }) {
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-4">
+      <p className="font-semibold text-ink">{title}</p>
+      <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-600">
+        {(items.length > 0 ? items : [emptyText]).map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
