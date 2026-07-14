@@ -49,6 +49,12 @@ export default function HomePage() {
             >
               开始 AI 初评
             </Link>
+            <Link
+              href="/case-study"
+              className="rounded-full border border-academy/20 bg-white/80 px-7 py-3 text-sm font-semibold text-academy transition hover:bg-white"
+            >
+              查看项目案例
+            </Link>
             <a
               href="https://github.com/Furuizhe061826/Japan-grad-school-recommender"
               target="_blank"
@@ -124,6 +130,9 @@ export default function HomePage() {
           <p className="mt-5 text-sm leading-7 text-slate-600">
             后续可在现有候选召回和评分规则之上接入真实大模型 API、募集要项 RAG 检索、用户收藏、院校对比和咨询预约入口。
           </p>
+          <Link href="/case-study" className="mt-5 inline-flex text-sm font-semibold text-academy transition hover:text-umber">
+            查看完整项目案例 →
+          </Link>
         </div>
       </section>
 

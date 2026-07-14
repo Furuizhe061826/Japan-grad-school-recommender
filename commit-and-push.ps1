@@ -22,7 +22,7 @@ if (-not $git) {
 Set-Location $PSScriptRoot
 
 & $git add --all
-& $git commit -m "Brand homepage for Zhesi Academy portfolio MVP"
+& $git commit -m "Add Zhesi Academy case study page"
 & $git push
 
 Write-Host ""

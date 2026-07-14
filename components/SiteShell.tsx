@@ -13,6 +13,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
           </span>
         </Link>
         <div className="flex items-center gap-3">
+          <Link href="/case-study" className="hidden text-sm font-semibold text-slate-600 transition hover:text-academy sm:inline-flex">
+            项目案例
+          </Link>
           <Link href="/recommend" className="hidden text-sm font-semibold text-slate-600 transition hover:text-academy sm:inline-flex">
             AI 初评
           </Link>
