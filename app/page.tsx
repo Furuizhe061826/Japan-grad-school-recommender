@@ -28,13 +28,13 @@ export default function HomePage() {
 
         <div className="relative max-w-3xl">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="rounded-full bg-academy px-3 py-1 text-xs font-semibold text-white">哲思学院旗下工具</span>
+            <span className="rounded-full bg-academy px-3 py-1 text-xs font-semibold text-white">哲思学园旗下工具</span>
             <span className="rounded-full border border-academy/20 bg-white/70 px-3 py-1 text-xs font-semibold text-academy">
               Portfolio MVP / Demo Project
             </span>
           </div>
 
-          <p className="mt-8 text-sm font-semibold uppercase tracking-[0.24em] text-gold">Zhesi Academy Japan Graduate Planner</p>
+          <p className="mt-8 text-sm font-semibold uppercase tracking-[0.24em] text-gold">Zhesi Gakuen Japan Graduate Planner</p>
           <h1 className="mt-4 max-w-4xl text-4xl font-bold leading-tight text-ink sm:text-6xl">
             AI 日本大学院申请规划助手
           </h1>

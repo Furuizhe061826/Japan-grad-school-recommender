@@ -6,10 +6,10 @@ export function SiteShell({ children }: { children: ReactNode }) {
     <main className="min-h-screen px-5 py-6 sm:px-8 lg:px-12">
       <nav className="mx-auto flex max-w-6xl items-center justify-between">
         <Link href="/" className="flex items-center gap-3 text-sm font-semibold text-ink">
-          <img src="/zhesi-logo.png" alt="哲思学院 logo" className="h-10 w-10 rounded-full border border-academy/20 bg-parchment object-cover" />
+          <img src="/zhesi-logo.png" alt="哲思学园 logo" className="h-10 w-10 rounded-full border border-academy/20 bg-parchment object-cover" />
           <span>
-            <span className="block text-base font-bold text-academy">哲思学院</span>
-            <span className="block text-[11px] font-medium uppercase tracking-[0.22em] text-slate-500">Zhesi Academy</span>
+            <span className="block text-base font-bold text-academy">哲思学园</span>
+            <span className="block text-[11px] font-medium uppercase tracking-[0.22em] text-slate-500">Zhesi Gakuen</span>
           </span>
         </Link>
         <div className="flex items-center gap-3">

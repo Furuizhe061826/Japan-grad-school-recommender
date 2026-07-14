@@ -69,7 +69,7 @@ export default function CaseStudyPage() {
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-gold">Portfolio Case Study</p>
             <h1 className="mt-4 text-4xl font-bold leading-tight text-ink sm:text-5xl">
-              哲思学院 AI 日本大学院申请规划助手
+              哲思学园 AI 日本大学院申请规划助手
             </h1>
             <p className="mt-5 text-lg leading-8 text-slate-700">
               一个面向求职展示的 AI 辅助开发产品项目：把日本大学院选校、研究科匹配、导师筛选和申请风险判断，整理成可交互、可解释、可持续扩展的网页 MVP。
@@ -92,7 +92,7 @@ export default function CaseStudyPage() {
             </div>
           </div>
           <div className="w-full max-w-xs rounded-2xl border border-academy/10 bg-parchment p-6 text-center">
-            <img src="/zhesi-logo.png" alt="哲思学院 logo" className="mx-auto h-28 w-28 rounded-full border border-academy/20 bg-white object-cover" />
+            <img src="/zhesi-logo.png" alt="哲思学园 logo" className="mx-auto h-28 w-28 rounded-full border border-academy/20 bg-white object-cover" />
             <p className="mt-5 text-sm font-semibold text-academy">Demo 链接</p>
             <p className="mt-2 break-all text-sm leading-6 text-slate-600">japan-grad-school-recommender.vercel.app</p>
           </div>
