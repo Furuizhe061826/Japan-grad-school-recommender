@@ -52,9 +52,13 @@ function belongsToProgram(faculty: FacultyProfile, program: GraduateProgram) {
   );
 }
 
+function isFullProfessor(faculty: FacultyProfile) {
+  return faculty.title.trim() === "Professor";
+}
+
 export function hasFacultyProfilesForProgram(program: GraduateProgram) {
   const professorCount = (facultyProfiles as FacultyProfile[]).filter(
-    (faculty) => faculty.university === program.universityName && faculty.title === "Professor" && belongsToProgram(faculty, program)
+    (faculty) => faculty.university === program.universityName && isFullProfessor(faculty) && belongsToProgram(faculty, program)
   ).length;
 
   // A program-level threshold avoids treating one covered graduate school as if the whole university were covered.
@@ -67,7 +71,7 @@ export function findFacultyMatches(profile: StudentProfile, program: GraduatePro
   const programKeywords = new Set([...program.keywords, ...program.researchFields].map((keyword) => keyword.toLowerCase()));
 
   return (facultyProfiles as FacultyProfile[])
-    .filter((faculty) => faculty.university === program.universityName && faculty.title === "Professor" && belongsToProgram(faculty, program))
+    .filter((faculty) => faculty.university === program.universityName && isFullProfessor(faculty))
     .map((faculty) => {
       const facultyText = `${faculty.department} ${faculty.researchKeywords.join(" ")} ${faculty.researchSummary} ${faculty.fieldCategory}`.toLowerCase();
       const targetMatches = userKeywords.filter((keyword) => {
@@ -79,10 +83,12 @@ export function findFacultyMatches(profile: StudentProfile, program: GraduatePro
         return programKeywords.has(normalizedKeyword) && !weakProgramKeywords.has(normalizedKeyword);
       });
       const matchedKeywords = Array.from(new Set([...targetMatches, ...programMatches])).slice(0, 10);
-      const affinity = getProgramAffinity(program, faculty);
+      const programBelongs = belongsToProgram(faculty, program);
+      const strongCrossProgramSignal = !programBelongs && targetMatches.length >= 2;
+      const affinity = programBelongs ? getProgramAffinity(program, faculty) : 8;
       const hasResearchSignal = targetMatches.length > 0 || programMatches.length > 0;
       const score = hasResearchSignal
-        ? Math.min(100, 38 + targetMatches.length * 14 + programMatches.length * 8 + Math.min(affinity, 18))
+        ? Math.min(100, 38 + targetMatches.length * 14 + programMatches.length * 8 + Math.min(affinity, 18) - (programBelongs ? 0 : 6))
         : 0;
 
       return {
@@ -92,15 +98,18 @@ export function findFacultyMatches(profile: StudentProfile, program: GraduatePro
           matchedKeywords,
           matchReason:
             matchedKeywords.length > 0
-              ? `研究关键词命中：${matchedKeywords.join(" / ")}`
+              ? `研究关键词命中：${matchedKeywords.join(" / ")}${programBelongs ? "" : "。所属研究科/研究所与项目入口可能不完全一致，需进一步核验招生归属。"}`
               : ""
         },
-        targetMatchCount: targetMatches.length
+        targetMatchCount: targetMatches.length,
+        programBelongs,
+        strongCrossProgramSignal
       };
     })
-    .filter((item) => item.match.matchScore >= 58)
+    .filter((item) => item.match.matchScore >= 58 && (item.programBelongs || item.strongCrossProgramSignal))
     .sort(
       (a, b) =>
+        Number(b.programBelongs) - Number(a.programBelongs) ||
         b.targetMatchCount - a.targetMatchCount ||
         b.match.matchScore - a.match.matchScore ||
         b.match.matchedKeywords.length - a.match.matchedKeywords.length

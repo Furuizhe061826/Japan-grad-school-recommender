@@ -573,10 +573,32 @@ function getBreakdownScore(program: RecommendedProgram, key: ScoreBreakdownItem[
   return program.scoreBreakdown.find((item) => item.key === key)?.score ?? 0;
 }
 
+function calculateTargetFeasibilityScore(bestProgram: RecommendedProgram) {
+  let score = bestProgram.score;
+  const topFacultyScore = bestProgram.facultyMatches[0]?.matchScore ?? 0;
+
+  // 意向院校评估更接近咨询场景：强方向命中、教授命中和背景支撑应被明确体现。
+  if (bestProgram.researchMatchScore >= 86) score += 4;
+  else if (bestProgram.researchMatchScore >= 78) score += 2;
+
+  if (topFacultyScore >= 86) score += 5;
+  else if (topFacultyScore >= 72) score += 3;
+
+  if (getBreakdownScore(bestProgram, "difficulty") >= 90) score += 3;
+  else if (getBreakdownScore(bestProgram, "difficulty") >= 80) score += 2;
+
+  if (getBreakdownScore(bestProgram, "undergrad") >= 90) score += 2;
+  if (getBreakdownScore(bestProgram, "english") >= 76) score += 1;
+  if (getBreakdownScore(bestProgram, "japanese") >= 76) score += 1;
+  if (getBreakdownScore(bestProgram, "experience") >= 82) score += 1;
+
+  return Math.round(Math.max(bestProgram.score, Math.min(96, score)));
+}
+
 function probabilityLabel(score: number, bestProgram?: RecommendedProgram): TargetUniversityAssessment["probabilityLabel"] {
   if (!bestProgram) return "暂无法判断";
-  if (score >= 86 && bestProgram.researchMatchScore >= 78) return "较高";
-  if (score >= 76 && bestProgram.researchMatchScore >= 66) return "中等";
+  if (score >= 84 && bestProgram.researchMatchScore >= 78) return "较高";
+  if (score >= 72 && bestProgram.researchMatchScore >= 66) return "中等";
   if (score >= 62) return "偏低";
   return "高风险";
 }
@@ -630,7 +652,7 @@ function buildTargetAssessment(profile: StudentProfile, scoredPrograms: Recommen
     };
   }
 
-  const score = bestProgram.score;
+  const score = calculateTargetFeasibilityScore(bestProgram);
   const label = probabilityLabel(score, bestProgram);
   const facultyMatches = Array.from(
     new Map(bestPrograms.flatMap((program) => program.facultyMatches).map((faculty) => [faculty.facultyUrl, faculty])).values()
