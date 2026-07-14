@@ -106,7 +106,7 @@ export default function ResultPage() {
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="text-lg font-bold text-ink">{program.universityName}</h3>
+                      <h3 className="text-lg font-bold text-ink">{program.universityDisplayName}</h3>
                       <p className="mt-1 text-sm font-semibold text-slate-600">{program.graduateSchool}</p>
                       <p className="mt-1 text-sm text-slate-500">{program.programName}</p>
                     </div>
@@ -175,7 +175,7 @@ function TargetAssessmentBlock({ assessment }: { assessment: TargetUniversityAss
 
       <dl className="mt-5 grid gap-3 sm:grid-cols-2">
         <Info label="输入院校" value={assessment.requestedUniversity} />
-        <Info label="识别院校" value={assessment.resolvedUniversityName ?? "当前数据库暂未识别"} />
+        <Info label="识别院校" value={assessment.resolvedUniversityDisplayName ?? assessment.resolvedUniversityName ?? "当前数据库暂未识别"} />
       </dl>
 
       {assessment.alternativeUniversityNames.length > 0 && (

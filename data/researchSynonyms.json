@@ -1,13 +1,13 @@
 [
   {
     "category": "计算机视觉 / 图像处理",
-    "triggers": ["图像拼接", "图像融合", "图像处理", "计算机视觉", "视觉", "cv", "影像", "图像识别", "目标检测", "图像分割", "三维重建", "特征匹配", "遥感影像"],
-    "expandedKeywords": ["计算机视觉", "图像处理", "图像拼接", "图像融合", "机器学习", "深度学习", "人工智能", "数据科学", "computer vision", "image processing", "image recognition", "object detection", "image segmentation", "semantic segmentation", "3d reconstruction", "feature matching", "remote sensing", "pattern recognition", "machine learning", "deep learning", "artificial intelligence"]
+    "triggers": ["图像", "图像拼接", "图像融合", "图像处理", "计算机视觉", "视觉", "cv", "影像", "医学影像", "遥感", "视频", "图像识别", "目标检测", "图像分割", "语义分割", "三维重建", "特征匹配", "遥感影像", "ocr", "多模态视觉"],
+    "expandedKeywords": ["计算机视觉", "图像处理", "图像拼接", "图像融合", "机器学习", "深度学习", "人工智能", "数据科学", "computer vision", "image processing", "image recognition", "object detection", "image segmentation", "semantic segmentation", "3d reconstruction", "feature matching", "remote sensing", "pattern recognition", "machine learning", "deep learning", "artificial intelligence", "medical imaging", "video analysis", "multimodal learning", "optical character recognition"]
   },
   {
     "category": "人工智能 / 机器学习",
-    "triggers": ["人工智能", "机器学习", "深度学习", "神经网络", "强化学习", "大模型", "自然语言处理", "nlp", "生成式ai", "推荐系统"],
-    "expandedKeywords": ["人工智能", "机器学习", "深度学习", "算法", "数据科学", "智能系统", "artificial intelligence", "machine learning", "deep learning", "neural network", "natural language processing", "data science", "algorithm", "intelligent systems"]
+    "triggers": ["人工智能", "机器学习", "深度学习", "神经网络", "强化学习", "大模型", "自然语言处理", "nlp", "生成式ai", "推荐系统", "算法", "数据科学", "数据挖掘", "计算机科学", "软件工程", "信息系统", "网络安全", "数据库"],
+    "expandedKeywords": ["人工智能", "机器学习", "深度学习", "算法", "数据科学", "智能系统", "计算机", "软件", "信息系统", "artificial intelligence", "machine learning", "deep learning", "neural network", "natural language processing", "data science", "algorithm", "intelligent systems", "computer science", "software engineering", "information systems", "database", "cybersecurity", "data mining"]
   },
   {
     "category": "结构工程 / 抗震防灾",
@@ -21,32 +21,37 @@
   },
   {
     "category": "交互设计 / 用户体验",
-    "triggers": ["用户体验", "ux", "交互设计", "产品设计", "人机交互", "hci", "服务设计", "界面设计", "可用性"],
+    "triggers": ["用户体验", "ux", "交互设计", "产品设计", "人机交互", "hci", "服务设计", "界面设计", "可用性", "设计学", "媒体设计", "信息设计"],
     "expandedKeywords": ["交互", "用户体验", "设计", "产品", "媒体", "人因", "创新", "user experience", "ux", "interaction design", "human-computer interaction", "hci", "human interface", "service design", "product design", "usability", "cognitive science", "human factors"]
   },
   {
     "category": "城市规划 / 建筑环境",
-    "triggers": ["城市更新", "城市规划", "都市规划", "建筑环境", "城市设计", "交通规划", "都市环境", "可持续城市"],
-    "expandedKeywords": ["城市", "都市", "规划", "建筑", "环境", "交通", "可持续", "urban planning", "city planning", "urban design", "architecture", "built environment", "transportation planning", "traffic", "regional planning", "sustainable city", "urban environment"]
+    "triggers": ["城市更新", "城市规划", "都市规划", "建筑", "建筑学", "建筑设计", "建筑环境", "城市设计", "交通规划", "都市环境", "可持续城市", "景观", "区域规划"],
+    "expandedKeywords": ["城市", "都市", "规划", "建筑", "环境", "交通", "可持续", "urban planning", "city planning", "urban design", "architecture", "architectural design", "built environment", "transportation planning", "traffic", "regional planning", "landscape", "sustainable city", "urban environment"]
   },
   {
     "category": "金融科技 / 商业数据",
-    "triggers": ["金融科技", "fintech", "量化金融", "金融工程", "商业分析", "数据分析", "风险管理", "数字经济"],
-    "expandedKeywords": ["金融", "经济", "经营", "商科", "数据分析", "数据科学", "管理", "计量", "finance", "financial engineering", "fintech", "economics", "business administration", "management", "marketing", "accounting", "econometrics", "quantitative finance", "business analytics", "data analysis", "risk management"]
+    "triggers": ["金融", "金融科技", "fintech", "量化金融", "金融工程", "商业分析", "数据分析", "风险管理", "数字经济", "经营", "经营学", "管理", "市场营销", "会计", "经济", "经济学", "计量经济"],
+    "expandedKeywords": ["金融", "经济", "经营", "商科", "数据分析", "数据科学", "管理", "计量", "finance", "financial engineering", "fintech", "economics", "business administration", "management", "marketing", "accounting", "econometrics", "quantitative finance", "business analytics", "data analysis", "risk management", "digital economy"]
   },
   {
     "category": "能源环境 / 可持续",
-    "triggers": ["新能源", "能源环境", "可持续发展", "碳中和", "气候变化", "环境政策", "绿色建筑", "循环经济"],
-    "expandedKeywords": ["能源", "环境", "可持续", "气候", "材料", "政策", "建筑", "energy", "environment", "sustainability", "sustainable development", "climate change", "carbon neutral", "renewable energy", "environmental policy", "green building", "circular economy", "life cycle assessment"]
+    "triggers": ["新能源", "能源", "能源环境", "环境", "环境工程", "可持续发展", "碳中和", "气候变化", "环境政策", "绿色建筑", "循环经济", "水处理", "污染治理", "废弃物", "生命周期评价"],
+    "expandedKeywords": ["能源", "环境", "可持续", "气候", "材料", "政策", "建筑", "energy", "environment", "environmental engineering", "sustainability", "sustainable development", "climate change", "carbon neutral", "renewable energy", "environmental policy", "green building", "circular economy", "life cycle assessment", "water treatment", "pollution control", "waste management"]
   },
   {
     "category": "机器人 / 控制",
-    "triggers": ["机器人", "自动驾驶", "控制工程", "自动化", "智能制造", "机电", "运动控制", "机械臂"],
-    "expandedKeywords": ["机器人", "控制", "机械", "自动化", "智能", "制造", "机电", "robotics", "robot", "control engineering", "control", "automation", "autonomous driving", "mechatronics", "mechanical engineering", "motion control", "intelligent manufacturing", "manufacturing", "actuator", "sensor"]
+    "triggers": ["机器人", "机械", "机械工程", "自动驾驶", "控制工程", "自动化", "智能制造", "机电", "运动控制", "机械臂", "车辆工程", "汽车", "流体", "热能", "航空航天", "制造"],
+    "expandedKeywords": ["机器人", "控制", "机械", "机械工程", "自动化", "智能", "制造", "机电", "车辆", "流体", "热能", "航空", "robotics", "robot", "control engineering", "control", "automation", "autonomous driving", "mechatronics", "mechanical engineering", "motion control", "intelligent manufacturing", "manufacturing", "vehicle engineering", "fluid dynamics", "thermal engineering", "aerospace engineering", "actuator", "sensor"]
   },
   {
     "category": "材料科学 / 金属材料",
-    "triggers": ["轻合金金属", "轻合金", "合金", "金属材料", "金属", "铝合金", "镁合金", "钛合金", "高熵合金", "材料加工", "材料成形", "金属疲劳", "金属腐蚀"],
-    "expandedKeywords": ["材料", "材料科学", "金属", "金属材料", "合金", "轻合金", "材料加工", "材料成形", "先进制造", "化学", "materials science", "materials engineering", "metal", "metallic materials", "alloy", "light alloy", "aluminum alloy", "aluminium alloy", "magnesium alloy", "titanium alloy", "high entropy alloy", "materials processing", "material forming", "metal fatigue", "corrosion", "surface engineering", "microstructure", "advanced manufacturing", "chemistry"]
+    "triggers": ["材料", "材料科学", "材料工程", "轻合金金属", "轻合金", "合金", "金属材料", "金属", "铝合金", "镁合金", "钛合金", "高熵合金", "材料加工", "材料成形", "金属疲劳", "金属腐蚀", "高分子", "复合材料", "陶瓷", "半导体材料", "表面工程", "微观组织"],
+    "expandedKeywords": ["材料", "材料科学", "金属", "金属材料", "合金", "轻合金", "材料加工", "材料成形", "先进制造", "化学", "高分子", "复合材料", "陶瓷", "半导体", "materials science", "materials engineering", "metal", "metallic materials", "alloy", "light alloy", "aluminum alloy", "aluminium alloy", "magnesium alloy", "titanium alloy", "high entropy alloy", "polymer", "composite materials", "ceramics", "semiconductor materials", "materials processing", "material forming", "metal fatigue", "corrosion", "surface engineering", "microstructure", "advanced manufacturing", "chemistry"]
+  },
+  {
+    "category": "生命科学 / 生物医学",
+    "triggers": ["生命科学", "生物", "生物医学", "医学", "医工", "生物工程", "生物信息", "药学", "神经科学", "细胞", "分子生物学", "再生医学"],
+    "expandedKeywords": ["生命科学", "生物", "医学", "医工", "生物工程", "生物信息", "药学", "life science", "biology", "biomedical engineering", "medicine", "bioengineering", "bioinformatics", "pharmaceutical science", "neuroscience", "cell biology", "molecular biology", "regenerative medicine"]
   }
 ]

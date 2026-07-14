@@ -22,7 +22,7 @@ if (-not $git) {
 Set-Location $PSScriptRoot
 
 & $git add --all
-& $git commit -m "Add recommendation explainability and reliability signals"
+& $git commit -m "Tune recommendation scoring and research synonym coverage"
 & $git push
 
 Write-Host ""

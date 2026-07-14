@@ -114,7 +114,7 @@ types/
 2. 根据 IELTS / TOEFL / TOEIC 文本估算英语分。
 3. 根据 JLPT N1 / N2 / N3 / 无估算日语分。
 4. 根据本科院校层次估算背景竞争力。
-5. 使用 `data/researchSynonyms.json` 扩展研究方向同义词，例如「图像拼接融合」会扩展到计算机视觉、图像处理、人工智能等关键词；「抗震」会扩展到 seismic engineering、earthquake engineering、structural engineering 等土木结构方向关键词。
+ 5. 使用 `data/researchSynonyms.json` 扩展研究方向同义词，例如「图像拼接融合」会扩展到计算机视觉、图像处理、人工智能等关键词；「抗震」会扩展到 seismic engineering、earthquake engineering、structural engineering 等土木结构方向关键词。
 6. 匹配用户填写的目标研究方向与项目 `researchFields` / `keywords`。
 7. 使用固定权重计算综合分：研究课题匹配 25%、教授/实验室匹配 20%、申请难度匹配 12%、GPA 10%、本科专业及院校背景 8%、英语 8%、日语 5%、研究经历 7%、地区偏好 3%、学位及资格 2%。
 8. 语言成绩按“是否达到项目门槛 + 超过门槛后的少量竞争力加分”处理，不做简单线性加分。
@@ -124,6 +124,14 @@ types/
 12. 输出冲刺、匹配、相对稳妥三档推荐，并生成自然语言理由和提升建议。
 
 核心代码在 `lib/recommendation.ts`。
+
+可以运行下面的脚本检查高频研究方向词库是否能正常展开：
+
+```bash
+pnpm run check:synonyms
+```
+
+当前检查覆盖抗震、土木工程、图像、软件工程、机械工程、轻合金、城市规划、环境工程、经营学和生命科学等典型输入。
 
 ## 后续如何接入真实大模型 API
 

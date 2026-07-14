@@ -21,6 +21,9 @@ const bands: RecommendationBand[] = ["冲刺", "匹配", "相对稳妥"];
 
 const defaultTier: UndergraduateTier = "其他 / 不确定";
 const genericResearchKeywords = new Set(["工程", "科学", "研究", "系统"]);
+const universityDisplayNames: Record<string, string> = {
+  "Institute of Science Tokyo": "东京科学大学 / Institute of Science Tokyo"
+};
 
 type ResearchSynonymGroup = {
   category: string;
@@ -46,6 +49,10 @@ function getProfile(profile: StudentProfile): StudentProfile {
     targetUniversity: profile.targetUniversity ?? "",
     additionalBackground: profile.additionalBackground ?? ""
   };
+}
+
+function getUniversityDisplayName(universityName: string) {
+  return universityDisplayNames[universityName] ?? universityName;
 }
 
 function parseGpa(gpa: string) {
@@ -342,9 +349,22 @@ function buildScoreBreakdown(profile: StudentProfile, program: GraduateProgram, 
   }));
 }
 
-function calculateScore(scoreBreakdown: ScoreBreakdownItem[]) {
+function calculateScore(scoreBreakdown: ScoreBreakdownItem[], program: GraduateProgram) {
   const rawScore = scoreBreakdown.reduce((sum, item) => sum + item.contribution, 0);
-  return Math.round(Math.max(30, Math.min(99, rawScore)));
+  let adjustedScore = rawScore;
+  const undergradScore = getScore(scoreBreakdown, "undergrad");
+  const experienceScore = getScore(scoreBreakdown, "experience");
+  const gpaScore = getScore(scoreBreakdown, "gpa");
+
+  if (program.rankTier <= 2 && undergradScore < 78 && experienceScore < 66) adjustedScore -= 8;
+  else if (program.rankTier <= 2 && undergradScore < 78) adjustedScore -= 4;
+  else if (program.rankTier <= 2 && experienceScore < 66) adjustedScore -= 3;
+
+  if (program.difficulty >= 86 && undergradScore < 78 && experienceScore < 66) adjustedScore -= 4;
+  if (program.difficulty >= 90 && undergradScore < 78) adjustedScore -= 4;
+  if (program.difficulty >= 88 && gpaScore < 88) adjustedScore -= 2;
+
+  return Math.round(Math.max(30, Math.min(99, adjustedScore)));
 }
 
 function levelFromScore(score: number): InsightLevel {
@@ -560,11 +580,12 @@ function makeRecommendedProgram(profile: StudentProfile, program: GraduateProgra
   const scoreInsights = buildScoreInsights(program, scoreBreakdown, facultyMatches);
   const reliability = buildProgramReliability(program, facultyMatches);
   const noFacultyReasons = buildNoFacultyReasons(program, reliability);
-  const score = calculateScore(scoreBreakdown);
+  const score = calculateScore(scoreBreakdown, program);
   const band = chooseBand(score, program.difficulty, profile.applicationPreference);
 
   return {
     ...program,
+    universityDisplayName: getUniversityDisplayName(program.universityName),
     band,
     score,
     researchMatchScore: researchMatch.score,
@@ -720,28 +741,44 @@ function getBreakdownScore(program: RecommendedProgram, key: ScoreBreakdownItem[
 function calculateTargetFeasibilityScore(bestProgram: RecommendedProgram) {
   let score = bestProgram.score;
   const topFacultyScore = bestProgram.facultyMatches[0]?.matchScore ?? 0;
+  const undergradScore = getBreakdownScore(bestProgram, "undergrad");
+  const experienceScore = getBreakdownScore(bestProgram, "experience");
+  const difficultyScore = getBreakdownScore(bestProgram, "difficulty");
+  const gpaScore = getBreakdownScore(bestProgram, "gpa");
 
   // 意向院校评估更接近咨询场景：强方向命中、教授命中和背景支撑应被明确体现。
-  if (bestProgram.researchMatchScore >= 86) score += 4;
-  else if (bestProgram.researchMatchScore >= 78) score += 2;
+  if (bestProgram.researchMatchScore >= 86) score += 3;
+  else if (bestProgram.researchMatchScore >= 78) score += 1;
 
-  if (topFacultyScore >= 86) score += 5;
-  else if (topFacultyScore >= 72) score += 3;
+  if (topFacultyScore >= 86) score += 3;
+  else if (topFacultyScore >= 72) score += 2;
 
-  if (getBreakdownScore(bestProgram, "difficulty") >= 90) score += 3;
-  else if (getBreakdownScore(bestProgram, "difficulty") >= 80) score += 2;
+  if (difficultyScore >= 90) score += 2;
+  else if (difficultyScore >= 80) score += 1;
 
-  if (getBreakdownScore(bestProgram, "undergrad") >= 90) score += 2;
+  if (undergradScore >= 90) score += 1;
   if (getBreakdownScore(bestProgram, "english") >= 76) score += 1;
   if (getBreakdownScore(bestProgram, "japanese") >= 76) score += 1;
-  if (getBreakdownScore(bestProgram, "experience") >= 82) score += 1;
+  if (experienceScore >= 82) score += 1;
 
-  return Math.round(Math.max(bestProgram.score, Math.min(96, score)));
+  if (undergradScore < 78) score -= 5;
+  if (experienceScore < 66) score -= 6;
+  if (gpaScore < 88) score -= 2;
+  if (bestProgram.difficulty >= 88 && undergradScore < 78) score -= 3;
+
+  const ceiling =
+    undergradScore < 78 && experienceScore < 66
+      ? 84
+      : undergradScore < 78 || experienceScore < 66
+        ? 88
+        : 94;
+
+  return Math.round(Math.max(45, Math.min(ceiling, score)));
 }
 
 function probabilityLabel(score: number, bestProgram?: RecommendedProgram): TargetUniversityAssessment["probabilityLabel"] {
   if (!bestProgram) return "暂无法判断";
-  if (score >= 84 && bestProgram.researchMatchScore >= 78) return "较高";
+  if (score >= 88 && bestProgram.researchMatchScore >= 78) return "较高";
   if (score >= 72 && bestProgram.researchMatchScore >= 66) return "中等";
   if (score >= 62) return "偏低";
   return "高风险";
@@ -784,6 +821,7 @@ function buildTargetAssessment(profile: StudentProfile, scoredPrograms: Recommen
     return {
       requestedUniversity,
       resolvedUniversityName,
+      resolvedUniversityDisplayName: getUniversityDisplayName(resolvedUniversityName),
       probabilityLabel: "暂无法判断",
       probabilityScore: 0,
       summary: `已识别目标院校为 ${resolvedUniversityName}，但当前项目库还没有该校可评估的研究科/专业方向。`,
@@ -835,9 +873,10 @@ function buildTargetAssessment(profile: StudentProfile, scoredPrograms: Recommen
   return {
     requestedUniversity,
     resolvedUniversityName,
+    resolvedUniversityDisplayName: getUniversityDisplayName(resolvedUniversityName),
     probabilityLabel: label,
     probabilityScore: score,
-    summary: `已识别你的意向院校为 ${resolvedUniversityName}。在当前本地项目库中，最接近你的方向的是 ${bestProgram.graduateSchool} / ${bestProgram.programName}，综合可行性为 ${score} 分，系统判断为「${label}」。`,
+    summary: `已识别你的意向院校为 ${getUniversityDisplayName(resolvedUniversityName)}。在当前本地项目库中，最接近你的方向的是 ${bestProgram.graduateSchool} / ${bestProgram.programName}，综合可行性为 ${score} 分，系统判断为「${label}」。`,
     strengths,
     risks,
     suggestions,
@@ -883,13 +922,13 @@ export function buildRecommendationReport(result: RecommendationResult) {
     const assessment = result.targetAssessment;
     lines.push("意向院校评估");
     lines.push(`输入院校：${assessment.requestedUniversity}`);
-    lines.push(`识别院校：${assessment.resolvedUniversityName || "未识别"}`);
+    lines.push(`识别院校：${assessment.resolvedUniversityDisplayName || assessment.resolvedUniversityName || "未识别"}`);
     lines.push(`申请可行性：${assessment.probabilityLabel}${assessment.probabilityScore ? `（${assessment.probabilityScore} 分）` : ""}`);
     lines.push(`评估摘要：${assessment.summary}`);
     if (assessment.bestPrograms.length > 0) {
       lines.push("最匹配项目：");
       assessment.bestPrograms.forEach((program, index) => {
-        lines.push(`${index + 1}. ${program.graduateSchool}｜${program.programName}｜${program.score} 分`);
+      lines.push(`${index + 1}. ${program.graduateSchool}｜${program.programName}｜${program.score} 分`);
       });
     }
     if (assessment.facultyMatches.length > 0) {
@@ -907,7 +946,7 @@ export function buildRecommendationReport(result: RecommendationResult) {
   for (const band of bands) {
     lines.push(`${band}项目`);
     result.programs[band].forEach((program, index) => {
-      lines.push(`${index + 1}. ${program.universityName}｜${program.graduateSchool}｜${program.programName}`);
+      lines.push(`${index + 1}. ${program.universityDisplayName}｜${program.graduateSchool}｜${program.programName}`);
       lines.push(`方向：${program.researchFields.join(" / ")}｜地区：${program.region}`);
       lines.push(`匹配度：${program.score} 分`);
       lines.push(

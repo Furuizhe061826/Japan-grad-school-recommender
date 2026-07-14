@@ -60,6 +60,7 @@ export type GraduateProgram = {
 };
 
 export type RecommendedProgram = GraduateProgram & {
+  universityDisplayName: string;
   band: RecommendationBand;
   score: number;
   researchMatchScore: number;
@@ -120,6 +121,7 @@ export type RecommendationResult = {
 export type TargetUniversityAssessment = {
   requestedUniversity: string;
   resolvedUniversityName?: string;
+  resolvedUniversityDisplayName?: string;
   probabilityLabel: "较高" | "中等" | "偏低" | "高风险" | "暂无法判断";
   probabilityScore: number;
   summary: string;
