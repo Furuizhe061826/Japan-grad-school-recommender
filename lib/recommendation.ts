@@ -1,14 +1,17 @@
 import programs from "@/data/programs.json";
 import researchSynonyms from "@/data/researchSynonyms.json";
 import { detectChinaUniversity } from "@/lib/chinaUniversities";
-import { findFacultyMatches, hasFacultyProfilesForProgram } from "@/lib/facultyMatching";
+import { findFacultyMatches, getFacultyProfileStats, hasFacultyProfilesForProgram } from "@/lib/facultyMatching";
 import type {
   FacultyMatch,
   GraduateProgram,
+  InsightLevel,
+  ProgramReliability,
   RecommendationBand,
   RecommendationResult,
   RecommendedProgram,
   ScoreBreakdownItem,
+  ScoreInsight,
   StudentProfile,
   TargetUniversityAssessment,
   UndergraduateTier
@@ -344,6 +347,141 @@ function calculateScore(scoreBreakdown: ScoreBreakdownItem[]) {
   return Math.round(Math.max(30, Math.min(99, rawScore)));
 }
 
+function levelFromScore(score: number): InsightLevel {
+  if (score >= 82) return "高";
+  if (score >= 66) return "中";
+  return "低";
+}
+
+function getScore(scoreBreakdown: ScoreBreakdownItem[], key: ScoreBreakdownItem["key"]) {
+  return scoreBreakdown.find((item) => item.key === key)?.score ?? 0;
+}
+
+function buildScoreInsights(program: GraduateProgram, scoreBreakdown: ScoreBreakdownItem[], facultyMatches: FacultyMatch[]): ScoreInsight[] {
+  const researchScore = getScore(scoreBreakdown, "research");
+  const facultyScore = getScore(scoreBreakdown, "faculty");
+  const difficultyScore = getScore(scoreBreakdown, "difficulty");
+  const undergradScore = getScore(scoreBreakdown, "undergrad");
+  const englishScore = getScore(scoreBreakdown, "english");
+  const japaneseScore = getScore(scoreBreakdown, "japanese");
+
+  return [
+    {
+      label: "研究方向",
+      level: levelFromScore(researchScore),
+      score: researchScore,
+      explanation:
+        researchScore >= 82
+          ? "目标研究方向与该项目关键词高度接近，是推荐成立的主要依据。"
+          : researchScore >= 66
+            ? "研究方向有一定关联，但需要把研究对象、方法和目标导师写得更具体。"
+            : "当前方向命中较弱，推荐可信度主要依赖院校层级或宽泛学科匹配。"
+    },
+    {
+      label: "教授/研究室",
+      level: facultyMatches.length > 0 ? levelFromScore(facultyScore) : "待核验",
+      score: facultyScore,
+      explanation:
+        facultyMatches.length > 0
+          ? `已找到 ${facultyMatches.length} 个正教授层面的潜在研究室，可进一步核验招生归属和近年论文。`
+          : "当前没有强命中正教授，可能是教授库未覆盖、关键词过窄，或研究科归属需要人工核验。"
+    },
+    {
+      label: "申请难度",
+      level: levelFromScore(difficultyScore),
+      score: difficultyScore,
+      explanation:
+        difficultyScore >= 82
+          ? "你的综合背景与该项目难度差距相对可控。"
+          : difficultyScore >= 66
+            ? "项目难度与背景大致接近，建议用研究计划书和套磁反馈补强。"
+            : "项目难度明显偏高，需要把它视为冲刺，并准备更强的研究证据。"
+    },
+    {
+      label: "本科背景",
+      level: levelFromScore(undergradScore),
+      score: undergradScore,
+      explanation:
+        undergradScore >= 82
+          ? "本科院校层次或专业相关性能够提供较强背景支撑。"
+          : undergradScore >= 66
+            ? "本科背景有一定支撑，但仍需通过课程、科研或项目经历证明匹配度。"
+            : "本科背景对高难度项目支撑偏弱，建议突出可验证的专业能力。"
+    },
+    {
+      label: "英语",
+      level: levelFromScore(englishScore),
+      score: englishScore,
+      explanation:
+        englishScore >= 82
+          ? `英语成绩相对稳健，已明显接近或超过该项目建议线：${program.englishRequirement}。`
+          : englishScore >= 66
+            ? `英语基本接近门槛，但建议继续核对最低要求：${program.englishRequirement}。`
+            : `英语存在风险，应优先确认是否满足最低要求：${program.englishRequirement}。`
+    },
+    {
+      label: "日语",
+      level: levelFromScore(japaneseScore),
+      score: japaneseScore,
+      explanation:
+        japaneseScore >= 82
+          ? "日语能力对日文项目、面试和套磁沟通有正向支撑。"
+          : japaneseScore >= 66
+            ? "日语能力基本可作为辅助，但日文项目仍需确认研究科要求。"
+            : "日语可能成为日文项目或教授沟通的风险点。"
+    }
+  ];
+}
+
+function buildProgramReliability(program: GraduateProgram, facultyMatches: FacultyMatch[]): ProgramReliability {
+  const facultyStats = getFacultyProfileStats(program);
+  const hasAdmissionInfo = Boolean(program.admissionInfo);
+  const hasVerifiedAdmission = program.admissionInfo?.verificationStatus === "官方页面已核验";
+  const hasCrossProgramMatch = facultyMatches.some((faculty) => faculty.matchReason.includes("招生归属"));
+  const facultyCoverage: ProgramReliability["facultyCoverage"] =
+    facultyStats.programProfessorCount >= 8 ? "高" : facultyStats.programProfessorCount >= 3 || facultyStats.universityProfessorCount >= 80 ? "中" : "低";
+  const facultyMatchStatus: ProgramReliability["facultyMatchStatus"] =
+    facultyMatches.length === 0 ? "暂无强命中" : hasCrossProgramMatch ? "需核验招生归属" : "有正教授命中";
+  const reviewNotes: string[] = [];
+
+  if (!hasAdmissionInfo) reviewNotes.push("募集要项尚未逐项整理，申请时间、材料和考试方式必须以官网为准。");
+  else if (!hasVerifiedAdmission) reviewNotes.push("募集要项已有参考入口，但仍需要按目标年度重新核验。");
+
+  if (facultyStats.programProfessorCount === 0 && facultyStats.universityProfessorCount > 0) {
+    reviewNotes.push("该大学教授库已接入，但目标研究科归属覆盖不足。");
+  } else if (facultyStats.universityProfessorCount === 0) {
+    reviewNotes.push("该大学教授库尚未接入，导师匹配结果不能代表真实导师资源。");
+  }
+
+  if (facultyMatches.length === 0) reviewNotes.push("当前未找到强命中正教授，建议继续用日文/英文关键词检索研究室。");
+  if (hasCrossProgramMatch) reviewNotes.push("部分教授方向相近，但所属研究科或研究所可能与申请入口不同。");
+
+  return {
+    programDataStatus: "项目数据已收录",
+    admissionStatus: hasVerifiedAdmission ? "募集要项已核验" : "募集要项待核验",
+    facultyCoverage,
+    facultyMatchStatus,
+    facultyProfessorCount: facultyStats.programProfessorCount,
+    reviewNotes
+  };
+}
+
+function buildNoFacultyReasons(program: GraduateProgram, reliability: ProgramReliability) {
+  if (reliability.facultyMatchStatus !== "暂无强命中") return [];
+
+  const reasons = [
+    reliability.facultyCoverage === "低"
+      ? "当前教授库对该项目覆盖不足，不能据此判断没有合适导师。"
+      : "该项目已有一定教授库覆盖，但与输入方向没有形成强关键词命中。",
+    "你的研究方向可能还需要补充更具体的材料、方法、实验对象或英文/日文关键词。",
+    "部分教授可能通过其他研究科、研究所或实验室页面招生，需要继续人工核验。"
+  ];
+
+  if (!program.admissionInfo) reasons.unshift("该项目募集要项尚未逐项核验，导师联系规则也需要确认。");
+
+  return reasons;
+}
+
 function chooseBand(score: number, difficulty: number, preference: StudentProfile["applicationPreference"]): RecommendationBand {
   const gap = score - difficulty;
 
@@ -419,6 +557,9 @@ function makeRecommendedProgram(profile: StudentProfile, program: GraduateProgra
   const researchMatch = getResearchMatch(profile, program);
   const facultyMatches = findFacultyMatches(profile, program);
   const scoreBreakdown = buildScoreBreakdown(profile, program, facultyMatches);
+  const scoreInsights = buildScoreInsights(program, scoreBreakdown, facultyMatches);
+  const reliability = buildProgramReliability(program, facultyMatches);
+  const noFacultyReasons = buildNoFacultyReasons(program, reliability);
   const score = calculateScore(scoreBreakdown);
   const band = chooseBand(score, program.difficulty, profile.applicationPreference);
 
@@ -429,6 +570,9 @@ function makeRecommendedProgram(profile: StudentProfile, program: GraduateProgra
     researchMatchScore: researchMatch.score,
     matchedKeywords: researchMatch.matchedKeywords,
     scoreBreakdown,
+    scoreInsights,
+    reliability,
+    noFacultyReasons,
     facultyMatches,
     reasons: buildReasons(profile, program, score),
     improvements: buildImprovements(profile, program)
@@ -771,6 +915,15 @@ export function buildRecommendationReport(result: RecommendationResult) {
           .map((item) => `${item.label}${item.score}分 x ${Math.round(item.weight * 100)}% = ${item.contribution}`)
           .join("；")}`
       );
+      lines.push(
+        `评分解释：${program.scoreInsights
+          .map((item) => `${item.label}${item.level}（${item.score}分）：${item.explanation}`)
+          .join(" ")}`
+      );
+      lines.push(
+        `数据可信度：${program.reliability.programDataStatus}；${program.reliability.admissionStatus}；教授库覆盖${program.reliability.facultyCoverage}；${program.reliability.facultyMatchStatus}。`
+      );
+      if (program.reliability.reviewNotes.length > 0) lines.push(`需复核：${program.reliability.reviewNotes.join(" ")}`);
       lines.push(`推荐理由：${program.reasons.join(" ")}`);
       lines.push(`需要提升：${program.improvements.join(" ")}`);
       if (program.facultyMatches.length > 0) {
@@ -780,6 +933,8 @@ export function buildRecommendationReport(result: RecommendationResult) {
             `- ${faculty.professorName}${faculty.labName ? `｜${faculty.labName}` : ""}（${faculty.title}，匹配 ${faculty.matchScore}）：${faculty.matchReason} ${faculty.facultyUrl}`
           );
         });
+      } else if (program.noFacultyReasons.length > 0) {
+        lines.push(`未显示教授原因：${program.noFacultyReasons.join(" ")}`);
       }
       if (program.admissionInfo) {
         lines.push(`募集要项参考：${program.admissionInfo.sourceLabel}`);

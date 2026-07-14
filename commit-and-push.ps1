@@ -22,7 +22,7 @@ if (-not $git) {
 Set-Location $PSScriptRoot
 
 & $git add --all
-& $git commit -m "Add target university assessment and faculty data"
+& $git commit -m "Add recommendation explainability and reliability signals"
 & $git push
 
 Write-Host ""

@@ -57,12 +57,22 @@ function isFullProfessor(faculty: FacultyProfile) {
 }
 
 export function hasFacultyProfilesForProgram(program: GraduateProgram) {
-  const professorCount = (facultyProfiles as FacultyProfile[]).filter(
-    (faculty) => faculty.university === program.universityName && isFullProfessor(faculty) && belongsToProgram(faculty, program)
-  ).length;
+  const professorCount = getFacultyProfileStats(program).programProfessorCount;
 
   // A program-level threshold avoids treating one covered graduate school as if the whole university were covered.
   return professorCount >= 8;
+}
+
+export function getFacultyProfileStats(program: GraduateProgram) {
+  const universityProfessors = (facultyProfiles as FacultyProfile[]).filter(
+    (faculty) => faculty.university === program.universityName && isFullProfessor(faculty)
+  );
+  const programProfessorCount = universityProfessors.filter((faculty) => belongsToProgram(faculty, program)).length;
+
+  return {
+    universityProfessorCount: universityProfessors.length,
+    programProfessorCount
+  };
 }
 
 export function findFacultyMatches(profile: StudentProfile, program: GraduateProgram): FacultyMatch[] {

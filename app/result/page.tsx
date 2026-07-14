@@ -135,6 +135,8 @@ export default function ResultPage() {
                       <p className="font-semibold text-ink">需要提升的地方</p>
                       <p className="mt-1">{program.improvements.join(" ")}</p>
                     </div>
+                    <ReliabilityBlock program={program} />
+                    <ScoreInsightsBlock program={program} />
                     <ScoreBreakdown program={program} />
                     <FacultyMatchesBlock program={program} />
                     <p className="rounded-xl bg-mist p-3 text-xs text-slate-500">{program.notes}</p>
@@ -202,6 +204,23 @@ function TargetAssessmentBlock({ assessment }: { assessment: TargetUniversityAss
                   方向匹配 {program.researchMatchScore} 分，档位为{program.band}。
                   {program.facultyMatches.length > 0 ? ` 已命中 ${program.facultyMatches.length} 个潜在研究室。` : " 当前教授库暂无明确研究室命中。"}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {hasBestPrograms && (
+        <div className="mt-6 rounded-xl border border-slate-200 bg-mist p-4">
+          <h3 className="text-base font-bold text-ink">为什么是这个可行性判断</h3>
+          <div className="mt-3 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
+            {assessment.bestPrograms[0].scoreInsights.slice(0, 6).map((insight) => (
+              <div key={insight.label} className="rounded-lg bg-white p-3">
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-xs font-semibold text-slate-700">{insight.label}</p>
+                  <span className={insightBadgeClass(insight.level)}>{insight.level} · {insight.score}</span>
+                </div>
+                <p className="mt-2 text-xs leading-5 text-slate-600">{insight.explanation}</p>
               </div>
             ))}
           </div>
@@ -309,6 +328,73 @@ function AdmissionInfoBlock({ program }: { program: RecommendedProgram }) {
   );
 }
 
+function ReliabilityBlock({ program }: { program: RecommendedProgram }) {
+  const reliability = program.reliability;
+  const statusItems = [
+    { label: "项目数据", value: reliability.programDataStatus },
+    { label: "募集要项", value: reliability.admissionStatus },
+    { label: "教授库覆盖", value: `${reliability.facultyCoverage}${reliability.facultyProfessorCount > 0 ? `（${reliability.facultyProfessorCount} 位）` : ""}` },
+    { label: "导师命中", value: reliability.facultyMatchStatus }
+  ];
+
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-3">
+      <div className="flex items-center justify-between gap-3">
+        <p className="font-semibold text-ink">数据可信度</p>
+        <p className="text-xs text-slate-500">用于判断结果可靠范围</p>
+      </div>
+      <dl className="mt-3 grid grid-cols-2 gap-2">
+        {statusItems.map((item) => (
+          <div key={item.label} className="rounded-lg bg-mist p-2">
+            <dt className="text-[11px] font-semibold text-slate-500">{item.label}</dt>
+            <dd className="mt-1 text-xs font-semibold text-slate-700">{item.value}</dd>
+          </div>
+        ))}
+      </dl>
+      {reliability.reviewNotes.length > 0 && (
+        <div className="mt-3 rounded-lg border border-amber-100 bg-amber-50 p-3 text-xs leading-5 text-amber-800">
+          <p className="font-semibold">需要人工复核</p>
+          <ul className="mt-1 space-y-1">
+            {reliability.reviewNotes.map((note) => (
+              <li key={note}>{note}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ScoreInsightsBlock({ program }: { program: RecommendedProgram }) {
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-3">
+      <div className="flex items-center justify-between gap-3">
+        <p className="font-semibold text-ink">为什么是这个分</p>
+        <p className="text-xs text-slate-500">高 / 中 / 低</p>
+      </div>
+      <div className="mt-3 space-y-2">
+        {program.scoreInsights.map((insight) => (
+          <div key={insight.label} className="rounded-lg bg-mist p-3">
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-xs font-semibold text-slate-700">{insight.label}</p>
+              <span className={insightBadgeClass(insight.level)}>{insight.level} · {insight.score}</span>
+            </div>
+            <p className="mt-2 text-xs leading-5 text-slate-600">{insight.explanation}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function insightBadgeClass(level: RecommendedProgram["scoreInsights"][number]["level"]) {
+  const base = "rounded-full px-2 py-1 text-[11px] font-semibold";
+  if (level === "高") return `${base} bg-matcha/10 text-matcha`;
+  if (level === "中") return `${base} bg-ocean/10 text-ocean`;
+  if (level === "低") return `${base} bg-sakura/10 text-sakura`;
+  return `${base} bg-amber-100 text-amber-700`;
+}
+
 function ScoreBreakdown({ program }: { program: RecommendedProgram }) {
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-3">
@@ -336,7 +422,26 @@ function ScoreBreakdown({ program }: { program: RecommendedProgram }) {
 }
 
 function FacultyMatchesBlock({ program }: { program: RecommendedProgram }) {
-  if (program.facultyMatches.length === 0) return null;
+  if (program.facultyMatches.length === 0) {
+    return (
+      <div className="rounded-xl border border-dashed border-slate-200 bg-white p-3">
+        <div className="flex items-center justify-between gap-3">
+          <p className="font-semibold text-ink">潜在导师/研究室</p>
+          <p className="text-xs text-slate-500">暂无强命中</p>
+        </div>
+        <p className="mt-2 text-xs leading-5 text-slate-500">
+          当前没有显示具体教授，不等于该校没有合适导师，而是数据库或关键词证据还不够强。
+        </p>
+        {program.noFacultyReasons.length > 0 && (
+          <ul className="mt-3 space-y-2 rounded-lg bg-mist p-3 text-xs leading-5 text-slate-600">
+            {program.noFacultyReasons.map((reason) => (
+              <li key={reason}>{reason}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-3">

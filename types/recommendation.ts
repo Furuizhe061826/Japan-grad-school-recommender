@@ -65,9 +65,30 @@ export type RecommendedProgram = GraduateProgram & {
   researchMatchScore: number;
   matchedKeywords: string[];
   scoreBreakdown: ScoreBreakdownItem[];
+  scoreInsights: ScoreInsight[];
+  reliability: ProgramReliability;
+  noFacultyReasons: string[];
   facultyMatches: FacultyMatch[];
   reasons: string[];
   improvements: string[];
+};
+
+export type InsightLevel = "高" | "中" | "低" | "待核验";
+
+export type ScoreInsight = {
+  label: string;
+  level: InsightLevel;
+  score: number;
+  explanation: string;
+};
+
+export type ProgramReliability = {
+  programDataStatus: "项目数据已收录" | "项目数据待补充";
+  admissionStatus: "募集要项已核验" | "募集要项待核验";
+  facultyCoverage: "高" | "中" | "低";
+  facultyMatchStatus: "有正教授命中" | "暂无强命中" | "需核验招生归属";
+  facultyProfessorCount: number;
+  reviewNotes: string[];
 };
 
 export type ScoreBreakdownItem = {
