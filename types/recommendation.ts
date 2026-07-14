@@ -63,8 +63,12 @@ export type RecommendedProgram = GraduateProgram & {
   universityDisplayName: string;
   band: RecommendationBand;
   score: number;
+  scoreBeforeAdjustments: number;
+  scoreAdjustments: string[];
   researchMatchScore: number;
   matchedKeywords: string[];
+  applicationChecks: ApplicationCheck[];
+  riskLevel: ApplicationRiskLevel;
   scoreBreakdown: ScoreBreakdownItem[];
   scoreInsights: ScoreInsight[];
   reliability: ProgramReliability;
@@ -75,6 +79,17 @@ export type RecommendedProgram = GraduateProgram & {
 };
 
 export type InsightLevel = "高" | "中" | "低" | "待核验";
+
+export type ApplicationCheckStatus = "满足" | "有风险" | "待核验";
+export type ApplicationRiskLevel = "风险较低" | "需要关注" | "高风险";
+
+export type ApplicationCheck = {
+  key: "english" | "japanese" | "degree" | "faculty" | "admission";
+  label: string;
+  status: ApplicationCheckStatus;
+  summary: string;
+  affectsRecommendation: boolean;
+};
 
 export type ScoreInsight = {
   label: string;

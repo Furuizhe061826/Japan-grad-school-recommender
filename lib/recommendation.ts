@@ -3,6 +3,8 @@ import researchSynonyms from "@/data/researchSynonyms.json";
 import { detectChinaUniversity } from "@/lib/chinaUniversities";
 import { findFacultyMatches, getFacultyProfileStats, hasFacultyProfilesForProgram } from "@/lib/facultyMatching";
 import type {
+  ApplicationCheck,
+  ApplicationRiskLevel,
   FacultyMatch,
   GraduateProgram,
   InsightLevel,
@@ -318,6 +320,144 @@ function scoreResearchExperience(profile: StudentProfile) {
   return 55;
 }
 
+function buildApplicationChecks(
+  profile: StudentProfile,
+  program: GraduateProgram,
+  facultyMatches: FacultyMatch[],
+  reliability: ProgramReliability
+): ApplicationCheck[] {
+  const englishValue = parseEnglishToToeflScale(profile.englishScore);
+  const englishReference = parseRequiredEnglishToToeflScale(program);
+  const englishGap = englishValue - englishReference;
+  const englishCheck: ApplicationCheck =
+    englishValue <= 0
+      ? {
+          key: "english",
+          label: "英语参考线",
+          status: "有风险",
+          summary: `未识别到有效英语成绩；当前项目库建议线为 ${program.englishRequirement}。`,
+          affectsRecommendation: true
+        }
+      : englishGap < 0
+        ? {
+            key: "english",
+            label: "英语参考线",
+            status: "有风险",
+            summary: `当前成绩低于数据库中的项目建议线，约差 ${Math.abs(Math.round(englishGap))} 个 TOEFL 等值分。`,
+            affectsRecommendation: true
+          }
+        : {
+            key: "english",
+            label: "英语参考线",
+            status: "满足",
+            summary: `当前成绩达到数据库建议线；是否构成正式门槛仍以目标年度募集要项为准。`,
+            affectsRecommendation: false
+          };
+
+  const japaneseLevel = parseJapaneseLevel(profile.japaneseScore);
+  const requiredJapaneseLevel = parseRequiredJapaneseLevel(program);
+  const japaneseCheck: ApplicationCheck =
+    requiredJapaneseLevel === 0
+      ? {
+          key: "japanese",
+          label: "日语要求",
+          status: "待核验",
+          summary: "该项目的日语要求与申请类别、授课语言或研究室有关，需要按募集要项确认。",
+          affectsRecommendation: false
+        }
+      : japaneseLevel === 0 || japaneseLevel > requiredJapaneseLevel
+        ? {
+            key: "japanese",
+            label: "日语参考线",
+            status: "有风险",
+            summary: `当前日语能力未达到数据库建议的 JLPT N${requiredJapaneseLevel} 水平。`,
+            affectsRecommendation: true
+          }
+        : {
+            key: "japanese",
+            label: "日语参考线",
+            status: "满足",
+            summary: `当前日语能力达到数据库建议的 JLPT N${requiredJapaneseLevel} 水平。`,
+            affectsRecommendation: false
+          };
+
+  const degreeCheck: ApplicationCheck = program.degreeOptions.includes(profile.degreeGoal)
+    ? {
+        key: "degree",
+        label: "目标学位",
+        status: "满足",
+        summary: `项目数据包含${profile.degreeGoal}申请入口。`,
+        affectsRecommendation: false
+      }
+    : {
+        key: "degree",
+        label: "目标学位",
+        status: "有风险",
+        summary: `当前条目未收录${profile.degreeGoal}申请入口，需要更换项目或核验申请资格。`,
+        affectsRecommendation: true
+      };
+
+  const hasCrossProgramMatch = facultyMatches.some((faculty) => faculty.matchReason.includes("招生归属"));
+  const facultyCheck: ApplicationCheck =
+    facultyMatches.length > 0 && !hasCrossProgramMatch
+      ? {
+          key: "faculty",
+          label: "教授/研究室证据",
+          status: "满足",
+          summary: `已命中 ${facultyMatches.length} 位正教授，并保留官方研究者页面供复核。`,
+          affectsRecommendation: false
+        }
+      : facultyMatches.length > 0
+        ? {
+            key: "faculty",
+            label: "教授/研究室证据",
+            status: "待核验",
+            summary: "方向相近，但教授所属研究科或招生入口可能不同，需要人工核验。",
+            affectsRecommendation: true
+          }
+        : reliability.facultyCoverage === "高"
+          ? {
+              key: "faculty",
+              label: "教授/研究室证据",
+              status: "有风险",
+              summary: "该项目教授库覆盖较高，但当前方向没有形成正教授强命中。",
+              affectsRecommendation: true
+            }
+          : {
+              key: "faculty",
+              label: "教授/研究室证据",
+              status: "待核验",
+              summary: "教授库覆盖不足，暂时不能判断是否存在合适研究室。",
+              affectsRecommendation: false
+            };
+
+  const admissionCheck: ApplicationCheck =
+    reliability.admissionStatus === "募集要项已核验"
+      ? {
+          key: "admission",
+          label: "募集要项证据",
+          status: "满足",
+          summary: "已接入官方页面参考，但申请前仍需按目标年度再次确认。",
+          affectsRecommendation: false
+        }
+      : {
+          key: "admission",
+          label: "募集要项证据",
+          status: "待核验",
+          summary: "当前项目尚未完成目标年度募集要项逐项核验。",
+          affectsRecommendation: false
+        };
+
+  return [englishCheck, japaneseCheck, degreeCheck, facultyCheck, admissionCheck];
+}
+
+function getApplicationRiskLevel(checks: ApplicationCheck[]): ApplicationRiskLevel {
+  const riskChecks = checks.filter((check) => check.status === "有风险");
+  if (riskChecks.some((check) => check.key === "degree") || riskChecks.length >= 2) return "高风险";
+  if (riskChecks.length === 1 || checks.some((check) => check.affectsRecommendation)) return "需要关注";
+  return "风险较低";
+}
+
 function buildScoreBreakdown(profile: StudentProfile, program: GraduateProgram, facultyMatches: FacultyMatch[]): ScoreBreakdownItem[] {
   const gpaScore = parseGpa(profile.gpa);
   const englishScore = scoreEnglish(profile.englishScore, program);
@@ -349,22 +489,83 @@ function buildScoreBreakdown(profile: StudentProfile, program: GraduateProgram, 
   }));
 }
 
-function calculateScore(scoreBreakdown: ScoreBreakdownItem[], program: GraduateProgram) {
+function calculateScore(
+  profile: StudentProfile,
+  scoreBreakdown: ScoreBreakdownItem[],
+  program: GraduateProgram,
+  applicationChecks: ApplicationCheck[]
+) {
   const rawScore = scoreBreakdown.reduce((sum, item) => sum + item.contribution, 0);
   let adjustedScore = rawScore;
+  let scoreCeiling = 99;
+  const scoreAdjustments: string[] = [];
   const undergradScore = getScore(scoreBreakdown, "undergrad");
   const experienceScore = getScore(scoreBreakdown, "experience");
   const gpaScore = getScore(scoreBreakdown, "gpa");
+  const researchScore = getScore(scoreBreakdown, "research");
+  const englishScore = getScore(scoreBreakdown, "english");
+  const facultyScore = getScore(scoreBreakdown, "faculty");
 
-  if (program.rankTier <= 2 && undergradScore < 78 && experienceScore < 66) adjustedScore -= 8;
-  else if (program.rankTier <= 2 && undergradScore < 78) adjustedScore -= 4;
-  else if (program.rankTier <= 2 && experienceScore < 66) adjustedScore -= 3;
+  function penalize(points: number, reason: string) {
+    adjustedScore -= points;
+    scoreAdjustments.push(`-${points}：${reason}`);
+  }
 
-  if (program.difficulty >= 86 && undergradScore < 78 && experienceScore < 66) adjustedScore -= 4;
-  if (program.difficulty >= 90 && undergradScore < 78) adjustedScore -= 4;
-  if (program.difficulty >= 88 && gpaScore < 88) adjustedScore -= 2;
+  function capScore(ceiling: number, reason: string) {
+    if (ceiling < scoreCeiling) {
+      scoreCeiling = ceiling;
+      scoreAdjustments.push(`上限 ${ceiling}：${reason}`);
+    }
+  }
 
-  return Math.round(Math.max(30, Math.min(99, adjustedScore)));
+  if (program.rankTier <= 2 && undergradScore < 78 && experienceScore < 66) penalize(8, "高关注院校中本科背景与科研信号同时偏弱");
+  else if (program.rankTier <= 2 && undergradScore < 78) penalize(4, "高关注院校中本科背景支撑偏弱");
+  else if (program.rankTier <= 2 && experienceScore < 66) penalize(3, "高关注院校中科研经历信号偏弱");
+
+  if (program.difficulty >= 86 && undergradScore < 78 && experienceScore < 66) penalize(4, "项目难度较高且缺少背景补强证据");
+  if (program.difficulty >= 90 && undergradScore < 78) penalize(4, "顶尖项目对当前本科背景不利");
+  if (program.difficulty >= 88 && gpaScore < 88) penalize(2, "GPA 对高难度项目的支撑有限");
+
+  if (experienceScore < 66 && program.difficulty >= 84) {
+    penalize(3, "未识别到明确科研、论文或研究项目经历");
+    capScore(undergradScore < 78 ? 78 : 84, "高难度项目不能仅依靠方向关键词获得高适配分");
+  }
+
+  if (researchScore < 66) {
+    penalize(4, "研究方向证据不足");
+    capScore(74, "方向弱匹配项目不进入高适配区间");
+  }
+
+  const englishRisk = applicationChecks.find((check) => check.key === "english")?.status === "有风险";
+  if (englishRisk) {
+    penalize(englishScore <= 28 ? 6 : 4, englishScore <= 28 ? "未填写或无法识别英语成绩" : "英语成绩低于当前项目参考线");
+    capScore(englishScore <= 28 ? 74 : 82, "语言参考线未满足");
+  }
+
+  const japaneseRisk = applicationChecks.find((check) => check.key === "japanese")?.status === "有风险";
+  if (japaneseRisk) penalize(2, "日语能力低于当前项目参考线");
+
+  const degreeRisk = applicationChecks.find((check) => check.key === "degree")?.status === "有风险";
+  if (degreeRisk) {
+    penalize(12, "目标学位与当前项目入口不一致");
+    capScore(64, "学位资格未匹配");
+  }
+
+  const facultyRisk = applicationChecks.find((check) => check.key === "faculty")?.status === "有风险";
+  if (facultyRisk && facultyScore < 50) {
+    penalize(4, "教授库已有较高覆盖但没有正教授强命中");
+    capScore(80, "缺少教授/研究室层面的直接证据");
+  }
+
+  if (!profile.additionalBackground.trim() && experienceScore < 66 && program.difficulty >= 88) {
+    capScore(76, "未填写科研与补充背景，不对顶尖项目给出乐观判断");
+  }
+
+  return {
+    score: Math.round(Math.max(30, Math.min(scoreCeiling, adjustedScore))),
+    scoreBeforeAdjustments: Math.round(rawScore * 10) / 10,
+    scoreAdjustments
+  };
 }
 
 function levelFromScore(score: number): InsightLevel {
@@ -502,11 +703,27 @@ function buildNoFacultyReasons(program: GraduateProgram, reliability: ProgramRel
   return reasons;
 }
 
-function chooseBand(score: number, difficulty: number, preference: StudentProfile["applicationPreference"]): RecommendationBand {
+function chooseBand(
+  score: number,
+  difficulty: number,
+  preference: StudentProfile["applicationPreference"],
+  scoreBreakdown: ScoreBreakdownItem[],
+  applicationChecks: ApplicationCheck[]
+): RecommendationBand {
   const gap = score - difficulty;
+  const researchScore = getScore(scoreBreakdown, "research");
+  const undergradScore = getScore(scoreBreakdown, "undergrad");
+  const experienceScore = getScore(scoreBreakdown, "experience");
+  const englishScore = getScore(scoreBreakdown, "english");
+  const hasDegreeRisk = applicationChecks.some((check) => check.key === "degree" && check.status === "有风险");
+  const hasEnglishRisk = applicationChecks.some((check) => check.key === "english" && check.status === "有风险");
 
-  if (preference === "稳妥优先" && gap >= 10) return "相对稳妥";
-  if (gap >= 7) return "相对稳妥";
+  if (hasDegreeRisk || researchScore < 60 || englishScore <= 28) return "冲刺";
+  if (difficulty >= 82 && undergradScore < 78 && experienceScore < 66) return "冲刺";
+  if (difficulty >= 86 && hasEnglishRisk) return "冲刺";
+
+  if (preference === "稳妥优先" && gap >= 10 && researchScore >= 66) return "相对稳妥";
+  if (gap >= 7 && researchScore >= 66 && !applicationChecks.some((check) => check.affectsRecommendation)) return "相对稳妥";
   if (gap >= -10) return "匹配";
   return "冲刺";
 }
@@ -562,6 +779,10 @@ function buildImprovements(profile: StudentProfile, program: GraduateProgram) {
     improvements.push("研究方向还需要更具体，建议把目标教授、研究室关键词、方法和过往经历连接起来。");
   }
 
+  if (scoreResearchExperience(profile) < 66) {
+    improvements.push("当前未识别到明确科研经历，建议补充毕业设计、课程研究、实验室、论文、竞赛或可验证项目成果。");
+  }
+
   if (!program.degreeOptions.includes(profile.degreeGoal)) {
     improvements.push(`该条目当前更适合 ${program.degreeOptions.join(" / ")}，目标学位需要进一步核对募集要项。`);
   }
@@ -579,23 +800,29 @@ function makeRecommendedProgram(profile: StudentProfile, program: GraduateProgra
   const scoreBreakdown = buildScoreBreakdown(profile, program, facultyMatches);
   const scoreInsights = buildScoreInsights(program, scoreBreakdown, facultyMatches);
   const reliability = buildProgramReliability(program, facultyMatches);
+  const applicationChecks = buildApplicationChecks(profile, program, facultyMatches, reliability);
+  const riskLevel = getApplicationRiskLevel(applicationChecks);
   const noFacultyReasons = buildNoFacultyReasons(program, reliability);
-  const score = calculateScore(scoreBreakdown, program);
-  const band = chooseBand(score, program.difficulty, profile.applicationPreference);
+  const scoreResult = calculateScore(profile, scoreBreakdown, program, applicationChecks);
+  const band = chooseBand(scoreResult.score, program.difficulty, profile.applicationPreference, scoreBreakdown, applicationChecks);
 
   return {
     ...program,
     universityDisplayName: getUniversityDisplayName(program.universityName),
     band,
-    score,
+    score: scoreResult.score,
+    scoreBeforeAdjustments: scoreResult.scoreBeforeAdjustments,
+    scoreAdjustments: scoreResult.scoreAdjustments,
     researchMatchScore: researchMatch.score,
     matchedKeywords: researchMatch.matchedKeywords,
+    applicationChecks,
+    riskLevel,
     scoreBreakdown,
     scoreInsights,
     reliability,
     noFacultyReasons,
     facultyMatches,
-    reasons: buildReasons(profile, program, score),
+    reasons: buildReasons(profile, program, scoreResult.score),
     improvements: buildImprovements(profile, program)
   };
 }
@@ -615,6 +842,23 @@ function prioritizeRelevantPrograms(
   const weakPrograms = programs.filter((program) => program.researchMatchScore < 66).sort(compare);
 
   return [...relevantPrograms, ...weakPrograms];
+}
+
+function prioritizeBandCandidates(
+  programs: RecommendedProgram[],
+  band: RecommendationBand,
+  compare: (a: RecommendedProgram, b: RecommendedProgram) => number
+) {
+  const primary = prioritizeRelevantPrograms(
+    programs.filter((program) => program.band === band),
+    compare
+  );
+  const fallback = prioritizeRelevantPrograms(
+    programs.filter((program) => program.band !== band),
+    compare
+  );
+
+  return [...primary, ...fallback];
 }
 
 function pickUniquePrograms(
@@ -652,23 +896,26 @@ function pickUniquePrograms(
 function rebalanceBands(programs: RecommendedProgram[]) {
   const selectedPrograms = new Set<string>();
   const selectedUniversities = new Set<string>();
-  const challengeCandidates = prioritizeRelevantPrograms(
+  const challengeCandidates = prioritizeBandCandidates(
     programs,
+    "冲刺",
     (a, b) =>
       relevanceWeight(b) - relevanceWeight(a) ||
       b.difficulty - a.difficulty ||
       b.researchMatchScore - a.researchMatchScore ||
       b.score - a.score
   );
-  const matchCandidates = prioritizeRelevantPrograms(
+  const matchCandidates = prioritizeBandCandidates(
     programs,
+    "匹配",
     (a, b) =>
       relevanceWeight(b) - relevanceWeight(a) ||
       Math.abs(a.score - a.difficulty) - Math.abs(b.score - b.difficulty) ||
       b.researchMatchScore - a.researchMatchScore
   );
-  const safetyCandidates = prioritizeRelevantPrograms(
+  const safetyCandidates = prioritizeBandCandidates(
     programs,
+    "相对稳妥",
     (a, b) =>
       relevanceWeight(b) - relevanceWeight(a) ||
       a.difficulty - b.difficulty ||
@@ -766,12 +1013,18 @@ function calculateTargetFeasibilityScore(bestProgram: RecommendedProgram) {
   if (gpaScore < 88) score -= 2;
   if (bestProgram.difficulty >= 88 && undergradScore < 78) score -= 3;
 
-  const ceiling =
+  let ceiling =
     undergradScore < 78 && experienceScore < 66
       ? 84
       : undergradScore < 78 || experienceScore < 66
         ? 88
         : 94;
+
+  if (bestProgram.riskLevel === "高风险") ceiling = Math.min(ceiling, 68);
+  else if (bestProgram.riskLevel === "需要关注") ceiling = Math.min(ceiling, 84);
+  if (bestProgram.reliability.facultyCoverage === "高" && bestProgram.facultyMatches.length === 0) {
+    ceiling = Math.min(ceiling, 78);
+  }
 
   return Math.round(Math.max(45, Math.min(ceiling, score)));
 }
@@ -857,6 +1110,9 @@ function buildTargetAssessment(profile: StudentProfile, scoredPrograms: Recommen
   if (getBreakdownScore(bestProgram, "english") < 76) risks.push("英语成绩可能接近或低于部分项目门槛，建议优先确认募集要项中的最低要求。");
   if (getBreakdownScore(bestProgram, "japanese") < 60) risks.push("日语能力对日文项目或面试可能是风险点。");
   if (getBreakdownScore(bestProgram, "experience") < 70) risks.push("补充背景中科研/项目经历信号偏弱。");
+  bestProgram.applicationChecks
+    .filter((check) => check.status === "有风险")
+    .forEach((check) => risks.push(`${check.label}：${check.summary}`));
 
   if (bestProgram.researchMatchScore < 78) suggestions.push("把研究方向写得更具体，例如研究对象、方法、材料/数据/实验手段和想解决的问题。");
   if (facultyMatches.length > 0) suggestions.push("优先阅读匹配研究室的近年论文和实验室主页，再定制套磁邮件。");
@@ -876,7 +1132,7 @@ function buildTargetAssessment(profile: StudentProfile, scoredPrograms: Recommen
     resolvedUniversityDisplayName: getUniversityDisplayName(resolvedUniversityName),
     probabilityLabel: label,
     probabilityScore: score,
-    summary: `已识别你的意向院校为 ${getUniversityDisplayName(resolvedUniversityName)}。在当前本地项目库中，最接近你的方向的是 ${bestProgram.graduateSchool} / ${bestProgram.programName}，综合可行性为 ${score} 分，系统判断为「${label}」。`,
+    summary: `已识别你的意向院校为 ${getUniversityDisplayName(resolvedUniversityName)}。在当前本地项目库中，最接近你的方向的是 ${bestProgram.graduateSchool} / ${bestProgram.programName}，申请适配度为 ${score} 分，系统判断为「${label}」。该分数用于比较准备度，不代表实际录取概率。`,
     strengths,
     risks,
     suggestions,
@@ -923,7 +1179,7 @@ export function buildRecommendationReport(result: RecommendationResult) {
     lines.push("意向院校评估");
     lines.push(`输入院校：${assessment.requestedUniversity}`);
     lines.push(`识别院校：${assessment.resolvedUniversityDisplayName || assessment.resolvedUniversityName || "未识别"}`);
-    lines.push(`申请可行性：${assessment.probabilityLabel}${assessment.probabilityScore ? `（${assessment.probabilityScore} 分）` : ""}`);
+    lines.push(`申请适配判断：${assessment.probabilityLabel}${assessment.probabilityScore ? `（${assessment.probabilityScore} 分）` : ""}`);
     lines.push(`评估摘要：${assessment.summary}`);
     if (assessment.bestPrograms.length > 0) {
       lines.push("最匹配项目：");
@@ -948,7 +1204,7 @@ export function buildRecommendationReport(result: RecommendationResult) {
     result.programs[band].forEach((program, index) => {
       lines.push(`${index + 1}. ${program.universityDisplayName}｜${program.graduateSchool}｜${program.programName}`);
       lines.push(`方向：${program.researchFields.join(" / ")}｜地区：${program.region}`);
-      lines.push(`匹配度：${program.score} 分`);
+      lines.push(`申请适配度：${program.score} 分（原始加权分 ${program.scoreBeforeAdjustments}，风险等级：${program.riskLevel}）`);
       lines.push(
         `评分拆解：${program.scoreBreakdown
           .map((item) => `${item.label}${item.score}分 x ${Math.round(item.weight * 100)}% = ${item.contribution}`)
@@ -959,6 +1215,10 @@ export function buildRecommendationReport(result: RecommendationResult) {
           .map((item) => `${item.label}${item.level}（${item.score}分）：${item.explanation}`)
           .join(" ")}`
       );
+      lines.push(
+        `申请前置条件：${program.applicationChecks.map((check) => `${check.label}${check.status}：${check.summary}`).join("；")}`
+      );
+      if (program.scoreAdjustments.length > 0) lines.push(`风险修正：${program.scoreAdjustments.join("；")}`);
       lines.push(
         `数据可信度：${program.reliability.programDataStatus}；${program.reliability.admissionStatus}；教授库覆盖${program.reliability.facultyCoverage}；${program.reliability.facultyMatchStatus}。`
       );

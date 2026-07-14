@@ -87,6 +87,13 @@ export default function ResultPage() {
           </div>
         </div>
 
+        <div className="mb-8 rounded-2xl border border-academy/15 bg-parchment/70 px-5 py-4 text-sm leading-6 text-slate-700">
+          <p className="font-semibold text-academy">评分口径说明</p>
+          <p className="mt-1">
+            页面分数表示申请材料与项目的综合适配度，不是录取概率。语言、学位资格和教授证据会作为前置条件检查；未满足时即使研究方向相近，也会扣分、限制分数上限或调整到冲刺档。
+          </p>
+        </div>
+
         {result.targetAssessment && <TargetAssessmentBlock assessment={result.targetAssessment} />}
 
         <div className="grid gap-6 lg:grid-cols-3">
@@ -110,14 +117,18 @@ export default function ResultPage() {
                       <p className="mt-1 text-sm font-semibold text-slate-600">{program.graduateSchool}</p>
                       <p className="mt-1 text-sm text-slate-500">{program.programName}</p>
                     </div>
-                    <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700">
-                      {program.score}
-                    </span>
+                    <div className="flex shrink-0 flex-col items-end gap-2">
+                      <span className="rounded-full bg-slate-100 px-3 py-1 text-sm font-semibold text-slate-700">
+                        适配度 {program.score}
+                      </span>
+                      <span className={riskBadgeClass(program.riskLevel)}>{program.riskLevel}</span>
+                    </div>
                   </div>
 
                   <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
                     <Info label="地区" value={program.region} />
                     <Info label="推荐档位" value={program.band} />
+                    <Info label="申请风险" value={program.riskLevel} />
                     <Info label="方向匹配" value={`${program.researchMatchScore} 分`} />
                     <Info label="研究方向" value={program.researchFields.slice(0, 3).join(" / ")} />
                     <Info label="命中关键词" value={program.matchedKeywords.length > 0 ? program.matchedKeywords.join(" / ") : "暂无明确命中"} />
@@ -135,6 +146,7 @@ export default function ResultPage() {
                       <p className="font-semibold text-ink">需要提升的地方</p>
                       <p className="mt-1">{program.improvements.join(" ")}</p>
                     </div>
+                    <ApplicationChecksBlock program={program} />
                     <ReliabilityBlock program={program} />
                     <ScoreInsightsBlock program={program} />
                     <ScoreBreakdown program={program} />
@@ -167,7 +179,7 @@ function TargetAssessmentBlock({ assessment }: { assessment: TargetUniversityAss
           <p className="mt-3 max-w-3xl leading-7 text-slate-600">{assessment.summary}</p>
         </div>
         <div className={`min-w-40 rounded-2xl border px-5 py-4 ${assessmentStyles[assessment.probabilityLabel]}`}>
-          <p className="text-xs font-semibold opacity-80">申请可行性</p>
+          <p className="text-xs font-semibold opacity-80">申请适配判断</p>
           <p className="mt-1 text-3xl font-bold">{assessment.probabilityLabel}</p>
           <p className="mt-1 text-sm font-semibold">{scoreText}</p>
         </div>
@@ -198,7 +210,10 @@ function TargetAssessmentBlock({ assessment }: { assessment: TargetUniversityAss
                     <p className="font-semibold text-ink">{program.graduateSchool}</p>
                     <p className="mt-1 text-sm text-slate-600">{program.programName}</p>
                   </div>
-                  <span className="rounded-full bg-white px-3 py-1 text-sm font-semibold text-ocean">{program.score}</span>
+                  <div className="flex shrink-0 flex-col items-end gap-2">
+                    <span className="rounded-full bg-white px-3 py-1 text-sm font-semibold text-ocean">适配度 {program.score}</span>
+                    <span className={riskBadgeClass(program.riskLevel)}>{program.riskLevel}</span>
+                  </div>
                 </div>
                 <p className="mt-3 text-sm leading-6 text-slate-600">
                   方向匹配 {program.researchMatchScore} 分，档位为{program.band}。
@@ -328,6 +343,41 @@ function AdmissionInfoBlock({ program }: { program: RecommendedProgram }) {
   );
 }
 
+function riskBadgeClass(level: RecommendedProgram["riskLevel"]) {
+  const base = "rounded-full px-2.5 py-1 text-[11px] font-semibold";
+  if (level === "风险较低") return `${base} bg-matcha/10 text-matcha`;
+  if (level === "需要关注") return `${base} bg-amber-100 text-amber-700`;
+  return `${base} bg-sakura/10 text-sakura`;
+}
+
+function applicationCheckClass(status: RecommendedProgram["applicationChecks"][number]["status"]) {
+  if (status === "满足") return "border-matcha/20 bg-matcha/5 text-matcha";
+  if (status === "有风险") return "border-sakura/20 bg-sakura/5 text-sakura";
+  return "border-amber-200 bg-amber-50 text-amber-700";
+}
+
+function ApplicationChecksBlock({ program }: { program: RecommendedProgram }) {
+  return (
+    <div className="rounded-xl border border-slate-200 bg-white p-3">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <p className="font-semibold text-ink">申请前置条件</p>
+        <span className={riskBadgeClass(program.riskLevel)}>{program.riskLevel}</span>
+      </div>
+      <div className="mt-3 grid gap-2 sm:grid-cols-2">
+        {program.applicationChecks.map((check) => (
+          <div key={check.key} className={`rounded-lg border p-3 ${applicationCheckClass(check.status)}`}>
+            <div className="flex items-center justify-between gap-3">
+              <p className="text-xs font-semibold">{check.label}</p>
+              <span className="text-[11px] font-bold">{check.status}</span>
+            </div>
+            <p className="mt-2 text-xs leading-5 text-slate-600">{check.summary}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function ReliabilityBlock({ program }: { program: RecommendedProgram }) {
   const reliability = program.reliability;
   const statusItems = [
@@ -400,7 +450,7 @@ function ScoreBreakdown({ program }: { program: RecommendedProgram }) {
     <div className="rounded-xl border border-slate-200 bg-white p-3">
       <div className="flex items-center justify-between gap-3">
         <p className="font-semibold text-ink">评分拆解</p>
-        <p className="text-xs text-slate-500">分数 x 权重</p>
+        <p className="text-xs text-slate-500">原始 {program.scoreBeforeAdjustments} → 最终 {program.score}</p>
       </div>
       <div className="mt-3 space-y-2">
         {program.scoreBreakdown.map((item) => (
@@ -417,6 +467,16 @@ function ScoreBreakdown({ program }: { program: RecommendedProgram }) {
           </div>
         ))}
       </div>
+      {program.scoreAdjustments.length > 0 && (
+        <div className="mt-4 rounded-lg border border-amber-100 bg-amber-50 p-3 text-xs leading-5 text-amber-800">
+          <p className="font-semibold">风险修正</p>
+          <ul className="mt-1 space-y-1">
+            {program.scoreAdjustments.map((adjustment) => (
+              <li key={adjustment}>{adjustment}</li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
