@@ -9,7 +9,26 @@ type ResearchSynonymGroup = {
 };
 
 const genericKeywords = new Set(["工程", "科学", "研究", "系统", "engineering", "science", "research", "systems"]);
-const weakProgramKeywords = new Set(["工学", "土木", "建筑", "工程", "engineering", "science"]);
+const weakProgramKeywords = new Set(["工学", "土木", "土木工程", "建筑", "工程", "engineering", "science", "infrastructure"]);
+const specificCrossProgramKeywords = new Set([
+  "structural engineering",
+  "seismic engineering",
+  "earthquake engineering",
+  "structural health monitoring",
+  "geotechnical engineering",
+  "bridge engineering",
+  "concrete",
+  "reinforced concrete",
+  "prestressed concrete",
+  "structural safety",
+  "structural reliability",
+  "seismic",
+  "耐震",
+  "免震",
+  "制震",
+  "地震工学",
+  "構造工学"
+]);
 
 function normalizeKeywords(text: string) {
   return text
@@ -76,7 +95,7 @@ export function getFacultyProfileStats(program: GraduateProgram) {
 }
 
 export function findFacultyMatches(profile: StudentProfile, program: GraduateProgram): FacultyMatch[] {
-  const targetText = `${profile.researchDirection} ${profile.additionalBackground}`;
+  const targetText = `${profile.researchDirection} ${profile.undergraduateMajor} ${profile.additionalBackground}`;
   const userKeywords = Array.from(new Set([...normalizeKeywords(targetText), ...getExpandedKeywords(targetText)]));
   const programKeywords = new Set([...program.keywords, ...program.researchFields].map((keyword) => keyword.toLowerCase()));
 
@@ -94,7 +113,8 @@ export function findFacultyMatches(profile: StudentProfile, program: GraduatePro
       });
       const matchedKeywords = Array.from(new Set([...targetMatches, ...programMatches])).slice(0, 10);
       const programBelongs = belongsToProgram(faculty, program);
-      const strongCrossProgramSignal = !programBelongs && targetMatches.length >= 2;
+      const hasSpecificCrossSignal = targetMatches.some((keyword) => specificCrossProgramKeywords.has(keyword.toLowerCase()));
+      const strongCrossProgramSignal = !programBelongs && targetMatches.length >= 2 && hasSpecificCrossSignal;
       const affinity = programBelongs ? getProgramAffinity(program, faculty) : 8;
       const hasResearchSignal = targetMatches.length > 0 || programMatches.length > 0;
       const score = hasResearchSignal

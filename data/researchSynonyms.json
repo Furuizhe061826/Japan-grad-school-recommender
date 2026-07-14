@@ -11,13 +11,13 @@
   },
   {
     "category": "结构工程 / 抗震防灾",
-    "triggers": ["抗震结构", "结构工程", "地震工程", "防灾", "灾害科学", "桥梁结构", "结构健康监测", "岩土", "基础设施", "混凝土结构", "钢筋混凝土", "预应力混凝土"],
-    "expandedKeywords": ["结构", "抗震", "地震", "防灾", "土木", "建筑", "基础设施", "灾害", "structural engineering", "structural", "seismic engineering", "seismic", "earthquake engineering", "earthquake", "disaster prevention", "disaster mitigation", "bridge engineering", "bridge", "infrastructure", "resilience", "structural health monitoring", "geotechnical engineering"]
+    "triggers": ["抗震", "地震", "耐震", "结构", "结构工程", "抗震结构", "地震工程", "防灾", "灾害科学", "桥梁", "桥梁结构", "结构健康监测", "岩土", "基础设施", "土木", "土木工程", "建筑土木", "混凝土结构", "钢筋混凝土", "预应力混凝土"],
+    "expandedKeywords": ["结构", "抗震", "地震", "耐震", "防灾", "土木", "土木工程", "建筑", "基础设施", "灾害", "桥梁", "structural engineering", "structural", "seismic engineering", "seismic", "earthquake engineering", "earthquake", "earthquake disaster", "disaster prevention", "disaster mitigation", "bridge engineering", "bridge", "infrastructure", "resilience", "structural health monitoring", "geotechnical engineering", "耐震", "免震", "制震", "地震工学", "構造", "構造工学"]
   },
   {
     "category": "混凝土 / 土木结构材料",
-    "triggers": ["混凝土", "钢筋混凝土", "预应力混凝土", "rc结构", "rc", "水泥", "桥梁混凝土", "混凝土耐久性", "结构可靠性"],
-    "expandedKeywords": ["混凝土", "钢筋混凝土", "预应力混凝土", "concrete", "reinforced concrete", "prestressed concrete", "cement", "bridge", "structural safety", "structural reliability", "durability", "corrosion", "コンクリート"]
+    "triggers": ["混凝土", "钢筋混凝土", "预应力混凝土", "rc结构", "rc", "水泥", "桥梁混凝土", "混凝土耐久性", "结构可靠性", "土木材料", "结构材料"],
+    "expandedKeywords": ["混凝土", "钢筋混凝土", "预应力混凝土", "concrete", "reinforced concrete", "prestressed concrete", "cement", "bridge", "structural safety", "structural reliability", "durability", "corrosion", "コンクリート", "鉄筋コンクリート", "プレストレストコンクリート"]
   },
   {
     "category": "交互设计 / 用户体验",
